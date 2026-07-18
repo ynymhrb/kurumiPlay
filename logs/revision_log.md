@@ -260,6 +260,26 @@ eval_after: 不适用
 delta: 不适用
 git_ref: 78fde25
 
+## 2026-07-18 — CEU schema v0.5→v0.6：卷一末尾schema复核
+
+触发：卷一（19个cluster）全部处理完，`logs/schema_gaps.md`累积3条待复核信号（A-001起源类证据分类、C-002无冲突记录方式、S-002私下战略人格区分），按`spec/eval_protocol.md`第7节步骤5触发正式schema复核。
+
+修正前：`value_conflict`字段没有区分"经过核实确认无冲突"和"没检查/漏填"两种情况的书写规范；`CEU_schema.md`"待验证的开放问题"里"是否存在多个人格状态"这条一直是纯理论问题，没有实际证据交叉引用
+
+修正后：
+1. `value_conflict`字段新增用法约定：确认无内在冲突时必须显式写"无明显内在冲突（已核实）"，不能留空（回应C-002信号）
+2. A-001（起源类证据分类）和S-002（私下战略人格区分）判断为**暂不需要schema层面改动**：A-001只有1个场景，`evidence_source: narrator`勉强够用；S-002现有emotion/underlying_belief字段配合mental_models.md新增的MM8候选已经能记录这个区别，不需要为单个场景新增结构化字段
+3. `CEU_schema.md`"待验证的开放问题"里"多个人格状态"这条补充了S-002作为第一条直接支持证据的交叉引用
+
+原因：这是CEU schema主动检测机制（v0.4引入`schema_gap`字段）第一次真正走完"收集信号→定期复核→部分修改/部分保留观察"的完整流程。三条信号里只有一条真正触发修改，符合预期——不是所有`schema_gap`信号都应该导致改动，只有1个场景支撑的假设应该继续观察而不是急于新增结构，这个复核结果本身也验证了`logs/schema_gaps.md`"不允许无声丢弃但也不强行改动"这个设计原则是可行的。
+
+change_type: 字段新增
+round: v1.0
+eval_before: 无
+eval_after: 不适用
+delta: 不适用
+git_ref: （待commit回填）
+
 ## 2026-07-17 — CEU schema v0.1 → v0.2
 
 触发：雅儿贝德测试中发现仅用 emotion/action/belief 字段不足以支撑 Value Hierarchy 推导（"雅儿贝德嫉妒夏提雅"信息量不够）。
