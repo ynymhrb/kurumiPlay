@@ -102,6 +102,31 @@ eval_after: 不适用
 delta: 不适用
 git_ref: a112726
 
+## 2026-07-18 — mental_models MM1自我归责细化+MM5潜在细化；contradictions观察项2；decision_rules规则7候选；expression_dna三分类重构
+
+触发：处理卷一cluster C（第592-833行），产出 YLDB-V1-C-001（反复关切+对无关自己的问题主动请罪）、YLDB-V1-C-002（安兹以"测试"名义请求身体接触，她欣然应允并主动升级，安兹喊停后瞬间切回职责模式）。
+
+修正前：
+1. `mental_models.md` MM1 只到"关切"层次，没有"默认归责自己"这一层；MM5没有考虑"安兹在场但非竞争场合"这类情况
+2. `contradictions.md` 只有1条张力+1条观察项
+3. `decision_rules.md` 只有6条规则，没有命令复诵相关的规则
+4. `expression_dna.md` 只有"公务/私密"二分类，n=5
+
+修正后：
+1. MM1新增"自我归责细化"小节（C-001支撑）：安兹的任何负面状态默认是自己的责任，即使客观无关；MM5新增"潜在细化"小节（C-002支撑）：安兹在场但非竞争场合时她并不表现出克制，提示"是否有观众"可能不如"安兹是否明确表态"更根本，暂不改动MM5正式表述
+2. contradictions.md新增"观察项2"，指出C-002正是此前张力1"待观察"部分预警的反例类型，与观察项1并列跟踪
+3. decision_rules.md新增候选规则7"接到命令逐字复诵确认"（C-002支撑，1个场景）
+4. expression_dna.md v0.2→v0.3：语料从5条增至15条，发现原有"公务/私密"二分类不够用，拆出第三类"安兹在场一对一场合"（n=10，目前语料最多的一类），重新做了三分类的句式指纹对比；同时发现候选口癖"主动自我归责"（C-001+C-002两个场景，接近转正门槛）
+
+原因：这一批CEU信息量很大，同时触动了mental_models、contradictions、decision_rules、expression_dna四个文件——没有拆成4条零散记录，是因为它们都源自同一批新证据、且互相引用（C-002既是MM5细化的证据，也是contradictions观察项2的证据，也是expression_dna新场合分类的证据），拆开记录反而会掩盖这些发现是同一批数据的不同侧面这件事。C-002本身还触发了一个schema_gap（"无冲突"本身值得记录，但value_conflict字段名装不下这个发现），已记入schema_gaps.md。
+
+change_type: 候选模型新增
+round: v1.0
+eval_before: 无（卷一才处理到cluster C，尚无卷内自测基线）
+eval_after: 不适用
+delta: 不适用
+git_ref: （待commit回填）
+
 ## 2026-07-17 — CEU schema v0.1 → v0.2
 
 触发：雅儿贝德测试中发现仅用 emotion/action/belief 字段不足以支撑 Value Hierarchy 推导（"雅儿贝德嫉妒夏提雅"信息量不够）。
