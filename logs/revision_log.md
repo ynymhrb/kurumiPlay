@@ -280,6 +280,28 @@ eval_after: 不适用
 delta: 不适用
 git_ref: 61c333f
 
+## 2026-07-18 — 卷三cluster A-D：MM2强化+decision_rule#2第二组谏言对照+decision_rule#8新增+contradictions观察项3新增
+
+触发：卷三首次处理，cluster C（夏提雅背叛危机处理）产出YLDB-V3-C-001~004，cluster D（伊格法尔吉遭遇战）产出YLDB-V3-D-001~002
+
+修正前：MM2"秩序与职责模型"只有笼统表述，无具体场景支撑其"主动拒绝对等关系"这一面；decision_rule#2的"谏言强度"只有YLDB-V2-B-001一个场景（涉及安兹安全，反对到近乎僵持）；decision_rules无涉及"命令本身是否提升执行认真度"的条目；contradictions.md未记录任何"特定关键词击穿克制机制"的观察
+
+修正后：
+1. mental_models.md MM2新增强化证据（D-001）：被安兹随口称为"同伴"而非"臣子"，当场情绪失控，证明她主动拒绝对等关系框架，不只是被动接受等级制
+2. decision_rules.md规则2新增"谏言强度的第二组对照"（C-003）：处置背叛者夏提雅这类她自己无切身安全利害的议题，谏言力度明显轻于V2-B-001（安兹安全议题），提示谏言强度可能和议题是否关乎安兹安全相关
+3. decision_rules.md新增规则8（候选）：命令的存在会提升她执行任务的认真程度，即使任务对象本身不构成价值考量（D-002：处决人类前"试挥武器"这个额外认真动作，原文点明是因为"这是安兹的命令"）
+4. contradictions.md新增观察项3：C-001（"爱"字触发失控撞天花板）+D-001（"同伴"称呼触发失控）共同提示存在独立于MM5"是否有观众"的第二条开关——特定关键词本身能直接击穿克制机制，无论观众条件是否满足
+5. mental_models.md MM1新增无观众忠诚证据（C-004）：完全独处、无任何观众的场合下，她仍主动重申对安兹的绝对忠诚，是目前"忠诚不是表演"最强证据，对MM8"双重人格"候选形成制衡
+
+原因：卷三首个批次同时提供了MM2的首次实证支撑、decision_rule#2谏言强度的第二个独立样本、一个全新的"命令提升认真度"细节，以及一个可能独立于MM5的新开关假设。这些改动大多是"新增支撑证据/细化范围"而非推翻已有模型，符合V1.0"证据驱动、非推倒重来"的迭代原则。抽取过程中2次出现speech/action字段ASCII引号+尾随内容导致YAML解析失败（第四、五次遇到），已在construction_log.md C011条目记录，作为后续抽取时的固定检查项。
+
+change_type: 范围限定
+round: v1.0
+eval_before: 无
+eval_after: 不适用
+delta: 不适用
+git_ref: （待commit回填）
+
 ## 2026-07-18 — 卷二V0.1遗留CEU复核：确认兼容V1.0规范，不改动
 
 触发：TaskList#4，`ROUND_STATUS.md`"下一步"第1项——卷一处理完、schema复核commit后，按用户"回头审视卷二V0.1遗留CEU是否需要按V1.0流程调整"的要求，正式审视`characters/雅儿贝德/V1.0/CEU/`下vol2相关文件（`_index_vol2.yaml`、`vol2_prologue.yaml`、`vol2_ch01_early.yaml`、`vol2_cluster_D.yaml`、`vol2_cluster_G.yaml`）。
