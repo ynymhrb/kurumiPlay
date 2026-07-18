@@ -65,4 +65,4 @@
 **跨会话恢复进度**：看 `CEU/_index_vol1.yaml` 的 `progress_summary.next_recommended` 字段（当前=F），不要只看本文件的文字描述，以index文件的status字段为准（曾发生过index文件重复键导致status显示错误的bug，已修复并在index文件里写了防范说明）。
 
 ---
-最后更新：2026-07-18（卷一cluster F/G/H完成），对应 commit（待本次提交后回填）
+最后更新：2026-07-18（卷一cluster F/G/H完成），对应 commit `72161bb`
