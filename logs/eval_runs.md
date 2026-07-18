@@ -13,4 +13,4 @@
 - `model_ref`：跑这次评估时对应的 git commit hash 或 tag
 - `test_set`：如 `雅儿贝德-卷三-batch1`
 - `predictive_accuracy`：对/(对+部分对*0.5+错) 的总用例，部分对按 0.5 计
-- `style_score`：1-5 分，LLM-judge 平均分（expression_dna 内容不足前该分数仅供参考）
+- `style_score`：1-5 分，LLM-judge 平均分（`profile.yaml` 的 `speech_register` 内容不足前该分数仅供参考）

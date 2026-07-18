@@ -21,16 +21,13 @@
 7. **`characters/雅儿贝德/V2.0/profile.yaml`**：新建，从旧版`value_hierarchy.md`/`mental_models.md`/`decision_rules.md`/`relationship_rules.md`/`expression_dna.md`/`contradictions.md`迁移+重整核心内容——**这是本轮最重要的产出，静态特质模型的分析结论基本完整保留**，只是组织方式变了（MM1-8→belief_system条目、contradictions.md→psychological_structure机制记录）
 8. **`characters/雅儿贝德/V2.0/literary_techniques.md`**：迁移自`reaction_stylization.md`，内容不变
 
-## ⚠️ 尚未完成、需要你决定优先级的部分
+## 卷一~五处理方式：已定案（选项B）
 
-**`characters/雅儿贝德/V2.0/events/` 目录目前是空的。** 这是新架构和旧架构最大的差距所在：旧版CEU库（卷一~五，55条记录）里的**逐轮次时间线数据**（`progress_timeline`、`environmental_force_snapshot`等新字段）没有被自动迁移——旧CEU是"一个证据事件=一条扁平记录"，新Event是"一个事件=多个结构化turn的时间线"，两者结构不同，不能简单转换，需要重新回原文构建。
+`characters/雅儿贝德/V2.0/events/` 目录**有意保持为空**——用户已决定采用选项B：卷一~五不重新按新Event schema重建时间线数据，只保留`profile.yaml`层面已完成迁移的分析结论；`events/`目录从**卷六**开始正式启用，用新schema处理新内容。旧卷一~五的原始证据（含逐字原文引用）需要追溯时，去`characters/雅儿贝德/_history/V1.0-CEU/CEU/`查，不会有新格式的`events/vol1.yaml`~`vol5.yaml`。
 
-`profile.yaml`里保留的是**从这些证据推导出的分析结论**（信念、价值排序、决策规则、关系图谱），这部分没有丢失；丢失/待重建的是**支撑这些结论的原始时间线证据本身**（按新schema的细粒度）。
+## logs/ 归档整理（本次同步完成）
 
-这意味着两个选择，需要你决定：
-
-- **选项A**：把卷一~五的旧CEU语料重新过一遍，转换/重建成新Event格式的`events/vol1.yaml`~`events/vol5.yaml`（工作量接近重做一次卷一~五的抽取，但因为分析结论已经在profile.yaml里了，主要是把原文重新组织成turn时间线，不需要重新做归因分析）
-- **选项B**：接受卷一~五只保留`profile.yaml`层面的分析结论，`events/`目录从卷六开始，用新schema处理新内容——旧证据的可追溯性依赖`_history/V1.0-CEU/`归档目录，而不是新格式的`events/`
+`logs/construction_log.md`、`logs/schema_gaps.md`、`logs/revision_log.md`（CEU时代累积内容）已归档到`logs/_history/`，三个文件重新建成干净的活跃版本（字段名同步为事件模型术语，如`events_extracted`/`triggered_structure_updates`），从架构迁移这条记录开始累积新内容。`logs/eval_runs.md`未归档（此前从未产生记录，格式本身与CEU/Event无关），只做了字段说明里的术语更新（expression_dna→speech_register）。
 
 ## Character OS 文件版本（新命名）
 
@@ -39,9 +36,9 @@
 
 ## 下一步
 
-1. **等待你对上面"选项A/B"的决定**，这个决定会影响接下来的工作量和顺序
-2. 无论哪个选项，`profile.yaml`里MM2/MM4/MM6/MM7对应的belief_system条目仍未做三重验证回填，`value_hierarchy`第3/5层仍无正式证据支撑，这两项本身就值得继续推进，与events/怎么处理是独立的两件事
+1. 卷六——第一个正式使用新Event schema处理的卷，先跑`scripts/locate_candidates.py 雅儿贝德 6`定位候选场景，再按`spec/event_schema.md`的两遍法产出`events/vol6.yaml`
+2. `profile.yaml`里MM2/MM4/MM6/MM7对应的belief_system条目仍未做三重验证回填，`value_hierarchy`第3/5层仍无正式证据支撑，这两项可以和卷六处理并行推进
 3. `psychological_structure`里4条机制全部标注`status: open`（样本量都只有1-2个场景），需要更多卷的证据来判断是否转正为`confirmed`
 
 ---
-最后更新：2026-07-19（架构迁移到CSE，profile.yaml/literary_techniques.md迁移完成，events/待你决定处理方式）
+最后更新：2026-07-19（架构迁移到CSE完成，卷一~五处理方式定案为选项B，logs/归档整理完成）
