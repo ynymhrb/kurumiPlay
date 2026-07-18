@@ -326,7 +326,7 @@ round: v1.0
 eval_before: 无
 eval_after: 不适用
 delta: 不适用
-git_ref: （待commit回填）
+git_ref: 1fb8577
 
 ## 2026-07-18 — 卷二V0.1遗留CEU复核：确认兼容V1.0规范，不改动
 
