@@ -52,4 +52,4 @@
 - 卷一处理完，回头审视卷二V0.1遗留CEU是否需要按当前schema/方法论调整
 
 ---
-最后更新：2026-07-18（albedo-round-v1.0 首个batch：卷一 cluster A + 基础设施搭建），对应 commit（待本次提交后回填）
+最后更新：2026-07-18（albedo-round-v1.0 首个batch：卷一 cluster A + 基础设施搭建），对应 commit `3696fc1`

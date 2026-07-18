@@ -35,7 +35,7 @@ round: v1.0
 eval_before: 无（train阶段尚未开始正式eval，本条修正不涉及预测力评分变化，纯粹是证据有效性清理）
 eval_after: 不适用
 delta: 不适用
-git_ref: （本次提交生成后回填）
+git_ref: 3696fc1
 
 ## 2026-07-18 — mental_models.md MM1 背景脚注（爱的设定来源）
 
@@ -52,7 +52,7 @@ round: v1.0
 eval_before: 无（train阶段卷一首个batch，尚无卷内自测基线）
 eval_after: 不适用（本条不是对预测力的修正，是补充/精化已有背景注脚，不改变模型的预测性结论）
 delta: 不适用
-git_ref: （本次提交生成后回填）
+git_ref: 3696fc1
 
 ## 2026-07-17 — CEU schema v0.1 → v0.2
 
