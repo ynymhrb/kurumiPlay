@@ -2,7 +2,7 @@
 
 每次因 Fidelity Test 或逐章验证发现模型无法解释的行为而做出修正时，在此记录。
 
-格式：
+格式（v0.1 起新增 change_type / eval_before / eval_after / delta，评估协议见 `../spec/eval_protocol.md`）：
 
 ```
 ## <日期> — <修正对象>
@@ -10,7 +10,14 @@
 修正前: ...
 修正后: ...
 原因: ...
+change_type: 字段新增 / 层级拆分 / 候选模型新增 / 范围限定 / 重命名精确化 / 证据分级
+eval_before: <eval_runs.md 的 eval_id，改动前最近一次同测试集分数>
+eval_after: <改动后重跑同测试集的 eval_id>
+delta: <predictive_accuracy 变化，如 +0.08>
+git_ref: <这次修正对应的 commit hash>
 ```
+
+以下4条历史记录早于本评估协议（2026-07-18 引入），无 eval 数据，标注 `predates eval harness`，不做补录。
 
 ## 2026-07-17 — CEU schema v0.1 → v0.2
 
