@@ -48,7 +48,8 @@ character/
 ├── README.md                          本文件
 ├── spec/
 │   ├── CEU_schema.md                   CEU 数据结构规范（随迭代升级版本号，含 schema_gap 检测机制）
-│   ├── character_os_template.md        Character OS 输出模板
+│   ├── character_os_template.md        Character OS 输出模板（含三重验证/矛盾三分类/自检清单）
+│   ├── expression_dna_protocol.md      语言风格提取方法论（句式指纹/风格标签/口癖，按场合拆分）
 │   └── eval_protocol.md                评估协议：训练轮次版本化、train/dev/test切分、打分标准、简单流程
 ├── scripts/                            自动化脚本（定位候选场景/校验CEU/轮次切换汇总），流程本身由我按文档手动执行，不用subagent
 ├── characters/

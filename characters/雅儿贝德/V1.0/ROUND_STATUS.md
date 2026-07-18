@@ -29,15 +29,20 @@
 ## 当前 Character OS 文件版本
 
 - `value_hierarchy.md`：v0.3（第3/5层因移除seed引用暂列"待验证假设"）
-- `mental_models.md`：v0.2（MM1背景脚注本轮已用YLDB-V1-A-001升级为第一手实锤）
+- `mental_models.md`：v0.2（MM1背景脚注本轮已用YLDB-V1-A-001升级为第一手实锤；现在有了三重验证标准，但现有MM1-7尚未逐条回填标注满足几重验证，是下一步）
 - `decision_rules.md`：v0.2
 - `relationship_rules.md`：v0.1
-- `expression_dna.md`：v0.1（几乎空，仍是最大缺口）
+- `expression_dna.md`：v0.2（首次有真实语料，5条台词的初步分析；方法论见新增的 `expression_dna_protocol.md`；样本量仍是最大限制，不再是"完全空白"）
+- `contradictions.md`：新增矛盾三分类（时间性/领域性/本质性）+ 1条新观察项（"喔"语气词场合区分度不明显）
 - CEU schema：v0.5（本轮新增 `schema_gap` 字段）
 
 ## 待处理的 schema_gap 信号
 
 1条未复核（见 `logs/schema_gaps.md`）：YLDB-V1-A-001 触发的"起源类证据不适配现有evidence_source三分类"问题，待卷末schema复核步骤处理。
+
+## 待处理的观察项（非schema_gap，是矛盾候选）
+
+1条（见 `contradictions.md` 观察项1）：语气词"喔"在公务/私密两种场合都出现，与MM5"场合决定语言风格"假设不完全吻合，样本太小（n=2）无法判断是噪音还是真实反例，需要更多台词语料后重新判断。
 
 ## Pipeline 基础设施（本轮新增）
 
@@ -52,4 +57,4 @@
 - 卷一处理完，回头审视卷二V0.1遗留CEU是否需要按当前schema/方法论调整
 
 ---
-最后更新：2026-07-18（albedo-round-v1.0 首个batch：卷一 cluster A + 基础设施搭建），对应 commit `3696fc1`
+最后更新：2026-07-18（expression_dna方法论落地 + mental_models三重验证/contradictions三分类），对应 commit（待本次提交后回填）

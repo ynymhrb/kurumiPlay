@@ -91,11 +91,12 @@
 1. **候选场景定位**（脚本）：`scripts/locate_candidates.py <角色> <卷号>` 按人名关键词 grep 命中行号，自动聚类成 cluster 草稿，写入 `CEU/_index_vol<N>.yaml`
 2. **两遍法抽取**（我直接做）：一遍机械列出候选片段里所有"说了/做了什么"的节拍（宁可过度收录）；二遍逐条判断是否构成 CEU 并按 schema 填字段；字段套不上时写 `schema_gap` 而不是硬凑；产出写入 `CEU/vol<N>_cluster_<ID>.yaml`
 3. **Schema 校验**（脚本）：`scripts/validate_ceu.py <角色>`——CEU 必填字段是否齐全、`event_id` 是否唯一、Character OS 文件里引用的 CEU 编号是否真实存在
-4. **Character OS 更新**（我直接做）：新 CEU 是否挑战现有 value_hierarchy/mental_models/decision_rules，触发修正（**必须字段级精确**，见 `logs/revision_log.md` 顶部说明）或记入 `contradictions.md`
-5. **schema 复核**（我直接做，卷末或 `schema_gaps.md` 积累到一定量时）：判断 `schema_gaps.md` 里的信号是否需要真正修改 schema，无论改不改都要留复核记录
-6. **卷内自测**（我直接做，可选）：对本卷预留的 1-2 个 cluster 跑预测任务（第3-4节协议），只根据 trigger+context 预测，再对照真实结果打分，记入 `construction_log.md` 的 `within_batch_accuracy`
-7. **过程指标统计**：汇总写入 `logs/construction_log.md`（见第8节）
-8. **收尾**：git commit（对应本批次改动，引用轮次 tag）+ 更新 `characters/<角色>/V<当前版本>/ROUND_STATUS.md`
+4. **Character OS 更新**（我直接做）：新 CEU 是否挑战现有 value_hierarchy/mental_models/decision_rules，触发修正（**必须字段级精确**，见 `logs/revision_log.md` 顶部说明）或记入 `contradictions.md`（**必须分类**：时间性/领域性/本质性，见 `character_os_template.md`）；Mental Model 候选转正前过一遍三重验证（跨场景复现/有生成力/有排他性）
+5. **expression_dna 更新**（我直接做，不是独立任务，跟着每批CEU走）：新CEU里如果有她本人的直接台词，按 `expression_dna_protocol.md` 补充进语料池，重新跑一遍句式指纹/风格标签统计，样本量不到阈值就明确标"初步观察"
+6. **schema 复核**（我直接做，卷末或 `schema_gaps.md` 积累到一定量时）：判断 `schema_gaps.md` 里的信号是否需要真正修改 schema，无论改不改都要留复核记录
+7. **卷内自测**（我直接做，可选）：对本卷预留的 1-2 个 cluster 跑预测任务（第3-4节协议），只根据 trigger+context 预测，再对照真实结果打分，记入 `construction_log.md` 的 `within_batch_accuracy`
+8. **过程指标统计**：汇总写入 `logs/construction_log.md`（见第8节）
+9. **收尾**：git commit（对应本批次改动，引用轮次 tag）+ 更新 `characters/<角色>/V<当前版本>/ROUND_STATUS.md`；冻结轮次时额外过一遍 `character_os_template.md` 的自检清单
 
 ### 阶段B 开发（卷十一～十二，尚未开发）
 

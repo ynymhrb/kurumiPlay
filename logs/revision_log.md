@@ -54,6 +54,31 @@ eval_after: 不适用（本条不是对预测力的修正，是补充/精化已�
 delta: 不适用
 git_ref: 3696fc1
 
+## 2026-07-18 — expression_dna.md v0.1→v0.2；mental_models/contradictions方法论新增三重验证与矛盾三分类
+
+触发：用户提供外部参考`nuwa-skill`项目的`extraction-framework.md`，要求参考其方法论补充expression_dna.md并把规则并入当前流程。
+
+修正前：
+1. `expression_dna.md` 是纯占位（v0.1，无实际内容，四个维度全部"待提取"）
+2. `mental_models.md` 的候选模型转正没有明确标准，MM5/MM7当前是"候选"但缺少可检验的判断依据
+3. `contradictions.md` 只有一条记录（张力1），没有分类体系，矛盾类型全部混在一起处理
+
+修正后：
+1. 新增 `spec/expression_dna_protocol.md`（句式指纹/风格标签/禁忌词口癖的量化方法，按场合拆分统计，样本不足显式标注），`expression_dna.md` 升级到 v0.2，用现有CEU库里的5条真实台词做了首次实际分析（按公务/私密场合对比职衔自我援引、句式结构、语气词），产出候选口癖2条（反问句式化解质疑；援引官方职衔为行动背书）
+2. `character_os_template.md` 新增 Mental Model 三重验证标准（跨场景复现/有生成力/有排他性），只过1重的降级为候选不写入正式结论
+3. `contradictions.md` 记录格式新增"类型"字段（时间性/领域性/本质性），张力1回溯分类为"领域性矛盾"；新增"观察项1"记录expression_dna分析中发现的"喔"语气词场合区分度不明显的现象，暂不升级为矛盾
+4. `character_os_template.md` 新增"信息不足时的处理"通用规则和"轮次冻结前自检清单"
+5. `eval_protocol.md` 第7节pipeline新增独立的"expression_dna更新"步骤（此前完全没有这一步，是明显的流程缺口）
+
+原因：expression_dna.md此前是全项目最薄弱的文件，且没有可执行的提取方法——只写"待提取"不会自动变成有内容，需要像CEU抽取一样有明确的、可重复执行的流程。三重验证和矛盾分类同样是采纳外部方法论后发现能直接补上当前流程里"候选模型什么时候能转正"和"矛盾要不要调和"这两个此前一直靠主观判断的空白。
+
+change_type: 字段新增
+round: v1.0
+eval_before: 不适用（方法论/文档新增，非预测力相关修正）
+eval_after: 不适用
+delta: 不适用
+git_ref: （待commit回填）
+
 ## 2026-07-17 — CEU schema v0.1 → v0.2
 
 触发：雅儿贝德测试中发现仅用 emotion/action/belief 字段不足以支撑 Value Hierarchy 推导（"雅儿贝德嫉妒夏提雅"信息量不够）。
