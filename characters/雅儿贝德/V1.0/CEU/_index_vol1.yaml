@@ -338,11 +338,11 @@ clusters:
   - 3456
   mention_lines:
   - 3441
-  brief: ''
-  status: pending
+  brief: 安兹向斯连教国士兵介绍"身后的这位名叫雅儿贝德"，仅提及姓名，无独立行动
+  status: done
   ceu_ids: []
   priority: low
-  notes: ''
+  notes: 确认为旁涉提及，跳过。
 - cluster_id: P
   line_range:
   - 3478
@@ -351,11 +351,11 @@ clusters:
   - 3493
   - 3497
   - 3498
-  brief: ''
-  status: pending
+  brief: 尼根一方预期她会上前抵挡天使攻击，但安兹不需要防护，她未获得行动机会，无CEU
+  status: done
   ceu_ids: []
   priority: high
-  notes: ''
+  notes: 尼根一方预期"雅儿贝德应该会上前抵挡"，但安兹根本不需要防护，未给她任何行动机会——是他人对她角色的预期落空，不是她自己的选择场景，判断不构成CEU。
 - cluster_id: Q
   line_range:
   - 3526
@@ -367,11 +367,11 @@ clusters:
   - 3592
   - 3593
   - 3601
-  brief: ''
-  status: pending
-  ceu_ids: []
+  brief: 她在"退下"命令生效期间违令救主，事后用"尊严"话术辩护，第二次命令后才服从——decision_rule#2重要反例
+  status: done
+  ceu_ids: [YLDB-V1-Q-001]
   priority: high
-  notes: ''
+  notes: 本轮目前信息量最大的decision_rules相关发现，需要重点回填进decision_rules.md和contradictions.md。
 - cluster_id: R
   line_range:
   - 3629
@@ -441,11 +441,11 @@ clusters:
   notes: ''
 progress_summary:
   clusters_total: 19
-  clusters_done: 14
+  clusters_done: 17
   clusters_partial: 0
-  clusters_pending: 5
+  clusters_pending: 2
   processing_order: sequential
-  next_recommended: O
+  next_recommended: R
 usage_note: >
   brief/priority/status 由处理该cluster时填写/更新。新会话恢复进度时：先看 progress_summary.next_recommended，
   再核对每个cluster的 status 字段（本文件曾出现过字段被trailing重复key覆盖导致status显示错误的bug，
