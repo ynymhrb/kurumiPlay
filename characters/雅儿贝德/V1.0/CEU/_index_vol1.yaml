@@ -236,11 +236,11 @@ clusters:
   - 2278
   mention_lines:
   - 2263
-  brief: ''
-  status: pending
+  brief: 飞鼠指示塞巴斯通知雅儿贝德全副武装待命，她本人不在场，无CEU
+  status: done
   ceu_ids: []
   priority: low
-  notes: ''
+  notes: 确认为旁涉提及，跳过。
 - cluster_id: J
   line_range:
   - 2336
@@ -257,11 +257,11 @@ clusters:
   - 2387
   - 2388
   - 2418
-  brief: ''
-  status: pending
-  ceu_ids: []
+  brief: 村民对飞鼠的善意表现出恐惧而非感激，雅儿贝德自主判断为大不敬，举斧欲斩首，被喝止后立即服从
+  status: done
+  ceu_ids: [YLDB-V1-J-001]
   priority: high
-  notes: ''
+  notes: 卡恩村救援场景，暴力倾向与绝对服从结合的关键证据。
 - cluster_id: K
   line_range:
   - 2538
@@ -279,9 +279,9 @@ clusters:
   - 2606
   - 2615
   - 2633
-  brief: ''
-  status: pending
-  ceu_ids: []
+  brief: 安兹决定正式采用"安兹·乌尔·恭"为专属名号，雅儿贝德流露独占欲+自我牺牲表态+第3次"最爱的人"
+  status: done
+  ceu_ids: [YLDB-V1-K-001]
   priority: high
   notes: ''
 - cluster_id: L
@@ -441,11 +441,11 @@ clusters:
   notes: ''
 progress_summary:
   clusters_total: 19
-  clusters_done: 8
+  clusters_done: 11
   clusters_partial: 0
-  clusters_pending: 11
+  clusters_pending: 8
   processing_order: sequential
-  next_recommended: I
+  next_recommended: L
 usage_note: >
   brief/priority/status 由处理该cluster时填写/更新。新会话恢复进度时：先看 progress_summary.next_recommended，
   再核对每个cluster的 status 字段（本文件曾出现过字段被trailing重复key覆盖导致status显示错误的bug，
