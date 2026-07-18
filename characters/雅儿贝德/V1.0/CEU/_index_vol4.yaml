@@ -49,11 +49,11 @@ clusters:
   - 640
   mention_lines:
   - 625
-  brief: ''
-  status: pending
+  brief: 夏提雅与厨房员工艾克雷亚/皮奇闲聊，提及"我从雅儿贝德那里听说过消耗品的补充计划"
+  status: done
   ceu_ids: []
   priority: low
-  notes: ''
+  notes: 确认雅儿贝德本人不在场，是夏提雅转述她管理下的一项消耗品补充计划，无独立CEU。
 - cluster_id: C
   line_range:
   - 3030
@@ -68,11 +68,13 @@ clusters:
   - 3081
   - 3086
   - 3106
-  brief: ''
-  status: pending
-  ceu_ids: []
+  brief: 守护者集合朝见安兹的正式仪式，雅儿贝德随侍在侧主持流程，同时压抑着未点明原因的愤怒
+  status: done
+  ceu_ids: [YLDB-V4-C-001]
   priority: high
-  notes: ''
+  notes: >
+    C-001：正式仪式中情绪外泄到被科塞特斯察觉的程度，但仪式执行完全不受影响——MM5"表演性得体"
+    框架的中间状态证据（内在情绪与外在职能表现部分独立运作），愤怒原因未点明，标记open_question。
 - cluster_id: D
   line_range:
   - 3143
@@ -94,11 +96,15 @@ clusters:
   - 3247
   - 3248
   - 3250
-  brief: ''
-  status: pending
-  ceu_ids: []
+  brief: 王座之厅朝见：安兹赦免夏提雅被雅儿贝德公开打断坚持惩罚；科塞特斯请求赦免蜥蜴人，雅儿贝德两次越权斥责被安兹制止
+  status: done
+  ceu_ids: [YLDB-V4-D-001, YLDB-V4-D-002]
   priority: high
-  notes: ''
+  notes: >
+    2条重要CEU。D-001：A-003谏言模式的第二数据点，但从私下升级到当众打断至尊，风险更高，
+    立场依然坚定，说明这是稳定立场而非场合依赖。D-002：目前唯一显示她的判断会与安兹真实意图
+    明显偏差的证据——连续两次代替安兹发怒斥责科塞特斯，两次都被安兹亲自制止，展现一种"超前于
+    安兹本人反应的保护性侵略"倾向，会误判且需要被纠正，补充decision_rules"谏言/介入负面案例"。
 - cluster_id: E
   line_range:
   - 3294
