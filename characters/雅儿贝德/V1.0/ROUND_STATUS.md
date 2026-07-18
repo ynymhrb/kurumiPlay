@@ -20,7 +20,7 @@
 
 | 卷 | 状态 | 说明 |
 |---|---|---|
-| 卷一 | 进行中 | `_index_vol1.yaml` 已生成（19个候选cluster），A/B/C已处理完（A起源场景、B自主意识觉醒、C两条：自我归责模式+身体接触测试场景），D-S共16个cluster待处理 |
+| 卷一 | 进行中（5/19 done） | A/B/C/D/E已处理完（D无CEU，E产出3条：效忠仪式"我最爱的人"告白、对夏提雅贱人嫉妒爆发、被训斥后恐惧顺从）。**下一个：cluster F**（见`_index_vol1.yaml`的`progress_summary.next_recommended`，跨会话恢复进度看这个字段） |
 | 卷二 | V0.1遗留，待复核 | 9/11 cluster 有CEU（V0.1产出），尚未按V1.0流程重新审视是否需要调整；cluster A(partial)/K待处理 |
 | 卷三～十 | 未开始 | |
 | 卷十一～十二（dev） | 未启动 | 待train阶段收敛 |
@@ -52,12 +52,17 @@
 
 - 脚本：`scripts/locate_candidates.py`（候选场景定位）/ `scripts/validate_ceu.py`（机械校验）/ `scripts/reconcile_round.py`（轮次切换汇总），均已改为轮次感知（`--round` 参数，默认取最新 `V*` 目录）
 
-## 下一步
+## 下一步（用户要求处理到卷五；本session的TaskList#1-8对应这个顺序）
 
-- 继续处理卷一剩余16个cluster（D-S，按顺序），用户要求处理到卷五
-- 处理到卷末时跑一次 schema 复核，处理 `logs/schema_gaps.md` 里的信号（当前2条待复核）
-- 卷一处理完，回头审视卷二V0.1遗留CEU是否需要按当前schema/方法论调整
-- MM2/MM4/MM6/MM7 逐条回填三重验证标注（MM1/MM3已有部分标注，作为参考模板）
+1. 卷一剩余14个cluster（F-S）
+2. 卷一末尾schema复核（`logs/schema_gaps.md`当前2条待复核）
+3. 回头审视卷二V0.1遗留CEU
+4. 卷三（先跑`locate_candidates.py 雅儿贝德 3`生成索引）
+5. 卷四
+6. 卷五（本轮当前阶段的目标终点）
+7. MM2/MM4/MM6/MM7 逐条回填三重验证标注（不必卡在卷一，可以和卷三~五并行积累证据后再做）
+
+**跨会话恢复进度**：看 `CEU/_index_vol1.yaml` 的 `progress_summary.next_recommended` 字段（当前=F），不要只看本文件的文字描述，以index文件的status字段为准（曾发生过index文件重复键导致status显示错误的bug，已修复并在index文件里写了防范说明）。
 
 ---
-最后更新：2026-07-18（卷一cluster C完成：自我归责模式+身体接触测试场景，MM5潜在细化，expression_dna三分类重构），对应 commit `261c4b7`
+最后更新：2026-07-18（卷一cluster D+E完成，修复`_index_vol1.yaml`重复键bug），对应 commit（待本次提交后回填）

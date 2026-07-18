@@ -101,26 +101,28 @@ clusters:
   - 829
   - 867
   - 901
-  brief: ''
-  status: pending
-  ceu_ids: []
   priority: high
-  notes: ''
 - cluster_id: D
   line_range:
   - 977
   - 1007
   mention_lines:
   - 992
-  brief: ''
-  status: pending
+  brief: 亚乌菈/马雷场景，仅在第992行提及雅儿贝德香味作对比，她本人不在场，无CEU
+  status: done
   ceu_ids: []
   priority: low
-  notes: ''
+  notes: 确认为无关场景的旁涉提及，不构成CEU，跳过。
 - cluster_id: E
   line_range:
   - 1479
   - 1814
+  brief: >
+    楼层守护者集会：效忠仪式（"我最爱的人"告白）、被安兹训斥后的恐惧顺从、安兹离场后
+    对夏提雅"贱人"的嫉妒爆发——E-002是MM5表演性得体的关键验证证据
+  status: done
+  ceu_ids: [YLDB-V1-E-001, YLDB-V1-E-002, YLDB-V1-E-003]
+  notes: 大段场景，多个节拍合并为3条CEU，未逐一切分。
   mention_lines:
   - 1494
   - 1495
@@ -165,11 +167,7 @@ clusters:
   - 1766
   - 1770
   - 1799
-  brief: ''
-  status: pending
-  ceu_ids: []
   priority: high
-  notes: ''
 - cluster_id: F
   line_range:
   - 1876
@@ -443,9 +441,13 @@ clusters:
   notes: ''
 progress_summary:
   clusters_total: 19
-  clusters_done: 0
+  clusters_done: 5
   clusters_partial: 0
-  clusters_pending: 19
+  clusters_pending: 14
   processing_order: sequential
-  next_recommended: A
-usage_note: 本文件由 scripts/locate_candidates.py 机械生成（按人名grep聚类），brief/priority/status 需要 ceu-extractor 处理时填写/更新，不代表已判断是否构成CEU。
+  next_recommended: F
+usage_note: >
+  brief/priority/status 由处理该cluster时填写/更新。新会话恢复进度时：先看 progress_summary.next_recommended，
+  再核对每个cluster的 status 字段（本文件曾出现过字段被trailing重复key覆盖导致status显示错误的bug，
+  2026-07-18已修复A-E，写入新cluster时注意不要在同一个cluster块内重复写brief/status/ceu_ids/notes等键，
+  YAML后写的会静默覆盖先写的）。

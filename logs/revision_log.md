@@ -127,6 +127,28 @@ eval_after: 不适用
 delta: 不适用
 git_ref: 261c4b7
 
+## 2026-07-18 — mental_models MM5新增支持性证据（E-002）；index文件重复键bug修复
+
+触发：处理卷一cluster E（第1479-1814行，楼层守护者集会），产出3条CEU：E-001（效忠仪式+"我最爱的人"告白）、E-002（安兹离场后对夏提雅"贱人"嫉妒爆发，其他守护者仍在场）、E-003（被安兹训斥"别多嘴"后的恐惧顺从）。修复过程中发现`_index_vol1.yaml`存在字段重复键bug。
+
+修正前：
+1. `mental_models.md` MM5的"潜在细化"只有C-002一个反例，没有正面支持证据
+2. `_index_vol1.yaml` 里cluster C、D、E的编辑方式是在mention_lines前插入新的brief/status/ceu_ids，但原有的brief/status/ceu_ids/notes尾随块没有删除，导致YAML后写的键静默覆盖先写的——用`yaml.safe_load`核对时发现cluster C被误判为status=pending（实际已完成）
+
+修正后：
+1. MM5新增"支持性证据"小节：E-002显示安兹不在场时即使其他守护者在场她仍会情绪失控，与C-002合并看，暂时的解读是"存在需要维持竞争优势的政治对手观众"才是真正触发克制的条件（比单纯"安兹在场"或"有观众"更窄），而不是要推翻MM5
+2. 修复了cluster C/D/E的重复键问题（删除尾随的旧brief/status/ceu_ids/notes块，只保留一份），并在index文件顶部usage_note补充了这个bug的说明，防止后续处理卷三~五时重蹈覆辙
+3. `progress_summary`从stale的"0 done"更新为准确的"5 done"
+
+原因：这个bug如果不修，会直接破坏用户要求的"跨会话可恢复进度"机制——新会话如果看到cluster C显示pending会重新处理已经做完的内容，浪费工作还可能产生重复/冲突的CEU编号。发现原因是处理cluster D/E时用`python3 -c`直接解析验证progress_summary，而不是只用肉眼看Edit后的diff片段。
+
+change_type: 候选模型新增
+round: v1.0
+eval_before: 无
+eval_after: 不适用
+delta: 不适用
+git_ref: （待commit回填）
+
 ## 2026-07-17 — CEU schema v0.1 → v0.2
 
 触发：雅儿贝德测试中发现仅用 emotion/action/belief 字段不足以支撑 Value Hierarchy 推导（"雅儿贝德嫉妒夏提雅"信息量不够）。
