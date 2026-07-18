@@ -1,0 +1,181 @@
+source: characters/雅儿贝德/source/全文/第四卷.txt
+total_lines: 4684
+total_mention_lines: 73
+last_scanned: 由 locate_candidates.py 自动生成，未经人工复核
+clusters:
+- cluster_id: A
+  line_range:
+  - 11
+  - 165
+  mention_lines:
+  - 26
+  - 31
+  - 32
+  - 35
+  - 36
+  - 39
+  - 45
+  - 46
+  - 48
+  - 51
+  - 53
+  - 58
+  - 73
+  - 75
+  - 78
+  - 92
+  - 97
+  - 109
+  - 113
+  - 118
+  - 129
+  - 137
+  - 139
+  - 146
+  - 150
+  brief: 卷四开篇，安兹归来，"新婚家家酒"迎接+情报会议（世界地图讲解、夏提雅惩罚建议）
+  status: done
+  ceu_ids: [YLDB-V4-A-001, YLDB-V4-A-002, YLDB-V4-A-003]
+  priority: high
+  notes: >
+    3条CEU。A-001：主动策划的"新婚家家酒"角色扮演，带明确性暗示且持续加码，补充私密场合
+    "主动策划的浪漫/情欲展演"这一此前证据缺失的维度（区别于纯情绪失控）。A-002：安兹一声
+    含糊的"唔"就触发她主动道歉自我修正，延续E-002认知自我说服模式，对安兹反应极度敏感。
+    A-003：目前唯一一次完整成功且获得正面强化的谏言（建议惩罚夏提雅），补充decision_rules
+    "谏言成功要素"观察（谦逊包装+清晰论证+议题不涉及安兹安全）。
+- cluster_id: B
+  line_range:
+  - 610
+  - 640
+  mention_lines:
+  - 625
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: low
+  notes: ''
+- cluster_id: C
+  line_range:
+  - 3030
+  - 3121
+  mention_lines:
+  - 3045
+  - 3047
+  - 3048
+  - 3062
+  - 3074
+  - 3080
+  - 3081
+  - 3086
+  - 3106
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: high
+  notes: ''
+- cluster_id: D
+  line_range:
+  - 3143
+  - 3265
+  mention_lines:
+  - 3158
+  - 3160
+  - 3162
+  - 3175
+  - 3182
+  - 3220
+  - 3222
+  - 3224
+  - 3225
+  - 3226
+  - 3240
+  - 3242
+  - 3245
+  - 3247
+  - 3248
+  - 3250
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: high
+  notes: ''
+- cluster_id: E
+  line_range:
+  - 3294
+  - 3335
+  mention_lines:
+  - 3309
+  - 3313
+  - 3320
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: high
+  notes: ''
+- cluster_id: F
+  line_range:
+  - 3904
+  - 3936
+  mention_lines:
+  - 3919
+  - 3920
+  - 3921
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: high
+  notes: ''
+- cluster_id: G
+  line_range:
+  - 3962
+  - 4089
+  mention_lines:
+  - 3977
+  - 3994
+  - 3997
+  - 4001
+  - 4005
+  - 4009
+  - 4020
+  - 4022
+  - 4049
+  - 4062
+  - 4074
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: high
+  notes: ''
+- cluster_id: H
+  line_range:
+  - 4117
+  - 4147
+  mention_lines:
+  - 4132
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: low
+  notes: ''
+- cluster_id: I
+  line_range:
+  - 4425
+  - 4500
+  mention_lines:
+  - 4440
+  - 4465
+  - 4484
+  - 4485
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: high
+  notes: ''
+progress_summary:
+  clusters_total: 9
+  clusters_done: 0
+  clusters_partial: 0
+  clusters_pending: 9
+  processing_order: sequential
+  next_recommended: A
+usage_note: 本文件由 scripts/locate_candidates.py 机械生成（按人名grep聚类），brief/priority/status 需要处理该cluster时填写/更新，不代表已判断是否构成CEU。
