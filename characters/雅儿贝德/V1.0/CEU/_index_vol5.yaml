@@ -1,0 +1,29 @@
+source: characters/雅儿贝德/source/全文/第五卷.txt
+total_lines: 3917
+total_mention_lines: 1
+last_scanned: 由 locate_candidates.py 自动生成，未经人工复核
+clusters:
+- cluster_id: A
+  line_range:
+  - 1349
+  - 1379
+  mention_lines:
+  - 1364
+  brief: 安兹独自在旅店房间盘算纳萨力克财政/守护者薪水制度，心算薪水时列举六位守护者名字（含雅儿贝德）
+  status: done
+  ceu_ids: []
+  priority: low
+  notes: >
+    确认雅儿贝德本人不在场（安兹此时以"飞飞"身份独自在王国活动），仅在安兹计算薪水的
+    内心自言自语中被提及姓名，无独立CEU。**卷五全文仅有这1处提及她的姓名**（grep确认，
+    total_mention_lines=1），符合原作实际情节——卷五（"王国的男人们"）几乎全篇聚焦安兹
+    在王国以"飞飞/momon"身份活动的剧情，雅儿贝德留守纳萨力克，未随行出场。这不是候选场景
+    定位遗漏，是原作这一卷本身就极少涉及她。
+progress_summary:
+  clusters_total: 1
+  clusters_done: 1
+  clusters_partial: 0
+  clusters_pending: 0
+  processing_order: sequential
+  next_recommended: null   # 卷五仅1处提及，已确认处理完（她本人未出场，符合原作情节）
+usage_note: 本文件由 scripts/locate_candidates.py 机械生成（按人名grep聚类），brief/priority/status 需要处理该cluster时填写/更新，不代表已判断是否构成CEU。
