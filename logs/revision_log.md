@@ -350,6 +350,32 @@ eval_after: 不适用
 delta: 不适用
 git_ref: 55b0119
 
+## 2026-07-18 — 卷五处理完成：train阶段第一阶段（卷一~五）全部达成
+
+触发：卷五全文3917行经grep核实仅1处提及"雅儿贝德"姓名（安兹心算薪水时的自言自语列举，她本人未出场），确认非候选场景定位遗漏后，判定卷五处理完成，达成用户"处理到卷五"的既定目标
+
+修正前：无（本条不修改任何Character OS文件内容，是里程碑确认记录）
+
+修正后：`_index_vol5.yaml`标记为完成（1/1 cluster，0 CEU），construction_log新增C015行说明这是真实的低内容量结果而非流程缺陷
+
+原因：用户明确要求"处理到卷五"，卷五本身在原作中就是雅儿贝德出场极少的一卷（剧情聚焦安兹的"飞飞"身份在王国活动），如实记录这个结果本身就是遵循"证据驱动、不为了凑数而编造内容"的方法论原则。
+
+**里程碑总结（卷一~五累计）**：
+- 55条CEU（卷一21 + 卷二9历史遗留 + 卷三25 + 卷四9 + 卷五0）
+- value_hierarchy新增候选第0层（被需要/不被抛弃）
+- mental_models：MM1三重验证转正+多条深化、MM2首次实证支撑、MM4极端深化、MM5三种应对方式（克制/失控/离场掩饰）、MM8新候选
+- decision_rules从6条零散规则发展为11条，形成完整的"谏言行为谱系"（成功/误判/边界条件）
+- contradictions新增4条观察项+2条张力（含本质性张力分类）
+- expression_dna首个正式转正口癖"最爱的人"
+- 累计7个schema_gap信号待复核（暂缓，等待用户指示是否现在复核）
+
+change_type: 证据分级
+round: v1.0
+eval_before: 无
+eval_after: 不适用
+delta: 不适用
+git_ref: （待commit回填）
+
 ## 2026-07-18 — 卷二V0.1遗留CEU复核：确认兼容V1.0规范，不改动
 
 触发：TaskList#4，`ROUND_STATUS.md`"下一步"第1项——卷一处理完、schema复核commit后，按用户"回头审视卷二V0.1遗留CEU是否需要按V1.0流程调整"的要求，正式审视`characters/雅儿贝德/V1.0/CEU/`下vol2相关文件（`_index_vol2.yaml`、`vol2_prologue.yaml`、`vol2_ch01_early.yaml`、`vol2_cluster_D.yaml`、`vol2_cluster_G.yaml`）。
