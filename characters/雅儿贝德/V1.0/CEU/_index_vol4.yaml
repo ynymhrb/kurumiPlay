@@ -113,11 +113,14 @@ clusters:
   - 3309
   - 3313
   - 3320
-  brief: ''
-  status: pending
+  brief: 安兹下令全体守护者出击蜥蜴人村落，雅儿贝德迅速给出精准的军事调度方案（兵力翻倍至六千人）
+  status: done
   ceu_ids: []
   priority: high
-  notes: ''
+  notes: >
+    确认这是行政/军事调度能力的展示（"守护者总管，雅儿贝德回答得行云流水"），与既有vol2
+    G-004（组织管理能力评价）、relationship_rules"管理者"维度性质相同，是能力的重复确认而非
+    新的价值冲突或决策模式，不构成独立CEU。
 - cluster_id: F
   line_range:
   - 3904
@@ -126,11 +129,13 @@ clusters:
   - 3919
   - 3920
   - 3921
-  brief: ''
-  status: pending
-  ceu_ids: []
+  brief: 安兹以坐在夏提雅背上作为"惩罚"，夏提雅乐在其中，雅儿贝德借故离场撞墙发泄嫉妒后佯装若无其事
+  status: done
+  ceu_ids: [YLDB-V4-F-001]
   priority: high
-  notes: ''
+  notes: >
+    F-001：MM5表演性得体框架的第三种应对方式（此前只有"当场克制"/"当场失控"二元）——主动离场
+    私下发泄，再带着编造的掩饰理由（"不小心撞墙"）从容返回，是成熟且近乎习惯化的情绪管理策略。
 - cluster_id: G
   line_range:
   - 3962
