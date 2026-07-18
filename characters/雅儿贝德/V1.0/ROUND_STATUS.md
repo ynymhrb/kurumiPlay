@@ -20,7 +20,7 @@
 
 | 卷 | 状态 | 说明 |
 |---|---|---|
-| 卷一 | 进行中（18/19 done） | A-R已处理完。R产出目前情绪爆发强度最高的CEU，并作为Q-001的对照组确认第三层例外是特例。**下一个：cluster S（卷一最后一个cluster）**（见`_index_vol1.yaml`的`progress_summary.next_recommended`） |
+| 卷一 | **已完成（19/19）** | 全部cluster处理完，约21条CEU。压轴S-001/S-002：她本人拒绝"起源决定真实性"，新增MM8候选"双重人格层次"。下一步：卷末schema复核 |
 | 卷二 | V0.1遗留，待复核 | 9/11 cluster 有CEU（V0.1产出），尚未按V1.0流程重新审视是否需要调整；cluster A(partial)/K待处理 |
 | 卷三～十 | 未开始 | |
 | 卷十一～十二（dev） | 未启动 | 待train阶段收敛 |
@@ -29,16 +29,19 @@
 ## 当前 Character OS 文件版本
 
 - `value_hierarchy.md`：v0.3（第3/5层因移除seed引用暂列"待验证假设"）
-- `mental_models.md`：v0.2（MM1已回填三重验证标注3/3已转正，新增自我归责细化；MM5新增潜在细化观察；MM2/MM4/MM6/MM7尚未逐条回填三重验证，是下一步）
-- `decision_rules.md`：v0.2（新增候选规则7：命令逐字复诵）
+- `mental_models.md`：v0.2（MM1已回填三重验证标注3/3已转正+"起源不重要"声明；MM5多轮验证基本稳定；新增MM8候选"双重人格层次"；MM2/MM4/MM6/MM7尚未逐条回填三重验证，是下一步）
+- `decision_rules.md`：v0.2（新增候选规则7：命令逐字复诵；规则2新增第三层例外+对照组说明）
 - `relationship_rules.md`：v0.1
 - `expression_dna.md`：v0.4（首个正式转正口癖"最爱的人"，3个独立场景3种语境）
-- `contradictions.md`：新增矛盾三分类（时间性/领域性/本质性）+ 1条新观察项（"喔"语气词场合区分度不明显）
+- `contradictions.md`：矛盾三分类 + 2条张力（含首次"本质性张力"分类）+ 2条观察项
 - CEU schema：v0.5（本轮新增 `schema_gap` 字段）
 
 ## 待处理的 schema_gap 信号
 
-1条未复核（见 `logs/schema_gaps.md`）：YLDB-V1-A-001 触发的"起源类证据不适配现有evidence_source三分类"问题，待卷末schema复核步骤处理。
+3条未复核（见 `logs/schema_gaps.md`），卷一已处理完，现在正式进入schema复核步骤：
+1. YLDB-V1-A-001："起源类证据不适配现有evidence_source三分类"
+2. YLDB-V1-C-002："无冲突"本身值得记录，但value_conflict字段名装不下
+3. YLDB-V1-S-002："私下战略人格"和"情绪失控式不掩饰"是两种不同的"私密场合表现"，现有schema无法区分
 
 ## 待处理的观察项（非schema_gap，是矛盾候选）
 
@@ -54,15 +57,14 @@
 
 ## 下一步（用户要求处理到卷五；本session的TaskList#1-8对应这个顺序）
 
-1. 卷一剩余1个cluster（S，最后一个）
-2. 卷一末尾schema复核（`logs/schema_gaps.md`当前2条待复核）
-3. 回头审视卷二V0.1遗留CEU
-4. 卷三（先跑`locate_candidates.py 雅儿贝德 3`生成索引）
-5. 卷四
-6. 卷五（本轮当前阶段的目标终点）
-7. MM2/MM4/MM6/MM7 逐条回填三重验证标注（不必卡在卷一，可以和卷三~五并行积累证据后再做）
+1. **卷一末尾schema复核**（`logs/schema_gaps.md`当前3条待复核）——下一步
+2. 回头审视卷二V0.1遗留CEU
+3. 卷三（先跑`locate_candidates.py 雅儿贝德 3`生成索引）
+4. 卷四
+5. 卷五（本轮当前阶段的目标终点）
+6. MM2/MM4/MM6/MM7 逐条回填三重验证标注（不必卡在卷一，可以和卷三~五并行积累证据后再做）
 
-**跨会话恢复进度**：看 `CEU/_index_vol1.yaml` 的 `progress_summary.next_recommended` 字段（当前=S），不要只看本文件的文字描述，以index文件的status字段为准（曾发生过index文件重复键导致status显示错误的bug，已修复并在index文件里写了防范说明）。
+**跨会话恢复进度**：卷一（`_index_vol1.yaml`）已全部完成，`next_recommended: null`。下一步看本文件"下一步"列表的第1项。
 
 ---
-最后更新：2026-07-18（卷一cluster R完成，decision_rule#2对照组数据），对应 commit `0628ff3`
+最后更新：2026-07-18（**卷一全部完成**：cluster S收官，MM1新增起源声明，新增MM8候选），对应 commit（待本次提交后回填）

@@ -434,18 +434,18 @@ clusters:
   - 3961
   - 3962
   - 3964
-  brief: ''
-  status: pending
-  ceu_ids: []
+  brief: 卷一压轴：她拒绝"爱是被改造所以不真实"的说法(S-001)；独处时对塞巴斯展露从不给安兹看的算计野心一面，宣告要击败夏提雅成为正室(S-002，MM8候选)
+  status: done
+  ceu_ids: [YLDB-V1-S-001, YLDB-V1-S-002]
   priority: high
   notes: ''
 progress_summary:
   clusters_total: 19
-  clusters_done: 18
+  clusters_done: 19
   clusters_partial: 0
-  clusters_pending: 1
+  clusters_pending: 0
   processing_order: sequential
-  next_recommended: S
+  next_recommended: null  # 卷一已全部处理完，下一步是卷末schema复核，然后卷二复核，然后卷三
 usage_note: >
   brief/priority/status 由处理该cluster时填写/更新。新会话恢复进度时：先看 progress_summary.next_recommended，
   再核对每个cluster的 status 字段（本文件曾出现过字段被trailing重复key覆盖导致status显示错误的bug，
