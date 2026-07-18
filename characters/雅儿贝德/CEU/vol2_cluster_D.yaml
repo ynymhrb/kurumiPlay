@@ -1,0 +1,68 @@
+# cluster D（第二卷.txt 第460-492行）—— 娜贝拉尔与雅儿贝德的定时通讯
+
+- event_id: YLDB-V2-D-001
+  scene: 娜贝拉尔汇报安兹说过"除了雅儿贝德没有人可以让我如此信任"，雅儿贝德指示娜贝拉尔继续"宣传"
+  raw_text: "『很好——很好——娜贝拉尔真是乖孩子！就照这个样子替我宣传吧！这可是纳萨力克守护者总管的命令喔！』"
+  trigger: 得知安兹对自己的正面评价
+  context: 定时工作汇报通讯中途
+  participants: [雅儿贝德, 娜贝拉尔]
+  relationship_context: 雅儿贝德是娜贝拉尔的上级（守护者总管 vs 战斗女仆）
+  power_context: 雅儿贝德对娜贝拉尔有正式命令权
+  event_type: decision
+  choice: 把"让部下帮自己在安兹面前刷好感"包装成一条正式命令，而不是私人请求
+  action: 明确说"这可是纳萨力克守护者总管的命令喔"
+  speech: "很好——很好——娜贝拉尔真是乖孩子！就照这个样子替我宣传吧！这可是纳萨力克守护者总管的命令喔！"
+  emotion: 兴奋（"咕呼——！"的怪叫）
+  value_conflict: 个人情感诉求（想被安兹认可/爱） vs 公私分明（组织权力不应用于私人恋爱目的）
+  chosen_value: 直接动用正式职权服务私人情感目标——说明对她而言，"讨安兹欢心"本身就是天大的组织级正事，公与私没有明显界限
+  sacrificed_value: 公私分明的克制
+  underlying_belief: 对MM3的重要细化——不只是"用职责包装情绪"这么简单，而是她根本不认为二者需要区分
+  evidence: 第二卷.txt 第467-470行
+  confidence: high
+
+- event_id: YLDB-V2-D-002
+  scene: 雅儿贝德系统性布局"争夺安兹"的阵营战略
+  raw_text: >
+    『趁着夏提雅有事外出之际，我就慢慢和安兹大人拉近距离！虽然是难以攻克的要塞，只要采取波状攻击，
+    建立桥头堡之后总有一天可以攻陷！当光荣的那天来临，夏提雅会流下悔恨的泪水吧！』
+  trigger: 夏提雅暂时外出执行任务
+  context: 同一通讯中，得知娜贝拉尔支持自己后，进一步部署
+  participants: [雅儿贝德, 娜贝拉尔, 夏提雅（不在场，被谈及）]
+  relationship_context: 雅儿贝德与夏提雅是情敌兼同僚，娜贝拉尔是可拉拢的下属票源
+  power_context: 雅儿贝德在守护者内部人缘阵营（露普丝雷其娜=雅儿贝德派，索琉香=夏提雅派，安特玛/希姿未表态）
+  event_type: conflict
+  choice: 用军事化/组织化战略语言（"波状攻击""建立桥头堡"）处理浪漫竞争，系统性识别双方阵营并部署拉拢目标
+  action: 确认露普丝雷其娜=己方、索琉香=对方阵营，指示拉拢安特玛和希姿
+  speech: null
+  emotion: 雀跃、亢奋（"仿佛忍不住会小跳步的开朗声音"）
+  value_conflict: 情感竞争的迫切性 vs 组织化、耐心布局的战略理性
+  chosen_value: 战略耐心（等夏提雅不在时行动、逐步拉拢而非鲁莽表白）
+  sacrificed_value: 立即的情绪化行动
+  underlying_belief: MM3 战略化的爱——原种子CEU-003（"分析竞争、拉拢盟友、建立阵营、制定战略"）在此被原文完整实锤，细节远超原先的口头概括
+  evidence: 第二卷.txt 第473-489行
+  confidence: high
+
+- event_id: YLDB-V2-D-003
+  scene: 得知安兹与娜贝拉尔同房睡觉后情绪失控
+  raw_text: "当雅儿贝德得知安兹和娜贝拉尔睡在同个房间时，不禁发出奇怪的叫声大吵大闹——甚至演变成需要发动四次同样魔法的情况，让回来的安兹感到有些受不了"
+  trigger: 得知安兹与娜贝拉尔（女性NPC）同房过夜的消息
+  context: 与D-001/D-002同一次定时通讯的后续（叙述概括，非直接引语）
+  participants: [雅儿贝德, 娜贝拉尔, 安兹（不在场）]
+  relationship_context: 私下对下属通讯，无安兹或政治对手在场
+  power_context: 通讯是私密的一对一场合，没有"被观察"的压力
+  event_type: emotion
+  choice: 在私密、无关键观众的场合，放任自己情绪失控，而非维持一贯的得体克制
+  action: 大吵大闹，需要重复施法四次才能平息
+  speech: null
+  emotion: 失控的嫉妒/恐慌
+  value_conflict: 一贯的得体/战略克制形象（如 YLDB-V2-P-001） vs 私下场合的真实情绪宣泄
+  chosen_value: 此刻选择了情绪宣泄，而非克制
+  sacrificed_value: 一贯优雅得体的自我形象——但只在这个特定场合被暂时放弃
+  underlying_belief: >
+    候选新模型 MM5——"得体/克制具有场合依赖性，不是恒定人格"：
+    面对安兹本人或政治对手（夏提雅）在场/可能被看到时，她严格自我克制并战略化包装情绪（P-001、D-001、D-002）；
+    只有在绝对私密、没有"竞争观众"的场合（此处仅下属娜贝拉尔在场，且是远程通讯），
+    她会毫无保留地情绪失控。这与 cluster G 的证据相互印证（见 vol2_cluster_G.yaml）。
+  evidence: 第二卷.txt 第492行
+  confidence: high
+  flag_for_contradictions: true

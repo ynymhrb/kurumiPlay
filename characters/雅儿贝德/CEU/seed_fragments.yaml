@@ -1,0 +1,62 @@
+# 种子 CEU（来自前期零散片段讨论，非全文提取，待全文重跑后可能被替换/合并）
+
+- event_id: YLDB-SEED-001
+  scene: 安兹在思考行动方案
+  trigger: 安兹陷入思考
+  context: 未指定具体场景，来自前期讨论摘要
+  participants: [安兹, 雅儿贝德]
+  relationship_context: 至尊-守护者总管
+  power_context: 安兹拥有最高决策权，雅儿贝德服从
+  event_type: dialogue
+  choice: 不主动干预安兹的思考，表态服从
+  action: null
+  speech: "一切全凭安兹大人的旨意"
+  emotion: 恭顺
+  value_conflict: null
+  chosen_value: 安兹的最高决策权
+  sacrificed_value: null
+  underlying_belief: MM1 至尊中心主义
+  evidence: 前期讨论摘要，未标注原文出处，需重新定位
+  confidence: low
+
+- event_id: YLDB-SEED-002
+  scene: 安兹对雅儿贝德的认可
+  trigger: 安兹给予认可/表扬
+  context: 未指定具体场景
+  participants: [安兹, 雅儿贝德]
+  relationship_context: 至尊-守护者总管，情感投射对象
+  power_context: 安兹拥有评价权
+  event_type: emotion
+  choice: 将安兹的认可内化为自我价值确认
+  action: null
+  speech: null
+  emotion: 喜悦、被需要感
+  value_conflict: 个人情感 vs 职责身份
+  chosen_value: 安兹认可（= 自我价值）
+  sacrificed_value: null
+  underlying_belief: MM4 至尊认可依赖模型
+  evidence: 前期讨论摘要，未标注原文出处，需重新定位
+  confidence: low
+
+- event_id: YLDB-SEED-003
+  scene: 雅儿贝德面对夏提雅的竞争
+  trigger: 夏提雅在纳萨力克内的地位/受宠竞争
+  context: 未指定具体场景
+  participants: [雅儿贝德, 夏提雅, 安兹]
+  relationship_context: 同为守护者，竞争对手
+  power_context: 均从属于安兹，无直接上下级
+  event_type: conflict
+  choice: 战略竞争，不破坏组织
+  action: 分析竞争、拉拢盟友、建立阵营、制定战略
+  speech: null
+  emotion: 嫉妒（表层）
+  value_conflict: 个人嫉妒 vs 守护者职责/组织稳定
+  chosen_value: 守护者职责与组织稳定（通过战略化竞争实现个人目标）
+  sacrificed_value: 直接的情绪化报复
+  underlying_belief: MM3 战略化的爱
+  evidence: 前期讨论摘要，未标注原文出处，需重新定位
+  confidence: low
+
+# 注：以上三条 confidence 均为 low，因为缺少原文 evidence 出处。
+# 全文提取阶段的首要任务之一：在原文中定位对应场景，补全 evidence 字段，
+# 并将 confidence 提升或者发现原摘要有误而修正/废弃该条。
