@@ -403,6 +403,38 @@ eval_after: 不适用
 delta: 不适用
 git_ref: ab90b20
 
+## 2026-07-19 — 架构迁移：CEU单条证据格式 → CSE静态/动态分离架构（V1.0→V2.0）
+
+触发：用户提出推翻CEU+多文件Character OS架构，改用一套自行设计的"认知仿真引擎（CSE）"生产级软件规格（模块一全景数据建模：静态特质模型+数组化事件模型；模块二逆向归因引擎；模块三正向推理引擎；模块四自适应校验与HITL演化流水线）。我先做了一轮批判性评审（认可静态/动态分离、逐轮次事件schema、Trunk/Sandbox灰度验证原则；指出BLEU_Style指标选错、交叉熵损失方案的有效性问题、数值阈值无校准依据、6个信念类字段边界模糊、decision_logic_tree未定义具体schema、relational_graph两个标量压扁多维关系、"Ground Truth主权优先"规则与项目"提取深层特征而非死记原文"的初衷存在张力、缺少原文→结构化数据的提取流程、缺少字段级审计、缺少信息不足处理规则），用户逐条回应：认可的部分保留，不合理的部分暂不实现，代码部分暂不写（继续由我在对话中人工执行），整个项目归档到历史目录，流程和处理逻辑全部采用新设计。用户额外提出contradictions.md应该"不记录表象矛盾，而要发现背后的人格深度"，我认可并补充了"证据不足时诚实标注open状态，不强行编造深层机制"这个安全阀。
+
+修正前：
+1. `characters/雅儿贝德/V0.1/`、`V1.0/`：CEU单条证据格式（55条记录，卷一~五），多文件Character OS（value_hierarchy.md/mental_models.md/decision_rules.md/relationship_rules.md/expression_dna.md/contradictions.md/reaction_stylization.md）
+2. `spec/CEU_schema.md`（v0.7）、`spec/character_os_template.md`：定义CEU格式和多文件模板
+3. `scripts/validate_ceu.py`、`scripts/reconcile_round.py`：CEU格式专用校验/汇总脚本
+
+修正后：
+1. 归档：`characters/雅儿贝德/V0.1`→`_history/V0.1-CEU`，`V1.0`→`_history/V1.0-CEU`（git mv，保留完整历史）；`spec/CEU_schema.md`、`spec/character_os_template.md`→`spec/_history/`；`scripts/validate_ceu.py`、`scripts/reconcile_round.py`→`scripts/_history/`（`locate_candidates.py`/`_round_utils.py`保留，格式无关仍可用）
+2. 新建`spec/character_static_profile_schema.md`：静态特质模型schema，采纳CSE设计但合并了`worldview/values/outlook_on_life/beliefs/qualities/personality`六个边界模糊字段为`belief_system`（信念/世界观/人生观合一）+`traits`（性格/品质合一），保留`value_hierarchy`独立（有明确的冲突排序用途）；`decision_logic_tree`改用叙事化规则列表而非严格DSL；`relational_graph`从`affinity`/`compatibility`两个标量扩展为`affinity`/`professional_trust`/`tension`三维度，避免压扁"同僚+情敌+竞争对手"这类多维关系
+3. 新建`spec/event_schema.md`：动态事件/时间线schema，取代CEU格式——CEU是"一条扁平记录"，新Event是"一个事件含多个结构化turn的`progress_timeline`"，新增`environmental_force_snapshot`（situational_pressure/spatial_proxemics）把此前散落在自由文本`context`/`power_context`里的情境信息结构化
+4. 新建`spec/psychological_structure_protocol.md`：取代`contradictions.md`的"记录矛盾不调和"模式，改为"寻找能同时解释多个行为的深层机制，机制记录本身取代表象矛盾记录"，允许`status: open`（证据不足，不强行编造机制）防止新模式退化成新形式的造假
+5. `spec/attribution_framework.md` v0.1→v0.2：方法论内容（双轴四层+两层）完全不变，只更新产出目标字段（原CEU的`psych_core`/`literary_technique` → Event turn的`attribution`子结构+`profile.yaml`的`psychological_structure`）
+6. `spec/expression_dna_protocol.md` v0.2→v0.3：产出目标从独立`expression_dna.md`文件改为`profile.yaml`的`speech_register`字段，概率模型主副本迁移到`character_static_profile_schema.md`
+7. `spec/eval_protocol.md` v0.3→v1.0：全面重写，pipeline对接新文件结构；新增第10节，明确记录CSE设计里哪些部分（BLEU_Style/交叉熵损失/Trunk-Sandbox自动化A/B/decision_logic_tree严格DSL/数值阈值硬编码）判断为暂不实现及原因，避免这些决策的理由随时间遗忘
+8. 新建`characters/雅儿贝德/V2.0/profile.yaml`：从旧版6个Character OS文件迁移+重整核心分析结论——belief_system（6条，含至尊中心主义/秩序观/人类蔑视等）、value_hierarchy（含候选rank 0"被需要/不被抛弃"）、decision_rules（11条，形成完整谏言行为谱系）、relational_graph（5个关系对象，三维度）、speech_register（7条口癖，n/p(n)标注）、psychological_structure（4条机制，均status=open待更多证据）。**这是本次迁移最重要的产出，分析结论基本完整保留，只是组织方式改变**
+9. 新建`characters/雅儿贝德/V2.0/literary_techniques.md`：迁移自`reaction_stylization.md`，内容不变
+10. `README.md`：架构图、目录结构、当前状态全面更新为CSE设计
+
+原因：这不是渐进式的字段增补（如此前v0.5→v0.7的多次schema迭代），是用户判断当前架构存在结构性缺陷后主动发起的重新设计。核心动机：(1) CEU把每个证据当独立扁平记录，缺少"同一场景/对话内状态如何演变"的时间线概念，不利于未来RolePlay Agent做多轮对话；(2) contradictions.md"记录矛盾不调和"的原则容易停留在发现表象、不逼自己往下挖深层机制；(3) 多文件Character OS（6个markdown文件）职责边界不够清晰，静态长期特质和动态过程记录混杂。CSE设计提供了系统性的解决方案，但其中不少部分（BLEU评分、交叉熵损失、严格DSL、自动化A/B分支）建立在"这是一套要跑起来的代码"这个前提上，而当前项目没有代码执行环境、仍由我人工执行分析——这部分不合理的地方经过评审后被用户采纳意见，判断为暂不实现，只保留了合理且当前可执行的部分（静态/动态分离、事件时间线结构、心理机制优先于表象矛盾）。
+
+**已知未完成事项（不因本次迁移自动解决，见ROUND_STATUS.md）**：`characters/雅儿贝德/V2.0/events/`目录为空——卷一~五的旧CEU证据未按新Event schema重建为时间线数据，这需要用户决定是否值得重做（工作量接近重新提取卷一~五，但分析结论已经在profile.yaml里，不需要重新做归因分析）；`profile.yaml`里MM2/MM4/MM6/MM7对应内容的三重验证回填、value_hierarchy第3/5层的坐实，这两项迁移前就未完成，迁移后依然未完成。
+
+change_type: 架构迁移
+round: v2.0
+eval_before: 无
+eval_after: 不适用
+delta: 不适用
+git_ref: （待commit回填）
+
 ## 2026-07-18 — 卷二V0.1遗留CEU复核：确认兼容V1.0规范，不改动
 
 触发：TaskList#4，`ROUND_STATUS.md`"下一步"第1项——卷一处理完、schema复核commit后，按用户"回头审视卷二V0.1遗留CEU是否需要按V1.0流程调整"的要求，正式审视`characters/雅儿贝德/V1.0/CEU/`下vol2相关文件（`_index_vol2.yaml`、`vol2_prologue.yaml`、`vol2_ch01_early.yaml`、`vol2_cluster_D.yaml`、`vol2_cluster_G.yaml`）。

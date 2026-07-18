@@ -1,10 +1,12 @@
 # 归因分析框架（Attribution Framework）
 
-版本：v0.1（本轮对话共同设计，双轴模型：心理轴优先，文学轴仅用于修正"解释赤字"）
+版本：v0.2（架构迁移：CEU→Event/Turn，本框架现在是CSE架构"模块二·逆向归因引擎"的方法论依据，双轴模型本身不变）
 
-目的：CEU 的 `underlying_belief` 回答"这揭示了什么信念"，但不回答"这个信念被触发时，一个（假设为真人的）人大概会有什么行为反应，以及原文写出来的具体形式里，哪部分是可复用的心理真实、哪部分是作者为了叙事效果加的风格化包装"。这个框架就是用来回答后一个问题的，产出直接喂给 CEU schema 的 `psych_core` / `literary_technique` 字段（见 `CEU_schema.md`）。
+目的：`event_schema.md`里一条`progress_timeline` turn记录了"发生了什么"，但不直接回答"这个turn触发的深层机制是什么，以及原文写出来的具体表现形式里，哪部分是可复用的心理真实、哪部分是作者为了叙事效果加的风格化包装"。这个框架就是用来回答后一个问题的，产出写入turn的`attribution`字段（见`event_schema.md`），分析结论进一步反馈更新`profile.yaml`（静态特质模型，见`character_static_profile_schema.md`）——尤其是`trauma`/`weaknesses`/`decision_rules`/`psychological_structure`这几个字段。
 
-**不是每条CEU都要走这个流程**——只在`schema_gap`被触发、或者证据本身出现"反应幅度看起来超出常理"这类信号时才启用。多数CEU用现有的`choice`/`emotion`/`underlying_belief`字段已经足够。
+**不是每个turn都要走这个流程**——只在反应幅度看起来超出常理、或者需要判断是否触发`psychological_structure`（深层机制）更新时才启用。多数turn只需要`action_description`/`speech_content`已经足够，不需要这一层分析。
+
+（本框架早期版本v0.1是在旧版CEU schema体系下设计的，产出对应`psych_core`/`literary_technique`字段；v0.2迁移到Event/Turn体系后，四层/两层轴的分析内容完全不变，只是产出的目标字段变了，见文末"输出格式"一节）
 
 ## 核心原则
 
@@ -32,8 +34,8 @@
 ### Layer 3 社会与情境层（Social & Situational）
 核心提问：当时当刻，周围的人和环境施加了什么"推拉力"？
 
-- **勒温心理学场论**（Field Theory）：B = f(P, E)，行为是人格与环境场共同作用的结果。环境场引力足够大时，人格变量会被直接压制——这个公式可以直接用来给 `contradictions.md` 的"领域性矛盾"下定义：E变了导致P看起来不一致，但P本身没变。
-- **米尔格拉姆代理人状态理论**（Agentic State）：身处严密层级体制、面对合法权威命令时，心智从"自主状态"切换为"权威的工具"，不再对自己的判断负全责——适合解释雅儿贝德"代入维护安兹权威角色"这类行为（对应 `decision_rules.md` 规则10）。
+- **勒温心理学场论**（Field Theory）：B = f(P, E)，行为是人格与环境场共同作用的结果。环境场引力足够大时，人格变量会被直接压制——这个公式对应`event_schema.md`的`environmental_force_snapshot`字段（situational_pressure/spatial_proxemics）：E变了导致P看起来不一致，但P本身没变，这类情况应该判定为不需要更新`psychological_structure`，只是环境驱动的正常变化。
+- **米尔格拉姆代理人状态理论**（Agentic State）：身处严密层级体制、面对合法权威命令时，心智从"自主状态"切换为"权威的工具"，不再对自己的判断负全责——适合解释雅儿贝德"代入维护安兹权威角色"这类行为（对应`profile.yaml`的`decision_rules`）。
 - **社会交换理论**（Social Exchange）：社会言行本质是心理收益-成本的计算。
 
 ### Layer 4 文化与演化层（Cultural & Evolutionary）
@@ -65,22 +67,32 @@
    并明确切分——哪部分是可迁移的心理内核，哪部分是不可字面复用的风格化外壳
 ```
 
-对应CEU schema字段：
-- 主线解码的结论 → 写入/校准 `underlying_belief`（信念本身）+ `psych_core`（去场景化的行为反应模板）
-- 修正解码的结论 → 写入 `literary_technique`（仅"心理燃料+文学外壳"判定时填写）
+对应Event/Turn的`attribution`子结构（见`event_schema.md`）：
+- `psychological_layers` ← 心理轴四层的分析记录
+- `explanation_deficit` + `literary_axis` ← 是否触发文学轴+文学轴分析（仅触发时填写）
+- `judgment` ← 心理完全闭环 / 心理燃料+文学外壳
+- `profile_updates_suggested` ← 这次分析对`profile.yaml`哪些字段（`trauma`/`weaknesses`/`decision_rules`/
+  `psychological_structure`等）建议做什么修改，实际修改需要走`logs/revision_log.md`的审计记录
+
+如果判定命中"心理燃料+文学外壳"，风格化的部分（文学轴内容）应沉淀进`profile.yaml`的`speech_register`
+或专门的`literary_techniques.md`手法库（沿用原`reaction_stylization.md`的设计，改名迁移），可复用的
+频率标注用`character_static_profile_schema.md`的"特征频率概率模型"。
+
+如果这次分析揭示了一个能同时解释多条turn的深层机制（而不只是单条turn的解读），应该走
+`psychological_structure_protocol.md`的流程，判断是否新增/更新`profile.yaml`的`psychological_structure`条目。
 
 ## 生成阶段如何使用（详见 `eval_protocol.md` 生成pipeline章节）
 
-`literary_technique` 不是提取阶段就该丢弃的噪音，是可复用的风格化手法。生成新场景反应时：
-1. 先用 `psych_core` 生成写实反应
-2. 再判断是否要套用已积累的 `literary_technique`做风格化加工（判断标准见 `eval_protocol.md`，目前是TODO占位）
-3. 套用与否按该手法的场合概率抽样决定，不是非黑即白（概率模型见 `expression_dna_protocol.md` "特征频率概率模型"，`literary_technique`复用同一套模型）
+文学手法不是提取阶段就该丢弃的噪音，是可复用的风格化手法。生成新场景反应时：
+1. 先用心理轴分析结论生成写实反应
+2. 再判断是否要套用已积累的文学手法做风格化加工（判断标准见 `eval_protocol.md`，目前是TODO占位）
+3. 套用与否按该手法的场合概率抽样决定，不是非黑即白（概率模型见 `character_static_profile_schema.md` "特征频率概率模型"）
 
-## 示例（本轮对话实际分析结果，供参考）
+## 示例（本轮对话实际分析结果，产出于旧CEU体系，方法论不变，仅供参考四层/两层分析怎么写）
 
-| CEU | 判定 | 心理轴主线 | 文学轴（如适用） |
+| 案例 | 判定 | 心理轴主线 | 文学轴（如适用） |
 |---|---|---|---|
-| YLDB-V3-C-001 | 心理燃料+文学外壳 | 情感锚点（"爱"）被击中→杏仁核劫持式狂喜→短暂失神呢喃 | 表现主义外化（撞天花板），强化"病娇"标签 |
-| YLDB-V3-E-002 | 心理完全闭环 | 认知失调+合理化防御，保护"安兹绝对英明"这一核心信念 | 不适用 |
-| YLDB-V3-E-004 | 心理完全闭环 | 身份建构/自我说服，主动树立的信念尚未完全覆盖底层情绪 | 不适用 |
-| YLDB-V3-F-001 | 心理完全闭环 | 依恋创伤结构（IFS：保护者/流亡者）+fawn型应激反应，四层从演化到神经完整闭环 | 不适用 |
+| "爱"字触发失控撞天花板 | 心理燃料+文学外壳 | 情感锚点（"爱"）被击中→杏仁核劫持式狂喜→短暂失神呢喃 | 表现主义外化（撞天花板），强化"病娇"标签 |
+| 发现安兹失误后自我说服 | 心理完全闭环 | 认知失调+合理化防御，保护"安兹绝对英明"这一核心信念 | 不适用 |
+| 起源话题表态vs私下嫉妒 | 心理完全闭环 | 身份建构/自我说服，主动树立的信念尚未完全覆盖底层情绪 | 不适用 |
+| 被抛弃恐惧崩溃自裁提议 | 心理完全闭环 | 依恋创伤结构（IFS：保护者/流亡者）+fawn型应激反应，四层从演化到神经完整闭环 | 不适用 |
