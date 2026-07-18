@@ -57,4 +57,4 @@
 - 卷一处理完，回头审视卷二V0.1遗留CEU是否需要按当前schema/方法论调整
 
 ---
-最后更新：2026-07-18（expression_dna方法论落地 + mental_models三重验证/contradictions三分类），对应 commit（待本次提交后回填）
+最后更新：2026-07-18（expression_dna方法论落地 + mental_models三重验证/contradictions三分类），对应 commit `1edb72f`

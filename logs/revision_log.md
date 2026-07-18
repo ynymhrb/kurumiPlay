@@ -77,7 +77,7 @@ round: v1.0
 eval_before: 不适用（方法论/文档新增，非预测力相关修正）
 eval_after: 不适用
 delta: 不适用
-git_ref: （待commit回填）
+git_ref: 1edb72f
 
 ## 2026-07-17 — CEU schema v0.1 → v0.2
 
