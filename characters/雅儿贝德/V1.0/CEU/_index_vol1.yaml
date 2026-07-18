@@ -441,11 +441,11 @@ clusters:
   notes: ''
 progress_summary:
   clusters_total: 19
-  clusters_done: 5
+  clusters_done: 8
   clusters_partial: 0
-  clusters_pending: 14
+  clusters_pending: 11
   processing_order: sequential
-  next_recommended: F
+  next_recommended: I
 usage_note: >
   brief/priority/status 由处理该cluster时填写/更新。新会话恢复进度时：先看 progress_summary.next_recommended，
   再核对每个cluster的 status 字段（本文件曾出现过字段被trailing重复key覆盖导致status显示错误的bug，

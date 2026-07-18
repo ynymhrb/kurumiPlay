@@ -62,7 +62,7 @@
 6. 卷五（本轮当前阶段的目标终点）
 7. MM2/MM4/MM6/MM7 逐条回填三重验证标注（不必卡在卷一，可以和卷三~五并行积累证据后再做）
 
-**跨会话恢复进度**：看 `CEU/_index_vol1.yaml` 的 `progress_summary.next_recommended` 字段（当前=F），不要只看本文件的文字描述，以index文件的status字段为准（曾发生过index文件重复键导致status显示错误的bug，已修复并在index文件里写了防范说明）。
+**跨会话恢复进度**：看 `CEU/_index_vol1.yaml` 的 `progress_summary.next_recommended` 字段（当前=I），不要只看本文件的文字描述，以index文件的status字段为准（曾发生过index文件重复键导致status显示错误的bug，已修复并在index文件里写了防范说明）。
 
 ---
 最后更新：2026-07-18（卷一cluster F/G/H完成），对应 commit `72161bb`
