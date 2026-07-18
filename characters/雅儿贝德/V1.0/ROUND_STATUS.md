@@ -20,7 +20,7 @@
 
 | 卷 | 状态 | 说明 |
 |---|---|---|
-| 卷一 | 进行中 | `_index_vol1.yaml` 已生成（19个候选cluster），cluster A 已处理完（YLDB-V1-A-001），其余18个cluster待处理 |
+| 卷一 | 进行中 | `_index_vol1.yaml` 已生成（19个候选cluster），A/B已处理完（YLDB-V1-A-001起源场景、YLDB-V1-B-001自主意识觉醒场景），C-S共17个cluster待处理 |
 | 卷二 | V0.1遗留，待复核 | 9/11 cluster 有CEU（V0.1产出），尚未按V1.0流程重新审视是否需要调整；cluster A(partial)/K待处理 |
 | 卷三～十 | 未开始 | |
 | 卷十一～十二（dev） | 未启动 | 待train阶段收敛 |
@@ -29,7 +29,7 @@
 ## 当前 Character OS 文件版本
 
 - `value_hierarchy.md`：v0.3（第3/5层因移除seed引用暂列"待验证假设"）
-- `mental_models.md`：v0.2（MM1背景脚注本轮已用YLDB-V1-A-001升级为第一手实锤；现在有了三重验证标准，但现有MM1-7尚未逐条回填标注满足几重验证，是下一步）
+- `mental_models.md`：v0.2（MM1已回填三重验证标注，3/3已转正；MM2-MM7 尚未逐条回填，是下一步）
 - `decision_rules.md`：v0.2
 - `relationship_rules.md`：v0.1
 - `expression_dna.md`：v0.2（首次有真实语料，5条台词的初步分析；方法论见新增的 `expression_dna_protocol.md`；样本量仍是最大限制，不再是"完全空白"）
@@ -52,9 +52,10 @@
 
 ## 下一步
 
-- 继续处理卷一剩余18个cluster
+- 继续处理卷一剩余17个cluster（C-S，按顺序）
 - 处理到卷末时跑一次 schema 复核，处理 `logs/schema_gaps.md` 里的信号
 - 卷一处理完，回头审视卷二V0.1遗留CEU是否需要按当前schema/方法论调整
+- MM2-MM7 逐条回填三重验证标注（MM1已做完，作为参考模板）
 
 ---
-最后更新：2026-07-18（expression_dna方法论落地 + mental_models三重验证/contradictions三分类），对应 commit `1edb72f`
+最后更新：2026-07-18（正式开始训练：卷一cluster A+B完成，MM1三重验证转正），对应 commit（待本次提交后回填）

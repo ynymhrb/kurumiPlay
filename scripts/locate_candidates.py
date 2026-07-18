@@ -70,7 +70,7 @@ def main():
         print(f"暂不支持卷号 {args.volume}（未在 DIGIT_TO_CJK 里定义中文数字映射）", file=sys.stderr)
         sys.exit(1)
 
-    source_path = os.path.join(root, "characters", args.character, "source", f"第{vol_cjk}卷.txt")
+    source_path = os.path.join(root, "characters", args.character, "source", "全文", f"第{vol_cjk}卷.txt")
     if not os.path.exists(source_path):
         print(f"找不到原文文件：{source_path}", file=sys.stderr)
         sys.exit(1)
@@ -98,7 +98,7 @@ def main():
         })
 
     index = {
-        "source": f"characters/{args.character}/source/第{vol_cjk}卷.txt",
+        "source": f"characters/{args.character}/source/全文/第{vol_cjk}卷.txt",
         "total_lines": total_lines,
         "total_mention_lines": len(mentions),
         "last_scanned": "由 locate_candidates.py 自动生成，未经人工复核",

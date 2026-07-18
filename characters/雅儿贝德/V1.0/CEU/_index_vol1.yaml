@@ -33,11 +33,13 @@ clusters:
   - 522
   mention_lines:
   - 507
-  brief: ''
-  status: pending
-  ceu_ids: []
-  priority: low
-  notes: ''
+  brief: >
+    世界转移瞬间，服务器未如期关闭，雅儿贝德以自主意识第一次出声关切飞鼠的困惑与愤怒——
+    她"觉醒"后的第一个动作，MM1至尊中心主义的起源实锤
+  status: done
+  ceu_ids: [YLDB-V1-B-001]
+  priority: high
+  notes: 处理为 vol1_cluster_B.yaml。508行之后转场卡恩村（安莉·艾默特），与她无关，line_range实际有效内容只到507。
 - cluster_id: C
   line_range:
   - 580

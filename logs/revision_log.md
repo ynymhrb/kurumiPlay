@@ -79,6 +79,29 @@ eval_after: 不适用
 delta: 不适用
 git_ref: 1edb72f
 
+## 2026-07-18 — mental_models.md MM1三重验证转正；value_hierarchy第1层、relationship_rules"安兹"行新增证据
+
+触发：正式开始训练（用户批准），处理卷一cluster B（第492-522行，有效内容492-507行）——世界转移瞬间，服务器未如期关闭，雅儿贝德以自主意识第一次出声关切飞鼠，产出 YLDB-V1-B-001。这是继cluster A（她被设定"爱安兹"）之后的直接续篇：她自主意识觉醒的第一个动作就是关切飞鼠。
+
+修正前：
+1. `mental_models.md` MM1 没有三重验证标注，最早支撑证据是卷二的CEU
+2. `value_hierarchy.md` 第1层只有卷二的G-001/G-002两条证据
+3. `relationship_rules.md` "安兹"行的支撑CEU列表没有卷一的证据
+
+修正后：
+1. MM1 标注"三重验证：3/3，已转正"，新增"起源实锤"小节引用YLDB-V1-B-001，说明这是目前最早、最直接的证据（她有意识存在的第一个动作就体现MM1，不是"学会"的）
+2. value_hierarchy第1层新增YLDB-V1-B-001为第一条列出的证据（比G-001/G-002更直接：关切安兹本人的状态，而非空间/气味等象征物）
+3. relationship_rules"安兹"行新增YLDB-V1-A-001、YLDB-V1-B-001，标注为"关系起源"/"关系起点"
+
+原因：跨轮次/跨卷的独立证据是三重验证里"跨场景复现"这一条的核心要求，卷一这两条证据（A+B）不仅数量上增强了MM1，且时间线上比所有卷二证据都更早、更根本——这正是`character_os_template.md`要求的"每个MM标注满足几重验证"的第一次实际应用。
+
+change_type: 证据分级
+round: v1.0
+eval_before: 无（尚未开始卷内自测/正式eval，卷一才处理2个cluster）
+eval_after: 不适用
+delta: 不适用
+git_ref: （待commit回填）
+
 ## 2026-07-17 — CEU schema v0.1 → v0.2
 
 触发：雅儿贝德测试中发现仅用 emotion/action/belief 字段不足以支撑 Value Hierarchy 推导（"雅儿贝德嫉妒夏提雅"信息量不够）。
