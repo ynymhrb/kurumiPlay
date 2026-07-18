@@ -20,7 +20,7 @@
 
 | 卷 | 状态 | 说明 |
 |---|---|---|
-| 卷一 | 进行中（5/19 done） | A/B/C/D/E已处理完（D无CEU，E产出3条：效忠仪式"我最爱的人"告白、对夏提雅贱人嫉妒爆发、被训斥后恐惧顺从）。**下一个：cluster F**（见`_index_vol1.yaml`的`progress_summary.next_recommended`，跨会话恢复进度看这个字段） |
+| 卷一 | 进行中（8/19 done） | A-H已处理完（G无CEU）。**下一个：cluster I**（见`_index_vol1.yaml`的`progress_summary.next_recommended`，跨会话恢复进度看这个字段） |
 | 卷二 | V0.1遗留，待复核 | 9/11 cluster 有CEU（V0.1产出），尚未按V1.0流程重新审视是否需要调整；cluster A(partial)/K待处理 |
 | 卷三～十 | 未开始 | |
 | 卷十一～十二（dev） | 未启动 | 待train阶段收敛 |
@@ -54,7 +54,7 @@
 
 ## 下一步（用户要求处理到卷五；本session的TaskList#1-8对应这个顺序）
 
-1. 卷一剩余14个cluster（F-S）
+1. 卷一剩余11个cluster（I-S）
 2. 卷一末尾schema复核（`logs/schema_gaps.md`当前2条待复核）
 3. 回头审视卷二V0.1遗留CEU
 4. 卷三（先跑`locate_candidates.py 雅儿贝德 3`生成索引）
@@ -65,4 +65,4 @@
 **跨会话恢复进度**：看 `CEU/_index_vol1.yaml` 的 `progress_summary.next_recommended` 字段（当前=F），不要只看本文件的文字描述，以index文件的status字段为准（曾发生过index文件重复键导致status显示错误的bug，已修复并在index文件里写了防范说明）。
 
 ---
-最后更新：2026-07-18（卷一cluster D+E完成，修复`_index_vol1.yaml`重复键bug），对应 commit `62039e4`
+最后更新：2026-07-18（卷一cluster F/G/H完成），对应 commit（待本次提交后回填）

@@ -189,22 +189,22 @@ clusters:
   - 1922
   - 1923
   - 1960
-  brief: ''
-  status: pending
-  ceu_ids: []
+  brief: 雅儿贝德得知飞鼠化名来访又错过，急于梳洗打扮，被下属"辛劳模样反而加分"的说法说服放弃梳洗
+  status: done
+  ceu_ids: [YLDB-V1-F-001]
   priority: high
-  notes: ''
+  notes: 1928行之后转为飞鼠与迪米乌哥斯的对话，与她无关，跳过。
 - cluster_id: G
   line_range:
   - 1987
   - 2017
   mention_lines:
   - 2002
-  brief: ''
-  status: pending
+  brief: 迪米乌哥斯提及"和雅儿贝德商量"警戒网方案，她本人不在场，无CEU
+  status: done
   ceu_ids: []
   priority: low
-  notes: ''
+  notes: 确认为旁涉提及，跳过。
 - cluster_id: H
   line_range:
   - 2059
@@ -225,11 +225,11 @@ clusters:
   - 2099
   - 2103
   - 2104
-  brief: ''
-  status: pending
-  ceu_ids: []
+  brief: 她替飞鼠即兴解围（H-001）；获赠公会戒指强忍狂喜、飞鼠离场瞬间疑似发出粗俗欢呼（H-002，MM5关键证据）
+  status: done
+  ceu_ids: [YLDB-V1-H-001, YLDB-V1-H-002]
   priority: high
-  notes: ''
+  notes: 2107行之后转场安莉·艾默特追逐战，与她无关，跳过。
 - cluster_id: I
   line_range:
   - 2248
