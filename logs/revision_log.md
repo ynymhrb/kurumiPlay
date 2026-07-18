@@ -100,7 +100,7 @@ round: v1.0
 eval_before: 无（尚未开始卷内自测/正式eval，卷一才处理2个cluster）
 eval_after: 不适用
 delta: 不适用
-git_ref: （待commit回填）
+git_ref: a112726
 
 ## 2026-07-17 — CEU schema v0.1 → v0.2
 
