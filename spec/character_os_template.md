@@ -13,6 +13,7 @@ characters/<角色>/
     ├── decision_rules.md    Decision Heuristics
     ├── relationship_rules.md 关系/权力规则
     ├── expression_dna.md    语言习惯、口癖、修辞特征（用于 SFT 语言风格）
+    ├── reaction_stylization.md  文学化反应手法库（心理内核 vs 文学外壳，见 attribution_framework.md）
     ├── contradictions.md    模型无法解释的行为记录
     └── fidelity_test.md     用后续卷/盲测数据验证的记录
 ```
@@ -42,8 +43,14 @@ characters/<角色>/
 详细方法论见 `expression_dna_protocol.md`（独立文件，因为这套量化方法本身有版本迭代）。这里只列产出应包含的最低要求：
 - 语料池规模及来源（多少条台词、来自哪些CEU）
 - 按场合拆分的句式指纹对比（不能只给一套不分场合的笼统印象）
-- 候选口癖/句式，明确标注满足几次独立出现（<3次是候选，不是结论）
+- 每个口癖/句式标注独立出现次数`n`和对应的采样权重`p(n)`（见`expression_dna_protocol.md` 2.4节"特征频率概率模型"，不再用"候选/确认"二元判定——n=1也要记录并标p(1)=30%，不是"不算数"）
 - 明确的"待补充"清单，不要用空泛描述掩盖"这块还没数据"的事实
+
+## reaction_stylization.md 结构（v0.7新增，见 attribution_framework.md）
+
+- 每条记录：触发情绪类型 + 手法名称（如"表现主义外化：躯体动作放大情绪"）+ 支撑CEU编号 + 独立出现次数`n`和`p(n)`（同一套概率模型，见expression_dna_protocol.md 2.4节）
+- 只收录经`attribution_framework.md`双轴分析判定为"心理燃料+文学外壳"的CEU产出的`literary_technique`
+- 供生成阶段按`eval_protocol.md`第9节"两段式生成逻辑"检索是否要对写实反应做风格化加工
 
 ## contradictions.md 结构
 
@@ -76,3 +83,4 @@ characters/<角色>/
 - [ ] contradictions.md 里的矛盾有没有被"选一边忽略另一边"式地悄悄处理掉？
 - [ ] 是否所有 `schema_gap` 信号都在 `logs/schema_gaps.md` 里有复核记录，没有被无声丢弃？
 - [ ] `logs/revision_log.md` 的记录是否都精确到具体子项，而不是"某文件改了"？
+- [ ] 触发`schema_gap`或反应幅度明显异常的CEU，是否已经按`attribution_framework.md`走过归因分析、回填`psych_core`/`literary_technique`？

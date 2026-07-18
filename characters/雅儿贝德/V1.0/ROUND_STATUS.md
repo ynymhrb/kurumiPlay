@@ -35,13 +35,23 @@
 - `mental_models.md`：v0.2（MM1已回填三重验证标注3/3已转正+"起源不重要"声明+主动觉察安兹情感需求维度；MM2新增强化证据；MM4新增极端深化证据（被抛弃恐惧）；MM5多轮验证基本稳定；新增MM8候选"双重人格层次"；MM4/MM6/MM7尚未逐条回填三重验证，是下一步）
 - `decision_rules.md`：v0.2（规则1-11，已形成完整"谏言行为谱系"：规则7命令逐字复诵；规则2第三层例外+谏言强度对照；规则5新增反例；规则8命令提升执行认真度；规则9谏言成功要素；规则10保护性侵略误判风险；规则11主动进言边界条件）
 - `relationship_rules.md`：v0.1（"人类"档更名为"人类/非纳萨力克生命体"，范围扩展）
-- `expression_dna.md`：v0.4（首个正式转正口癖"最爱的人"，3个独立场景3种语境）
+- `expression_dna.md`：v0.5（改用特征频率概率模型n/p(n)标注，替代候选/确认二元判定；"最爱的人"n=3,p(3)=50%）
+- `reaction_stylization.md`：**新增文件类型**，v0.1（文学化反应手法库，首个实例"表现主义外化"n=1,p(1)=30%）
 - `contradictions.md`：矛盾三分类 + 2条张力 + 4条观察项（新增关键词击穿克制/起源话题表态层vs情绪层）
-- CEU schema：v0.6（卷一末尾schema复核触发：value_conflict新增"已核实无冲突"的显式写法）
+- CEU schema：**v0.7**（新增`psych_core`/`literary_technique`字段+`spec/attribution_framework.md`双轴归因分析法，详见下方"待处理的schema_gap信号"）
 
 ## 待处理的 schema_gap 信号
 
-**7条待复核**（卷一遗留3条 + 卷三新增4条）：A-001、C-002、S-002（卷一，暂缓复核）；C-001（"爱"字反射性失控，无法区分战略选择vs反射反应）、E-002（认知层面自我说服，非传统"选择"）、E-004（起源话题表态层vs情绪层张力）、F-001（被抛弃恐惧，可能不适合MM框架）。暂不立即复核——信号性质分散且部分只有单场景支撑，计划等卷四/五处理完或信号进一步积累后统一复核，避免用单一信号仓促驱动schema改动。详见 `logs/schema_gaps.md`。
+**0条待复核** —— 卷一遗留3条（A-001/C-002/S-002）已于卷一末尾处理完；卷三新增4条（C-001/E-002/E-004/F-001）已于2026-07-18通过CEU schema v0.6→v0.7（新增psych_core/literary_technique字段+attribution_framework.md归因方法论）全部处理完并回填。详见 `logs/schema_gaps.md` 复核记录表。后续卷新出现的信号会继续累积到这里。
+
+**本次schema升级的核心产出**（详见 `logs/revision_log.md` "CEU schema v0.6→v0.7"条目）：
+- 新建 `spec/attribution_framework.md`：双轴归因分析法（心理轴优先，文学轴仅在"解释赤字"时修正）
+- CEU schema新增 `psych_core`（去场景化可迁移反应模板）+ `literary_technique`（可复用叙事技法标签）
+- 新建 `characters/雅儿贝德/V1.0/reaction_stylization.md`（文学化反应手法库）
+- `expression_dna_protocol.md` 新增"特征频率概率模型"（p(n)=min(0.3+0.1×(n-1),0.8)，按场合分桶）
+- `eval_protocol.md` 新增第9节"生成阶段pipeline"（TODO占位，两段式生成逻辑）
+- 已回填4条CEU（C-001/E-002/E-004/F-001）的psych_core，C-001额外补充literary_technique
+- **未回填**：卷一~四其余CEU尚未追溯性走一遍归因分析补充psych_core（不是强制要求，只在schema_gap触发或反应幅度异常时才需要，见character_os_template.md自检清单）
 
 ## 待处理的观察项（非schema_gap，是矛盾候选）
 
