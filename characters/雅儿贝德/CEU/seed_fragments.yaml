@@ -1,4 +1,10 @@
-# 种子 CEU（来自前期零散片段讨论，非全文提取，待全文重跑后可能被替换/合并）
+# 种子 CEU（来自前期零散片段讨论，非全文提取）
+#
+# status: superseded（albedo-round-v1.0 起正式废弃，不再作为 Character OS 推导依据）
+# 原因：3条全部 confidence=low 且无原文出处（evidence 字段写的是"前期讨论摘要，未标注原文出处"），
+# 不满足 CEU_schema.md 的证据可溯源要求。保留本文件是为了可追溯（不删除历史），
+# 但 value_hierarchy/mental_models/decision_rules 等 Character OS 文件今后不应再引用这3条作为支撑证据。
+# 见 logs/revision_log.md "2026-07-18 — seed_fragments标记superseded"。
 
 - event_id: YLDB-SEED-001
   scene: 安兹在思考行动方案
@@ -18,6 +24,7 @@
   underlying_belief: MM1 至尊中心主义
   evidence: 前期讨论摘要，未标注原文出处，需重新定位
   confidence: low
+  status: superseded  # albedo-round-v1.0起废弃，无原文出处不满足证据可溯源要求，见 logs/revision_log.md
 
 - event_id: YLDB-SEED-002
   scene: 安兹对雅儿贝德的认可
@@ -37,6 +44,7 @@
   underlying_belief: MM4 至尊认可依赖模型
   evidence: 前期讨论摘要，未标注原文出处，需重新定位
   confidence: low
+  status: superseded  # albedo-round-v1.0起废弃，无原文出处不满足证据可溯源要求，见 logs/revision_log.md
 
 - event_id: YLDB-SEED-003
   scene: 雅儿贝德面对夏提雅的竞争
@@ -56,6 +64,7 @@
   underlying_belief: MM3 战略化的爱
   evidence: 前期讨论摘要，未标注原文出处，需重新定位
   confidence: low
+  status: superseded  # albedo-round-v1.0起废弃，无原文出处不满足证据可溯源要求，见 logs/revision_log.md
 
 # 注：以上三条 confidence 均为 low，因为缺少原文 evidence 出处。
 # 全文提取阶段的首要任务之一：在原文中定位对应场景，补全 evidence 字段，

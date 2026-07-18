@@ -1,8 +1,16 @@
 # 评估协议（Eval Protocol）
 
-版本：v0.1
+版本：v0.2（新增训练轮次版本化规则、卷内自测层级）
 
 目的：让每次对 Character OS（value_hierarchy / mental_models / decision_rules / relationship_rules / expression_dna / CEU schema）的修改，都能回答两个问题——**这次改动是变好了还是变坏了？哪类改动倾向于变好、哪类倾向于变坏？**——而不是停留在"感觉上更合理了"。
+
+## 0. 训练轮次版本化
+
+"重新训练一个角色"这件事会反复发生（规范/schema 迭代、发现方法论问题等都可能触发），因此需要一个比单个文件的版本号更高一层的"轮次"概念：
+
+- **轮次（round）**：形如 `v0.1`、`v1.0`、`v1.1`……小版本号（如 v1.0→v1.1）表示同一轮训练内部的修正迭代；大版本号进位（如 v0.x→v1.0）表示用户发起的一次新训练轮次——通常意味着规范/schema/方法论有实质变化，旧轮次的 CEU/Character OS 内容作为新轮次的起点/候选证据保留，不清空，冲突时以新轮次的规范为准。
+- 每个角色每个轮次冻结时打 tag：`<角色拼音缩写>-round-v<版本号>`，如 `albedo-round-v0.1`、`albedo-round-v1.0`。旧的 `<角色>-os-v<版本号>` tag 命名（第1节）用于轮次内部更细粒度的模型冻结点，两者可以共存（round 是大版本容器，os-v 是容器内某个具体状态的书签）。
+- `characters/<角色>/ROUND_STATUS.md` 是查询"当前轮次做了哪些事"的唯一入口，每处理完一批必须更新，不允许信息只存在于对话记录里。
 
 ## 1. 版本管理约定
 
@@ -22,7 +30,7 @@
 | 用途 | 产出 CEU、迭代 value_hierarchy/mental_models/decision_rules | 判断某次具体改动是否提升预测力，指导修订方向 | 确认模型没有过拟合到 dev 上的反复调参 |
 | 注意事项 | 不用于评估评分 | 允许根据 dev 上的失败案例反过来改模型（这正是它存在的目的） | **禁止**根据 test 结果反复微调后马上重测；下一次正式重测 test 应间隔足够多的独立修订，不能"调一次测一次"变相把它也用成了 dev |
 
-**当前所处阶段（v0.1 更新）**：项目还在 train 阶段（卷一～十的 CEU 提取与模型构建），dev 阶段的评估流程尚未开发，本文件第3-4节的预测任务/打分设计是为 dev/test 阶段预先定义的规格，train 阶段暂不执行。train 阶段的过程记录见 `logs/construction_log.md`（第7节）。
+**当前所处阶段（v0.2 更新）**：train 阶段（卷一～十）现在有了第三层、比 dev/test 更高频的反馈——**卷内自测（within-batch holdout）**：处理一卷时，预留该卷最后 1-2 个 cluster 不喂给 Character OS 更新流程，处理完后用第3-4节的预测任务协议在这 1-2 个 cluster 上跑一次预测，立即知道这一批修改是否提升了预测力。这层反馈**用完即弃**（每卷用该卷自己预留的部分，不复用），不占用卷十一～十四的 dev/test 额度，结果记入 `logs/construction_log.md` 的 `within_batch_accuracy` 列（而非 `eval_runs.md`，那张表专属 dev/test 正式记录）。dev 阶段（卷十一～十二）的评估流程仍待 train 阶段收敛后启动。train 阶段的过程记录见 `logs/construction_log.md`（第8节）。
 
 ## 3. 预测任务构造
 
@@ -78,12 +86,14 @@
 
 ### 阶段A 训练（卷一～十，当前所处阶段）
 
-1. `[可自动化]` 候选场景定位：脚本按人名关键词 grep 命中行号，自动聚类成 cluster 草稿（line_range / mention_lines），写入 `CEU/_index.yaml`，替代现在手动读文件+手动grep定位进度的方式
-2. `[需判断]` 两遍法抽取：一遍机械列出候选片段里所有"说了/做了什么"的节拍（宁可过度收录）；二遍逐条判断是否构成 CEU 并按 schema 填字段。用固定的 prompt 模板保证每次流程一致，但不脱离人工审核
-3. `[可自动化]` Schema 校验：CEU 必填字段是否齐全、`event_id` 是否唯一、`value_hierarchy.md`/`decision_rules.md` 等文件里引用的 CEU 编号是否真实存在于 CEU 库——纯机械校验，现在完全没有，是最该先补的自动化
-4. `[需判断]` Character OS 更新：新 CEU 是否挑战现有 value_hierarchy/mental_models/decision_rules，触发修正或记入 `contradictions.md`
-5. `[可自动化]` 过程指标统计：每处理完一批，自动/半自动汇总写入 `logs/construction_log.md`（见第8节）
-6. `[人工]` git commit（对应本批次改动）+ 有修正时更新 `logs/revision_log.md`
+1. `[可自动化]` 候选场景定位：`scripts/locate_candidates.py` 按人名关键词 grep 命中行号，自动聚类成 cluster 草稿（line_range / mention_lines），写入 `CEU/_index.yaml`
+2. `[需判断]` 两遍法抽取：`ceu-extractor` subagent（`.claude/agents/ceu-extractor.md`）——一遍机械列出候选片段里所有"说了/做了什么"的节拍（宁可过度收录）；二遍逐条判断是否构成 CEU 并按 schema 填字段；字段套不上时写 `schema_gap` 而不是硬凑
+3. `[可自动化]` Schema 校验：`scripts/validate_ceu.py`——CEU 必填字段是否齐全、`event_id` 是否唯一、`value_hierarchy.md`/`decision_rules.md` 等文件里引用的 CEU 编号是否真实存在于 CEU 库
+4. `[需判断]` Character OS 更新：`character-os-updater` subagent（`.claude/agents/character-os-updater.md`）——新 CEU 是否挑战现有 value_hierarchy/mental_models/decision_rules，触发修正（**必须字段级精确**，见 `logs/revision_log.md` 顶部说明）或记入 `contradictions.md`
+5. `[需判断，独立视角]` 卷末 schema 复核：`schema-reviewer` subagent（`.claude/agents/schema-reviewer.md`）——读 `logs/schema_gaps.md` + `contradictions.md`，判断是否需要修改 CEU schema，无论改不改都要在 `schema_gaps.md` 留复核记录
+6. `[需判断，独立视角]` 卷内自测：`fidelity-evaluator` subagent（`.claude/agents/fidelity-evaluator.md`）——对本卷预留的 1-2 个 cluster 跑预测任务，独立于刚更新模型的 updater，避免自己评自己
+7. `[可自动化]` 过程指标统计：每处理完一批，汇总写入 `logs/construction_log.md`（见第8节）
+8. `[人工]` git commit（对应本批次改动，引用轮次 tag）+ 更新 `characters/<角色>/ROUND_STATUS.md`
 
 ### 阶段B 开发（卷十一～十二，尚未开发）
 
@@ -99,6 +109,7 @@
 
 - `run_id`：如 `C001`，递增编号
 - `date`
+- `round`：所属训练轮次（如 `v1.0`），见第0节
 - `git_ref`：这批处理对应的 commit hash
 - `scope`：处理范围，如"卷三 cluster A-D"
 - `candidate_scenes`：一遍法机械列出的候选节拍数（体现"过度收录"这一步是否真的做到位，而非凭印象跳过）
@@ -108,6 +119,7 @@
 - `schema_violations_caught`：自动校验环节（第7节步骤3）抓到的字段缺失/引用错误数，修复前的原始计数
 - `triggered_revisions`：本批次触发了几条 `revision_log.md` 修正——这个数字随卷数增加是否收敛，是判断"模型是否趋于稳定、能否进入阶段B"的核心信号
 - `triggered_contradictions`：本批次新增几条 `contradictions.md` 记录
+- `within_batch_accuracy`：本卷预留的 1-2 个 cluster 上跑出的预测准确率（见第2节"当前所处阶段"），格式同 `eval_runs.md` 的 `predictive_accuracy`（对/部分对0.5/错），没跑则留空
 - `cross_validation`：是否用了外部交叉验证（如 ChatGPT），采纳了几条建议
 - `notes`
 

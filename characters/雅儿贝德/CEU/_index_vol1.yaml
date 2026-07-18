@@ -1,0 +1,442 @@
+source: characters/雅儿贝德/source/第一卷.txt
+total_lines: 4030
+total_mention_lines: 237
+last_scanned: 由 locate_candidates.py 自动生成，未经人工复核
+clusters:
+- cluster_id: A
+  line_range:
+  - 346
+  - 438
+  mention_lines:
+  - 361
+  - 362
+  - 369
+  - 372
+  - 382
+  - 384
+  - 385
+  - 388
+  - 399
+  - 402
+  - 410
+  - 423
+  brief: >
+    游戏结束前最后时刻，飞鼠翻看雅儿贝德角色设定，删除"贱人"字样并新增"如今爱着飞鼠"——
+    这是她"爱慕安兹"设定的第一手起源场景（此前只有卷二的事后转述）
+  status: done
+  ceu_ids: [YLDB-V1-A-001]
+  priority: high
+  notes: 处理为 vol1_cluster_A.yaml。她此时无自主意识，非她本人的选择，触发schema_gap，见CEU文件内说明。
+- cluster_id: B
+  line_range:
+  - 492
+  - 522
+  mention_lines:
+  - 507
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: low
+  notes: ''
+- cluster_id: C
+  line_range:
+  - 580
+  - 916
+  mention_lines:
+  - 595
+  - 597
+  - 599
+  - 602
+  - 603
+  - 609
+  - 611
+  - 622
+  - 623
+  - 632
+  - 634
+  - 655
+  - 683
+  - 684
+  - 707
+  - 712
+  - 715
+  - 718
+  - 727
+  - 731
+  - 733
+  - 738
+  - 743
+  - 744
+  - 748
+  - 751
+  - 754
+  - 761
+  - 763
+  - 766
+  - 770
+  - 789
+  - 795
+  - 797
+  - 799
+  - 801
+  - 808
+  - 809
+  - 810
+  - 814
+  - 815
+  - 821
+  - 822
+  - 824
+  - 825
+  - 826
+  - 829
+  - 867
+  - 901
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: high
+  notes: ''
+- cluster_id: D
+  line_range:
+  - 977
+  - 1007
+  mention_lines:
+  - 992
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: low
+  notes: ''
+- cluster_id: E
+  line_range:
+  - 1479
+  - 1814
+  mention_lines:
+  - 1494
+  - 1495
+  - 1510
+  - 1513
+  - 1517
+  - 1519
+  - 1530
+  - 1531
+  - 1532
+  - 1542
+  - 1547
+  - 1550
+  - 1558
+  - 1568
+  - 1569
+  - 1572
+  - 1573
+  - 1594
+  - 1598
+  - 1600
+  - 1602
+  - 1606
+  - 1615
+  - 1616
+  - 1617
+  - 1618
+  - 1621
+  - 1647
+  - 1658
+  - 1664
+  - 1665
+  - 1679
+  - 1684
+  - 1691
+  - 1695
+  - 1696
+  - 1706
+  - 1720
+  - 1759
+  - 1764
+  - 1766
+  - 1770
+  - 1799
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: high
+  notes: ''
+- cluster_id: F
+  line_range:
+  - 1876
+  - 1975
+  mention_lines:
+  - 1891
+  - 1892
+  - 1893
+  - 1898
+  - 1903
+  - 1906
+  - 1908
+  - 1910
+  - 1911
+  - 1913
+  - 1914
+  - 1915
+  - 1916
+  - 1922
+  - 1923
+  - 1960
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: high
+  notes: ''
+- cluster_id: G
+  line_range:
+  - 1987
+  - 2017
+  mention_lines:
+  - 2002
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: low
+  notes: ''
+- cluster_id: H
+  line_range:
+  - 2059
+  - 2119
+  mention_lines:
+  - 2074
+  - 2075
+  - 2077
+  - 2078
+  - 2080
+  - 2082
+  - 2083
+  - 2088
+  - 2090
+  - 2091
+  - 2093
+  - 2095
+  - 2099
+  - 2103
+  - 2104
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: high
+  notes: ''
+- cluster_id: I
+  line_range:
+  - 2248
+  - 2278
+  mention_lines:
+  - 2263
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: low
+  notes: ''
+- cluster_id: J
+  line_range:
+  - 2336
+  - 2433
+  mention_lines:
+  - 2351
+  - 2352
+  - 2357
+  - 2359
+  - 2361
+  - 2366
+  - 2383
+  - 2384
+  - 2387
+  - 2388
+  - 2418
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: high
+  notes: ''
+- cluster_id: K
+  line_range:
+  - 2538
+  - 2648
+  mention_lines:
+  - 2553
+  - 2554
+  - 2558
+  - 2560
+  - 2561
+  - 2565
+  - 2566
+  - 2570
+  - 2574
+  - 2606
+  - 2615
+  - 2633
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: high
+  notes: ''
+- cluster_id: L
+  line_range:
+  - 2676
+  - 2706
+  mention_lines:
+  - 2691
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: low
+  notes: ''
+- cluster_id: M
+  line_range:
+  - 2893
+  - 2996
+  mention_lines:
+  - 2908
+  - 2909
+  - 2910
+  - 2923
+  - 2938
+  - 2946
+  - 2948
+  - 2949
+  - 2952
+  - 2953
+  - 2955
+  - 2956
+  - 2969
+  - 2981
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: high
+  notes: ''
+- cluster_id: N
+  line_range:
+  - 3161
+  - 3201
+  mention_lines:
+  - 3176
+  - 3184
+  - 3186
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: high
+  notes: ''
+- cluster_id: O
+  line_range:
+  - 3426
+  - 3456
+  mention_lines:
+  - 3441
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: low
+  notes: ''
+- cluster_id: P
+  line_range:
+  - 3478
+  - 3513
+  mention_lines:
+  - 3493
+  - 3497
+  - 3498
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: high
+  notes: ''
+- cluster_id: Q
+  line_range:
+  - 3526
+  - 3616
+  mention_lines:
+  - 3541
+  - 3581
+  - 3582
+  - 3592
+  - 3593
+  - 3601
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: high
+  notes: ''
+- cluster_id: R
+  line_range:
+  - 3629
+  - 3737
+  mention_lines:
+  - 3644
+  - 3667
+  - 3672
+  - 3710
+  - 3715
+  - 3716
+  - 3717
+  - 3719
+  - 3720
+  - 3722
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: high
+  notes: ''
+- cluster_id: S
+  line_range:
+  - 3760
+  - 3979
+  mention_lines:
+  - 3775
+  - 3787
+  - 3788
+  - 3789
+  - 3807
+  - 3810
+  - 3814
+  - 3821
+  - 3842
+  - 3843
+  - 3851
+  - 3859
+  - 3862
+  - 3863
+  - 3865
+  - 3868
+  - 3872
+  - 3874
+  - 3876
+  - 3878
+  - 3883
+  - 3893
+  - 3895
+  - 3897
+  - 3899
+  - 3902
+  - 3903
+  - 3905
+  - 3907
+  - 3913
+  - 3921
+  - 3927
+  - 3951
+  - 3953
+  - 3961
+  - 3962
+  - 3964
+  brief: ''
+  status: pending
+  ceu_ids: []
+  priority: high
+  notes: ''
+progress_summary:
+  clusters_total: 19
+  clusters_done: 0
+  clusters_partial: 0
+  clusters_pending: 19
+  processing_order: sequential
+  next_recommended: A
+usage_note: 本文件由 scripts/locate_candidates.py 机械生成（按人名grep聚类），brief/priority/status 需要 ceu-extractor 处理时填写/更新，不代表已判断是否构成CEU。

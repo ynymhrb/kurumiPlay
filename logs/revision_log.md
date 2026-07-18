@@ -1,23 +1,58 @@
 # 模型修正记录
 
-每次因 Fidelity Test 或逐章验证发现模型无法解释的行为而做出修正时，在此记录。
+每次因 Fidelity Test 或逐章验证发现模型无法解释的行为而做出修正时，在此记录。**这是回答"每个字段为什么加/删/改"的地方，`<修正对象>` 必须精确到具体子项**（如"value_hierarchy 第1层拆分"、"MM6 改名"、"decision_rule #2 补充例外"），不能只写"某文件改了"——写"某文件改了"等于没有回答"为什么"。
 
-格式（v0.1 起新增 change_type / eval_before / eval_after / delta，评估协议见 `../spec/eval_protocol.md`）：
+格式（v0.1 起新增 change_type / eval_before / eval_after / delta，v1.0 起新增 round，评估协议见 `../spec/eval_protocol.md`）：
 
 ```
-## <日期> — <修正对象>
+## <日期> — <修正对象：精确到具体子项，如"MM6改名"/"value_hierarchy第1层拆分"/"decision_rule #2加例外">
 触发: 哪个 CEU / 哪次盲测暴露的问题
 修正前: ...
 修正后: ...
 原因: ...
 change_type: 字段新增 / 层级拆分 / 候选模型新增 / 范围限定 / 重命名精确化 / 证据分级
-eval_before: <eval_runs.md 的 eval_id，改动前最近一次同测试集分数>
-eval_after: <改动后重跑同测试集的 eval_id>
+round: 所属训练轮次（如 v1.0），见 eval_protocol.md 第0节
+eval_before: <eval_runs.md 或 construction_log.md 的 id，改动前最近一次同测试集/同卷内自测分数>
+eval_after: <改动后重跑同测试集的 id>
 delta: <predictive_accuracy 变化，如 +0.08>
 git_ref: <这次修正对应的 commit hash>
 ```
 
-以下4条历史记录早于本评估协议（2026-07-18 引入），无 eval 数据，标注 `predates eval harness`，不做补录。
+以下4条历史记录早于本评估协议（2026-07-18 引入）且属于 `albedo-round-v0.1`，无 eval 数据，标注 `predates eval harness`，不做补录。
+
+## 2026-07-18 — seed_fragments标记superseded；value_hierarchy第3/5层移除无效引用
+
+触发：用户要求正式开启 albedo-round-v1.0，需要对 V0.1 遗留内容做一次一致性核对。`seed_fragments.yaml` 3条（YLDB-SEED-001~003）全部 `confidence: low` 且 `evidence` 字段写的是"前期讨论摘要，未标注原文出处"，不满足 CEU_schema.md 的证据可溯源要求，此前 value_hierarchy.md 里已标注这3条"待定位或废弃"但一直没有正式处理。
+
+修正前：`seed_fragments.yaml` 无 status 标记，仍被 `value_hierarchy.md` 第2/3/5层列为支撑证据（YLDB-SEED-001/002/003）。
+
+修正后：`seed_fragments.yaml` 顶部标记 `status: superseded`，文件保留（可追溯）但今后不再作为 Character OS 推导依据；`value_hierarchy.md` 移除对这3条的引用，第2层保留 P-002/B-001 两条有效证据不受影响，第3、5层因唯一支撑证据被移除，改为标注"无正式CEU支撑，待卷一~十新证据重新坐实"。
+
+原因：轮次切换（V0.1→V1.0）时不应该把无出处的种子数据继续当作既定结论使用；`raw_text`/`evidence` 字段存在的意义就是保证证据可溯源，seed_fragments 从建立时起就不满足这个要求，属于历史遗留的方法论漏洞，本轮切换是清理它的自然时机。
+
+change_type: 证据分级
+round: v1.0
+eval_before: 无（train阶段尚未开始正式eval，本条修正不涉及预测力评分变化，纯粹是证据有效性清理）
+eval_after: 不适用
+delta: 不适用
+git_ref: （本次提交生成后回填）
+
+## 2026-07-18 — mental_models.md MM1 背景脚注（爱的设定来源）
+
+触发：albedo-round-v1.0 首个正式batch，处理卷一 cluster A（第346-438行）时定位到 YLDB-V1-A-001——游戏结束前飞鼠翻看雅儿贝德角色设定、删除"贱人"字样并新增"如今爱着飞鼠"的原始场景。此前 MM1 的背景脚注只引用卷二安兹事后回忆的转述（第166行），现在有了第一手原文实锤。
+
+修正前：MM1 背景脚注仅引用卷二第166行的转述性描述，未提及原设定含"贱人"字样、也未提及这是即兴非深思熟虑的决定。
+
+修正后：脚注更新为引用 YLDB-V1-A-001（卷一第383-418行）作为主要依据，补充"贬损字样被一并删除"和"事后感到害羞"两个细节，并注明该CEU本身触发了 schema_gap（她此时无自主意识，不是"她的选择"，evidence_source三分类都不完全贴切）。
+
+原因：一手原始场景比事后转述信息量更大、更可靠，且这条证据本身暴露了 schema 的一个盲区（起源类证据不完全适配当前分类），值得在脚注里显式记录，方便以后 schema-reviewer 复核时能追溯到具体案例。
+
+change_type: 证据分级
+round: v1.0
+eval_before: 无（train阶段卷一首个batch，尚无卷内自测基线）
+eval_after: 不适用（本条不是对预测力的修正，是补充/精化已有背景注脚，不改变模型的预测性结论）
+delta: 不适用
+git_ref: （本次提交生成后回填）
 
 ## 2026-07-17 — CEU schema v0.1 → v0.2
 
