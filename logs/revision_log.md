@@ -280,6 +280,30 @@ eval_after: 不适用
 delta: 不适用
 git_ref: 61c333f
 
+## 2026-07-18 — 卷二V0.1遗留CEU复核：确认兼容V1.0规范，不改动
+
+触发：TaskList#4，`ROUND_STATUS.md`"下一步"第1项——卷一处理完、schema复核commit后，按用户"回头审视卷二V0.1遗留CEU是否需要按V1.0流程调整"的要求，正式审视`characters/雅儿贝德/V1.0/CEU/`下vol2相关文件（`_index_vol2.yaml`、`vol2_prologue.yaml`、`vol2_ch01_early.yaml`、`vol2_cluster_D.yaml`、`vol2_cluster_G.yaml`）。
+
+审视内容：
+1. `python3 scripts/validate_ceu.py 雅儿贝德`机械校验：0 error（含vol2在内全库30条CEU）
+2. 逐条通读vol2的5个CEU文件：`raw_text`字段齐全（符合v0.3起的强制要求）；`value_conflict`字段均有实质内容，无需补"已核实无冲突"（v0.6新规范只约束"确认无冲突却留空"的情况，vol2这些CEU本身都存在真实冲突，不适用）；`evidence_source`字段大部分省略（默认self，符合v0.4规范——本人选择场景不强制显式标注），仅G-004场景（迪米乌哥斯对她能力的评价）正确显式标注`evidence_source: narrator`
+3. 交叉核对`mental_models.md`/`relationship_rules.md`：MM3范围限定、MM5候选、MM6改名、MM7候选，均已直接引用vol2证据（YLDB-V2-D-003/G-001/G-002等）并整合进模型正式表述；`relationship_rules.md`的安兹/夏提雅/迪米乌哥斯/娜贝拉尔四档关系记录也已用vol2数据填充
+
+结论：**卷二遗留CEU无需重新提取、无需字段级调整**，V0.1阶段产出的这批CEU在结构和内容上已经符合V1.0规范，且早已实际驱动了当前mental_models.md多条模型的形成，本次审视是补一份正式确认记录，不是发现问题后的修正。
+
+遗留的两处待续（非本次改动，记录以便后续卷追踪）：
+- cluster A：38/42/55行等人物介绍性描述、82行叙述者旁白，判断为背景注解不单独立CEU，维持`status: partial`不变（已核实无遗漏，非未完成）
+- cluster K：卷二末尾"夏提雅造反"伏笔，标记为`open_hook`，雅儿贝德本人反应留到卷三/卷四延续剧情时补CEU，届时可能是重量级证据
+
+原因：这次复核是V1.0轮次机制设计上明确要求的一步（`ROUND_STATUS.md`"下一步"清单第1项），目的是防止"V0.1产出被悄悄继承却从未真正核实是否合规"。结果是阳性确认（合规），但走这个流程本身仍然必要——不能因为"大概率没问题"就跳过实际核对。
+
+change_type: 无（复核结论，未修改任何文件内容）
+round: v1.0
+eval_before: 不适用
+eval_after: 不适用
+delta: 不适用
+git_ref: （待commit回填）
+
 ## 2026-07-17 — CEU schema v0.1 → v0.2
 
 触发：雅儿贝德测试中发现仅用 emotion/action/belief 字段不足以支撑 Value Hierarchy 推导（"雅儿贝德嫉妒夏提雅"信息量不够）。

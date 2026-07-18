@@ -21,8 +21,8 @@
 | 卷 | 状态 | 说明 |
 |---|---|---|
 | 卷一 | **已完成（19/19）+ schema复核已完成并commit** | 全部cluster处理完，约21条CEU。压轴S-001/S-002：她本人拒绝"起源决定真实性"，新增MM8候选"双重人格层次"。schema复核：3条信号中1条触发修改（value_conflict新增"已核实无冲突"写法，v0.5→v0.6），2条判断暂不需要改动。已commit（`61c333f`），下一步进入卷二复核 |
-| 卷二 | V0.1遗留，待复核 | 9/11 cluster 有CEU（V0.1产出），尚未按V1.0流程重新审视是否需要调整；cluster A(partial)/K待处理 |
-| 卷三～十 | 未开始 | |
+| 卷二 | **V0.1遗留，复核完成（确认兼容，无需调整）** | 9/11 cluster 有CEU（V0.1产出）。复核结论：raw_text/value_conflict/evidence_source均已合规，且MM3/MM5/MM6/MM7、relationship_rules均已实际引用vol2证据，不是"未整合的孤立数据"。cluster A(partial)确认无遗漏；cluster K（夏提雅造反伏笔）标记open_hook，留给卷三/四她本人反应场景时补CEU |
+| 卷三～十 | 未开始，下一步是卷三 | |
 | 卷十一～十二（dev） | 未启动 | 待train阶段收敛 |
 | 卷十三～十四（test） | 未启动 | 仅里程碑触发 |
 
@@ -54,13 +54,12 @@
 
 ## 下一步（用户要求处理到卷五；本session的TaskList#1-8对应这个顺序）
 
-1. 回头审视卷二V0.1遗留CEU——下一步，回来就先做这个
-2. 卷三（先跑`locate_candidates.py 雅儿贝德 3`生成索引）
-3. 卷四
-4. 卷五（本轮当前阶段的目标终点）
-5. MM2/MM4/MM6/MM7 逐条回填三重验证标注（不必卡在卷一，可以和卷三~五并行积累证据后再做）
+1. **卷三**——下一步，回来就先做这个（先跑`locate_candidates.py 雅儿贝德 3`生成`_index_vol3.yaml`，这是第一次处理卷三，无V0.1遗留数据）
+2. 卷四
+3. 卷五（本轮当前阶段的目标终点）
+4. MM2/MM4/MM6/MM7 逐条回填三重验证标注（不必卡在卷一，可以和卷三~五并行积累证据后再做）
 
-**跨会话恢复进度**：卷一（`_index_vol1.yaml`）已全部完成，`next_recommended: null`，schema复核已commit（`61c333f`）。下一步看本文件"下一步"列表第1项开始（卷二复核）。
+**跨会话恢复进度**：卷一（`_index_vol1.yaml`）已全部完成，`next_recommended: null`，schema复核已commit（`61c333f`）。卷二复核已完成（结论：兼容，无需调整CEU本身，仅revision_log记了一条确认记录，**这条revision_log改动尚未commit**）。下一步是卷三，本文件"下一步"列表第1项。
 
 ---
-最后更新：2026-07-18（卷一全部完成 + schema复核已commit），对应 commit `61c333f`
+最后更新：2026-07-18（卷一完成 + schema复核完成 + 卷二复核完成，均已确认），对应 commit `61c333f`（**注意：卷二复核的revision_log条目本身尚未提交**）
