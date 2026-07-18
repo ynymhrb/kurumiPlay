@@ -268,22 +268,29 @@ clusters:
   - 3893
   - 3900
   - 3902
-  brief: ''
-  status: pending
+  brief: 守护者们通过水晶萤幕围观安兹与夏提雅的战斗，对安兹的谋略深表敬佩，雅儿贝德也在其中低声惊叹
+  status: done
   ceu_ids: []
   priority: high
-  notes: ''
+  notes: >
+    确认这是守护者们（迪米乌哥斯、科塞特斯、雅儿贝德）共同围观的集体反应场景，雅儿贝德的反应
+    ("毛骨悚然""以双手抱住身体""低声惊叹")与其他守护者的钦佩情绪并无本质差异，不是她独立做出的
+    选择或独有的行为模式，属于MM4（至尊认可依赖/对安兹的崇拜）已有证据的重复性验证而非新维度，
+    不单独立CEU。
 - cluster_id: H
   line_range:
   - 4025
   - 4055
   mention_lines:
   - 4040
-  brief: ''
-  status: pending
-  ceu_ids: []
+  brief: 守护者围观安兹与夏提雅的体力消耗战，迪米乌哥斯质疑安兹的体力劣势，雅儿贝德以信念而非分析回应
+  status: done
+  ceu_ids: [YLDB-V3-H-001]
   priority: low
-  notes: ''
+  notes: >
+    H-001：与科塞特斯"逐步拆解安兹战术逻辑"的分析型信任形成对照，雅儿贝德的确信是纯粹的
+    身份信念（"他是安兹·乌尔·恭所以不用怀疑"），呼应F-002"相信主人是被创造者的本分"和
+    E-002认知层面自我说服，共同指向她的忠诚存在不完全依赖证据运作的信仰式机制。
 - cluster_id: I
   line_range:
   - 4138
@@ -309,16 +316,21 @@ clusters:
   - 4282
   - 4284
   - 4291
-  brief: ''
-  status: pending
-  ceu_ids: []
+  brief: 夏提雅复活后的余波——守护者集体劝谏+"寂寞"论点、雅儿贝德觉察安兹的孤独并拉他入圈、提议屠灭蜥蜴人村落
+  status: done
+  ceu_ids: [YLDB-V3-I-001, YLDB-V3-I-002, YLDB-V3-I-003]
   priority: high
-  notes: ''
+  notes: >
+    卷三收官批次，3条CEU。I-001：她不用"安全"论点（迪米乌哥斯已用过未完全奏效）而是切换到
+    "寂寞"论点成功说服安兹，展现对安兹心理的精准把握。I-002：全篇最温柔的一条证据——安兹毫无
+    言语提示地感到孤独，她主动察觉并伸手把他拉进守护者圈子，是目前唯一展现她"主动觉察安兹未
+    明说需求"而非被动反应的证据，与F-001形成有趣镜像。I-003：主动提议屠灭蜥蜴人村落取材，
+    带着愉悦笑容，把M-001人类蔑视扩展为"她-非纳萨力克生命体"更宽泛的冷酷计算。
 progress_summary:
   clusters_total: 9
-  clusters_done: 0
+  clusters_done: 9
   clusters_partial: 0
-  clusters_pending: 9
+  clusters_pending: 0
   processing_order: sequential
-  next_recommended: A
+  next_recommended: null   # 卷三已全部处理完
 usage_note: 本文件由 scripts/locate_candidates.py 机械生成（按人名grep聚类），brief/priority/status 需要处理该cluster时填写/更新，不代表已判断是否构成CEU。
