@@ -1,8 +1,8 @@
 # Schema Gaps
 
-`spec/CEU_schema.md` 不是定案。每条 CEU 的 `schema_gap` 字段（如果填了）汇总到这里，作为"当前 schema 哪里不够用"的原始信号池，供 `schema-reviewer` agent 定期复核。
+`spec/CEU_schema.md` 不是定案。每条 CEU 的 `schema_gap` 字段（如果填了）汇总到这里，作为"当前 schema 哪里不够用"的原始信号池，供卷末的 schema 复核步骤（见 `spec/eval_protocol.md` 第7节）处理。
 
-不允许无声丢弃：`schema-reviewer` 每次复核后，无论是否触发 schema 修改，都要在下方"复核记录"里写一条结论（改了/没改+原因），不能只处理信号池里的条目却不留痕迹。
+不允许无声丢弃：每次复核后，无论是否触发 schema 修改，都要在下方"复核记录"里写一条结论（改了/没改+原因），不能只处理信号池里的条目却不留痕迹。
 
 ## 待复核信号
 

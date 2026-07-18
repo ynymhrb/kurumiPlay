@@ -37,18 +37,18 @@
 
 ## 待处理的 schema_gap 信号
 
-1条未复核（见 `logs/schema_gaps.md`）：YLDB-V1-A-001 触发的"起源类证据不适配现有evidence_source三分类"问题，待 schema-reviewer 复核。
+1条未复核（见 `logs/schema_gaps.md`）：YLDB-V1-A-001 触发的"起源类证据不适配现有evidence_source三分类"问题，待卷末schema复核步骤处理。
 
 ## Pipeline 基础设施（本轮新增）
 
-- 脚本：`scripts/locate_candidates.py`（候选场景定位）/ `scripts/validate_ceu.py`（机械校验）/ `scripts/reconcile_round.py`（轮次切换汇总）
-- Subagent：`.claude/agents/{ceu-extractor,character-os-updater,schema-reviewer,fidelity-evaluator}.md`
-  - **已知限制**：本轮次创建的自定义subagent要到下次 Claude Code 会话启动时才会被识别为可调用的 subagent_type（当前会话里已通过手动模拟其角色指令的方式验证了 ceu-extractor + character-os-updater 两步的端到端流程，产出见 cluster A 处理记录）
+流程是一个简单的 pipeline（见 `spec/eval_protocol.md` 第7节），不用 subagent：机械步骤（候选场景定位/schema校验/轮次汇总）用 `scripts/` 下的脚本，需要理解语义的步骤（CEU抽取/Character OS更新/schema复核）由我在对话里按文档记录的流程直接执行。
+
+- 脚本：`scripts/locate_candidates.py`（候选场景定位）/ `scripts/validate_ceu.py`（机械校验）/ `scripts/reconcile_round.py`（轮次切换汇总），均已改为轮次感知（`--round` 参数，默认取最新 `V*` 目录）
 
 ## 下一步
 
-- 用真正的 subagent（下次会话验证可调用后）继续处理卷一剩余18个cluster
-- 处理到卷末时跑一次 schema-reviewer 复核 `logs/schema_gaps.md`
+- 继续处理卷一剩余18个cluster
+- 处理到卷末时跑一次 schema 复核，处理 `logs/schema_gaps.md` 里的信号
 - 卷一处理完，回头审视卷二V0.1遗留CEU是否需要按当前schema/方法论调整
 
 ---

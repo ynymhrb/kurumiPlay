@@ -6,8 +6,7 @@
    给新一轮一个"起点快照"
 2. 列出所有 status=superseded 的 CEU，提醒它们已不该被继续引用
 
-不修改任何文件，只输出报告；实际的 schema 字段回填/证据重定位仍需人工或
-ceu-extractor agent 处理。
+不修改任何文件，只输出报告；实际的 schema 字段回填/证据重定位仍需另外处理。
 
 用法：
     python3 reconcile_round.py <角色名>
@@ -20,23 +19,31 @@ from collections import Counter
 
 sys.path.insert(0, os.path.dirname(__file__))
 import yaml  # noqa: E402
+from _round_utils import resolve_round_dir  # noqa: E402
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("character")
+    ap.add_argument("--round", default=None, help="轮次目录名，如 V1.0；不传则用最新轮次")
     ap.add_argument("--root", default=None)
     args = ap.parse_args()
 
     root = args.root or os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
-    ceu_dir = os.path.join(root, "characters", args.character, "CEU")
+    round_dir = resolve_round_dir(root, args.character, args.round)
+    ceu_dir = os.path.join(round_dir, "CEU")
 
     active = []
     superseded = []
     for path in sorted(glob.glob(os.path.join(ceu_dir, "*.yaml"))):
         fname = os.path.basename(path)
         with open(path, encoding="utf-8") as f:
-            data = yaml.safe_load(f)
+            try:
+                data = yaml.safe_load(f)
+            except yaml.YAMLError as e:
+                print(f"[跳过] {fname}: YAML 解析失败（{e.__class__.__name__}），"
+                      f"如果是历史冻结轮次可能是遗留问题，不代表本脚本有bug", file=sys.stderr)
+                continue
         if not isinstance(data, list):
             continue
         for rec in data:

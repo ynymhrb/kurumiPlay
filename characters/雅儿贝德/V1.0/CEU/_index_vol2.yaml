@@ -1,0 +1,153 @@
+# 雅儿贝德 CEU 提取索引 —— 每次开始提取前先看这个文件，不要重新 grep/通读全文
+# 只有需要看某个 cluster 的具体细节时，才对 source 文件做定点 Read(offset/limit)
+
+source: characters/雅儿贝德/source/第二卷.txt
+total_lines: 3900
+total_mention_lines: 56   # grep "雅儿贝德" 命中的行数（同一场景内多次提及会被聚成一个cluster）
+last_scanned: 全文已跑过一次 grep，56处命中已全部聚类到下面的 clusters
+
+# ================= 场景聚类 =================
+clusters:
+
+  - cluster_id: A
+    line_range: [26, 90]
+    mention_lines: [41, 42, 55, 65, 68, 82]
+    brief: 序章。安兹办公室，雅儿贝德登场+夏提雅来访撒娇，雅儿贝德嫉妒但战略隐忍，安兹喝止二人
+    status: partial
+    ceu_ids: [YLDB-V2-P-001, YLDB-V2-P-002]
+    notes: >
+      41/42/55行是人物介绍性描述（非CEU候选，无价值选择）。
+      65-69行、76-78行已提取为CEU。82行是叙述者旁白评论，暂未单独建CEU，
+      可作为背景注解引用即可，无需重复提取。此cluster基本处理完。
+
+  - cluster_id: B
+    line_range: [130, 169]
+    mention_lines: [140, 141, 144, 146, 147, 149, 150, 152, 161, 163, 164, 166, 167, 169]
+    brief: >
+      安兹决定外出，雅儿贝德是反对声音最强烈的守护者但被迪米乌哥斯说服后突然转变；
+      安兹反思为何不带雅儿贝德出门（她视人类为低等生物）；
+      安兹反思自己曾经修改过雅儿贝德的角色设定使其爱上自己，心怀愧疚
+    status: done
+    ceu_ids: [YLDB-V2-B-001]
+    priority: high
+    notes: >
+      已提取。核心发现：她可以在安兹正式下命令之前主动谏言/反对（对MM1、decision_rule#2的重要细化），
+      迪米乌哥斯对她有安兹本人都达不到的说服力（open_question，原文未展开说服内容）。
+      人类蔑视态度、爱慕设定来源两点作为supplementary_notes记录，未单独立CEU（无独立选择场景）。
+
+  - cluster_id: C
+    line_range: [420, 430]
+    mention_lines: [426]
+    brief: 安兹担心把视人类为低等生物的雅儿贝德带出门有风险（与cluster B同一议题的呼应）
+    status: done
+    ceu_ids: []
+    priority: low
+    notes: 核实为安兹内心独白，非雅儿贝德本人的选择场景，确认并入cluster B的分析，不单独立CEU。
+
+  - cluster_id: D
+    line_range: [460, 495]
+    mention_lines: [465, 467, 472, 474, 475, 477, 482, 486, 488, 492]
+    brief: >
+      娜贝拉尔与雅儿贝德的通讯对话。雅儿贝德明确表态"夏提雅还是我更适合陪在安兹身边，
+      当然是我"；讨论楼层守护者阵营站队（露普丝雷其娜=雅儿贝德派，索琉香=夏提雅派）；
+      得知安兹和娜贝拉尔同房睡觉后雅儿贝德激动大吵大闹
+    status: done
+    ceu_ids: [YLDB-V2-D-001, YLDB-V2-D-002, YLDB-V2-D-003]
+    priority: high
+    notes: >
+      种子CEU-003正式坐实。D-003（情绪失控）与cluster G互相印证，
+      触发MM5/MM6两个候选新模型，记入contradictions.md。
+
+  - cluster_id: E
+    line_range: [820, 835]
+    mention_lines: [828]
+    brief: 安兹内心吐槽雅儿贝德和娜贝拉尔"没动脑"，因为轻视人类
+    status: done
+    ceu_ids: []
+    priority: low
+    notes: 确认为安兹视角评论，雅儿贝德本人不在场，无独立CEU。
+
+  - cluster_id: F
+    line_range: [1035, 1050]
+    mention_lines: [1039, 1049]
+    brief: 娜贝拉尔口误提及"情侣"和雅儿贝德的名字，安兹紧张
+    status: done
+    ceu_ids: []
+    priority: low
+    notes: 确认雅儿贝德本人未出场；作为"她在其他NPC心中的地位/名声"的旁证记入relationship_rules，非独立CEU。
+
+  - cluster_id: G
+    line_range: [1750, 1840]
+    mention_lines: [1753, 1754, 1755, 1757, 1760, 1791, 1796, 1805, 1810, 1812, 1814, 1816, 1825, 1832, 1836]
+    brief: >
+      迪米乌哥斯到雅儿贝德房间找她。她没在自己房间办公而是"关在这个房间里"（后文暗示
+      在私密空间偷懒/享乐），对迪米乌哥斯的调侃反应俏皮、得意洋洋，与"公务场合"形象反差大
+    status: done
+    ceu_ids: [YLDB-V2-G-001, YLDB-V2-G-002, YLDB-V2-G-003]
+    priority: high
+    notes: >
+      确认潜在矛盾候选属实：私密场合有明显放纵/幻想沉溺的一面，与D-003共同触发MM5/MM6候选模型。
+      另发现她对"以虐待人类为乐"的态度与迪米乌哥斯不同（G-003），补充relationship_rules"她-人类"档。
+
+  - cluster_id: H
+    line_range: [2010, 2018]
+    mention_lines: [2014]
+    brief: 他人对话中一句带过"穿黑色铠甲的人好像是叫雅儿贝德"
+    status: done
+    ceu_ids: []
+    priority: low
+    notes: 确认为极简提及（他人辨认铠甲颜色对应的名字），无独立CEU。
+
+  - cluster_id: I
+    line_range: [2145, 2158]
+    mention_lines: [2153, 2154]
+    brief: 安兹内心独白，与娜贝拉尔的对话牵扯到雅儿贝德的名字
+    status: done
+    ceu_ids: []
+    priority: low
+    notes: 确认为安兹内心戏，雅儿贝德本人不在场，无独立CEU。
+
+  - cluster_id: J
+    line_range: [2880, 2888]
+    mention_lines: [2884]
+    brief: 提及"届时联络雅儿贝德大人"
+    status: done
+    ceu_ids: []
+    priority: low
+    notes: 确认为极简提及（安特玛一句台词），无独立CEU。
+
+  - cluster_id: K
+    line_range: [3855, 3870]
+    mention_lines: [3859, 3861, 3865]
+    brief: 卷末，安兹用「讯息」联络雅儿贝德，她第一句话是"夏提雅·布拉德弗伦造反了"
+    status: partial
+    ceu_ids: []
+    priority: medium
+    notes: >
+      内容本身是剧情钩子（夏提雅造反），雅儿贝德只是信息传递者，尚未展开她自己的选择/反应。
+      不构成独立CEU，但这是卷2末尾埋的关键伏笔，后续卷（卷3）如果延续这条线，
+      要回头看雅儿贝德在"至交/情敌造反"事件中的反应，届时可能是重量级CEU。标记为open_hook。
+
+# ================= 推进状态 =================
+progress_summary:
+  clusters_total: 11
+  clusters_done: 9        # A(partial), C, D, E, F, G, H, I, J 全部处理完（A为partial不计入done但已核实无遗漏）
+  clusters_partial: 2     # A, K
+  clusters_pending: 0
+  processing_order: sequential   # 已按原文顺序 A→K 处理完卷2全部cluster
+  next_recommended: null   # 卷2已处理完，等待用户决定：冻结模型 or 补充复核 or 进入卷3盲测
+  freeze_rule: >
+    卷2已按原文顺序处理完全部cluster。当前是否冻结取决于：本轮新增的MM5/MM6候选模型
+    是否需要更多验证（目前只有D、G两个独立场景支持），建议用户决定是"先冻结v0.3"还是
+    "视为初步稳定但MM5/MM6继续标注为候选，冻结时保留这个不确定性"。
+    冻结后卷3作为盲测集：先根据冻结模型逐CEU预测雅儿贝德的选择，再对照原文核实，
+    不再据此调整模型参数（除非预测持续失败到需要承认模型有系统性缺陷）。
+
+# ================= 使用说明 =================
+usage_note: >
+  下次继续提取时：
+  1. 先读本文件，选一个 status=pending 且 priority 高的 cluster
+  2. 只对 source 文件做该 cluster line_range 范围的定点 Read（不要整篇读取或重新grep）
+  3. 提取完成后：在对应 cluster 更新 status=done，填入 ceu_ids
+  4. 更新 progress_summary 和 next_recommended
+  5. 新CEU写入 characters/雅儿贝德/CEU/ 下对应的 yaml 文件（可按 cluster 或按章节命名）

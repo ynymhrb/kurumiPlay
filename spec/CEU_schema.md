@@ -75,7 +75,7 @@ schema_gap:              # 可选。这条证据如果用现有字段表达不�
  ↓
 标注 confidence，暂存 evidence 出处以便溯源
  ↓
-汇总进 characters/<角色>/CEU/<卷>.yaml
+汇总进 characters/<角色>/V<当前轮次>/CEU/<卷>_cluster_<ID>.yaml
 ```
 
 ## 待验证的开放问题（来自研究记录）

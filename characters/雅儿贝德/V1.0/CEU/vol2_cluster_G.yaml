@@ -1,0 +1,98 @@
+# cluster G（第二卷.txt 第1748-1839行）—— 迪米乌哥斯到雅儿贝德房间找她
+
+- event_id: YLDB-V2-G-001
+  scene: 迪米乌哥斯发现她躲在安兹卧室而非自己办公室，调侃后被她反将一军
+  raw_text: >
+    迪米乌哥斯跟雅儿贝德说过「好的妻子不是应该等待丈夫，好好守护家园吗？」
+    却得到「妻子守护丈夫的房间又有什么不对。」回应，完全无法反驳。
+  trigger: 迪米乌哥斯质疑她不在自己岗位办公、跑去安兹房间待着是否失职
+  context: 安兹外出期间，她应管理纳萨力克但选择待在安兹卧室（据文中"她的所有行动都获得安兹许可"，非违规）
+  participants: [雅儿贝德, 迪米乌哥斯]
+  relationship_context: 同为守护者的同僚，迪米乌哥斯带调侃试探性质
+  power_context: 平级，无强制力，靠话术交锋
+  event_type: dialogue
+  choice: 不否认"待在安兹房间"这件事本身，而是用"妻子"这个关系身份重新定义它，使其显得正当得体
+  action: 用一句反问式回应完全堵死对方的调侃
+  speech: "妻子守护丈夫的房间又有什么不对。"
+  emotion: 从容、不以为意
+  value_conflict: 被质疑"看似怠惰/不务正业" vs 维持得体、被认可为尽职的形象
+  chosen_value: 用关系身份话语（"妻子"）把看似私人放纵的行为重新包装成正当——与 YLDB-V2-P-001 是同一套反应模式
+  sacrificed_value: 无（这次没有付出代价，说明这套话术对她而言已经很熟练）
+  underlying_belief: MM3 战略化的爱——再次验证：习惯性地用"关系身份"语言，把私人情感行为重新定义为正当，且这次是面对同僚、非公开政治场合也会这么做，说明这个习惯不只是"给外人看"的表演，也可能是她自己真心相信的自洽逻辑
+  evidence: 第二卷.txt 第1757行
+  confidence: high
+
+- event_id: YLDB-V2-G-002
+  scene: 她在安兹卧室里为床铺留香、展示自制抱枕与婴儿衣物
+  raw_text: >
+    「想要让安兹大人回来时，能够被我的香气包围。」
+    ……
+    「不管是打扫、洗衣，还是裁缝的技术，我都具备专家级的水准喔。」
+    「为了将来可能出生的婴儿，我还做了袜子和衣服。已经做到五岁啰。」
+  trigger: 迪米乌哥斯发现床上的"抱枕"，追问是谁做的
+  context: 私密场合，仅同僚迪米乌哥斯在场，安兹不在场也不知情
+  participants: [雅儿贝德, 迪米乌哥斯]
+  relationship_context: 同僚之间的私密时刻，非公开/竞争场合
+  power_context: 无权力压力，纯粹私人流露
+  event_type: emotion
+  choice: 坦然、得意地展示这些几乎不可能实现（安兹是不死者骷髅）的"未来家庭生活"准备，不掩饰也不觉得有问题
+  action: 主动炫耀裁缝手艺与婴儿衣物准备进度
+  speech: "为了将来可能出生的婴儿，我还做了袜子和衣服。已经做到五岁啰。"
+  emotion: 得意洋洋、沉浸其中
+  value_conflict: 对现实条件的理性判断（安兹是不死者，不可能有孩子） vs 活在与安兹共同生活的幻想叙事里
+  chosen_value: 选择活在幻想叙事里，持续为一个不可能的未来做具体准备
+  sacrificed_value: 对现实可行性的理性权衡
+  underlying_belief: >
+    MM6——"至尊象征崇拜"（原名"幻想化的爱"，经ChatGPT交叉分析后改名）：与安兹本人关联的空间/物品/气味
+    具有近乎神圣的价值，独立于组织效率。同时支持 MM7"未来投射模型"（源自ChatGPT）：她主动构建一个
+    围绕安兹的未来叙事（婴儿衣物做到五岁），并让当下行动向这个叙事靠拢，不论现实是否可行。
+    这与 MM3（战略化的爱）形成张力，不视为矛盾，而是"爱"在她身上有两种并存的表现形式：
+    有竞争/政治意义的场合走战略路线（P-001, D-001, D-002, G-001）；
+    私密、无竞争压力的场合走沉溺路线（本CEU、D-003的情绪失控，属于我方独立发现的MM5候选，
+    尚未经ChatGPT交叉验证）。
+  evidence: 第二卷.txt 第1799行, 1811-1813行
+  confidence: high
+  flag_for_contradictions: true
+
+- event_id: YLDB-V2-G-004
+  scene: 迪米乌哥斯对雅儿贝德组织管理能力与军事能力的评价
+  raw_text: >
+    就纳萨力克地下大坟墓这个组织的经营管理方面，雅儿贝确实德相当优秀，甚至遥遥领先迪米乌哥斯。
+    不过在防卫等军事层面有些不足，所以需要迪米乌哥斯辅助。
+  trigger: null
+  context: 迪米乌哥斯离开前，叙述者对两人能力分工的背景说明
+  participants: [雅儿贝德, 迪米乌哥斯]
+  relationship_context: 同僚间的能力互补分工
+  power_context: 平级，各自负责不同领域
+  event_type: null
+  evidence_source: narrator   # 不是雅儿贝德本人的选择，是全知叙述者对她能力的评价，采用轻量schema
+  observation: 组织管理能力极强，甚至超过迪米乌哥斯
+  limitation: 军事/防卫层面有所不足，需要迪米乌哥斯辅助
+  evidence: 第二卷.txt 第1817行
+  confidence: high
+  note: >
+    这条不构成"选择"事件，不适用value_conflict/chosen_value等字段，是v0.4新增
+    evidence_source字段后第一条采用"轻量schema"的他人评价类证据（采纳自ChatGPT的CEU-TEST-013）。
+    用于补充她作为"管理者"而非仅"恋爱者"的能力维度，后续可用于组织决策类RolePlay场景的能力校准。
+
+- event_id: YLDB-V2-G-003
+  scene: 对迪米乌哥斯"虐待人类俘虏取乐"提议的反应
+  raw_text: >
+    「所以才有趣啊。雅儿贝德也可以来享受一下人类的这个部分喔？只要把他们当成玩具就好。」
+    「我完全无法理解这种想法。」
+  trigger: 迪米乌哥斯描述用心理操纵手段虐待俘虏的"实验"，邀请她一起享受
+  context: 讨论俘虏处置的公务对话中途，语气轻松
+  participants: [雅儿贝德, 迪米乌哥斯]
+  relationship_context: 同僚间的公务讨论，无上下级压力
+  power_context: 平级
+  event_type: dialogue
+  choice: 明确拒绝"以折磨人类为乐"这种取向，但不反对折磨本身作为既定事实继续发生
+  action: 直接表态无法理解，未提出阻止或谴责
+  speech: "我完全无法理解这种想法。"
+  emotion: 轻微不适（"这真是令人不舒服"，针对人类会背叛主人这件事，而非同情俘虏）
+  value_conflict: 对人类的蔑视/工具化态度（与迪米乌哥斯一致） vs 是否把折磨人类当作乐趣本身
+  chosen_value: 保持蔑视但不施虐——她的冷酷是行政性/工具性的，不是施虐癖
+  sacrificed_value: 无明显牺牲，更像是性格边界的划定
+  underlying_belief: 补充 relationship_rules"她-人类"档：蔑视人类 ≠ 以虐待取乐
+  evidence: 第二卷.txt 第1830-1833行
+  confidence: medium   # 态度明确，但"为什么不理解"的具体原因原文未展开（道德/单纯无兴趣/其他）

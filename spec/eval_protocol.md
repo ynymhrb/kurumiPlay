@@ -6,11 +6,13 @@
 
 ## 0. 训练轮次版本化
 
-"重新训练一个角色"这件事会反复发生（规范/schema 迭代、发现方法论问题等都可能触发），因此需要一个比单个文件的版本号更高一层的"轮次"概念：
+"重新训练一个角色"这件事会反复发生（规范/schema 迭代、发现方法论问题等都可能触发），因此需要一个比单个文件的版本号更高一层的"轮次"概念，**用真实目录体现，不是只靠 git 历史反查**：
 
-- **轮次（round）**：形如 `v0.1`、`v1.0`、`v1.1`……小版本号（如 v1.0→v1.1）表示同一轮训练内部的修正迭代；大版本号进位（如 v0.x→v1.0）表示用户发起的一次新训练轮次——通常意味着规范/schema/方法论有实质变化，旧轮次的 CEU/Character OS 内容作为新轮次的起点/候选证据保留，不清空，冲突时以新轮次的规范为准。
-- 每个角色每个轮次冻结时打 tag：`<角色拼音缩写>-round-v<版本号>`，如 `albedo-round-v0.1`、`albedo-round-v1.0`。旧的 `<角色>-os-v<版本号>` tag 命名（第1节）用于轮次内部更细粒度的模型冻结点，两者可以共存（round 是大版本容器，os-v 是容器内某个具体状态的书签）。
-- `characters/<角色>/ROUND_STATUS.md` 是查询"当前轮次做了哪些事"的唯一入口，每处理完一批必须更新，不允许信息只存在于对话记录里。
+- **轮次（round）**：形如 `V0.1`、`V1.0`、`V1.1`……小版本号（如 V1.0→V1.1）表示同一轮训练内部的修正迭代；大版本号进位（如 V0.x→V1.0）表示发起一次新训练轮次——通常意味着规范/schema/方法论有实质变化。
+- **每次开启新轮次，在角色目录下新建一个版本子目录**：`characters/<角色>/V<版本号>/`，存放该轮次的 CEU/、value_hierarchy.md、mental_models.md、decision_rules.md、relationship_rules.md、expression_dna.md、contradictions.md、fidelity_test.md、ROUND_STATUS.md。旧版本目录冻结后不再修改，直接打开就能看到那一轮的完整状态，不需要 `git show` 或切分支。
+- `source/`（原文分卷文本）放在 `characters/<角色>/` 下、**不按轮次重复存储**——原文不会变，重复存一份没有意义，只会增加体积。
+- 每个角色每个轮次冻结时打 git tag：`<角色拼音缩写>-round-v<版本号>`，如 `albedo-round-v0.1`、`albedo-round-v1.0`，作为目录快照的辅助交叉引用（不是唯一凭证，目录本身才是主要的查阅方式）。
+- `characters/<角色>/V<当前版本>/ROUND_STATUS.md` 是查询"当前轮次做了哪些事"的唯一入口，每处理完一批必须更新。
 
 ## 1. 版本管理约定
 
@@ -80,24 +82,24 @@
 - `logs/eval_runs.md`：结构化表格，每次 eval 一行（eval_id / date / type / model_ref / test_set / n_cases / predictive_accuracy / style_score / notes）。
 - `logs/revision_log.md`：在原有"触发/修正前/修正后/原因"基础上，新增 `change_type` / `eval_before` / `eval_after` / `delta` 字段（引用 eval_runs.md 的 eval_id）。历史的4条修正记录早于本协议，不做补录，标注"predates eval harness"即可。
 
-## 7. 完整流程与自动化边界
+## 7. 流程（一个简单的 pipeline，不引入 subagent）
 
-三个阶段（对应第2节的 train/dev/test）各自的步骤，标注 `[可自动化]`（规则/脚本可做，不需要LLM判断）还是 `[需判断]`（依赖LLM/人工理解，只能标准化流程而非无人值守跑）：
+流程分两类步骤：能写成确定性脚本的（`scripts/`，机械判断，不需要理解语义），和需要读原文/理解语义的（由我在对话里按下面的步骤直接做，不拆分成独立的 subagent——独立 subagent 会带来上下文隔离和调用开销，对这种需要频繁交叉参考已有模型内容的任务没有必要）：
 
 ### 阶段A 训练（卷一～十，当前所处阶段）
 
-1. `[可自动化]` 候选场景定位：`scripts/locate_candidates.py` 按人名关键词 grep 命中行号，自动聚类成 cluster 草稿（line_range / mention_lines），写入 `CEU/_index.yaml`
-2. `[需判断]` 两遍法抽取：`ceu-extractor` subagent（`.claude/agents/ceu-extractor.md`）——一遍机械列出候选片段里所有"说了/做了什么"的节拍（宁可过度收录）；二遍逐条判断是否构成 CEU 并按 schema 填字段；字段套不上时写 `schema_gap` 而不是硬凑
-3. `[可自动化]` Schema 校验：`scripts/validate_ceu.py`——CEU 必填字段是否齐全、`event_id` 是否唯一、`value_hierarchy.md`/`decision_rules.md` 等文件里引用的 CEU 编号是否真实存在于 CEU 库
-4. `[需判断]` Character OS 更新：`character-os-updater` subagent（`.claude/agents/character-os-updater.md`）——新 CEU 是否挑战现有 value_hierarchy/mental_models/decision_rules，触发修正（**必须字段级精确**，见 `logs/revision_log.md` 顶部说明）或记入 `contradictions.md`
-5. `[需判断，独立视角]` 卷末 schema 复核：`schema-reviewer` subagent（`.claude/agents/schema-reviewer.md`）——读 `logs/schema_gaps.md` + `contradictions.md`，判断是否需要修改 CEU schema，无论改不改都要在 `schema_gaps.md` 留复核记录
-6. `[需判断，独立视角]` 卷内自测：`fidelity-evaluator` subagent（`.claude/agents/fidelity-evaluator.md`）——对本卷预留的 1-2 个 cluster 跑预测任务，独立于刚更新模型的 updater，避免自己评自己
-7. `[可自动化]` 过程指标统计：每处理完一批，汇总写入 `logs/construction_log.md`（见第8节）
-8. `[人工]` git commit（对应本批次改动，引用轮次 tag）+ 更新 `characters/<角色>/ROUND_STATUS.md`
+1. **候选场景定位**（脚本）：`scripts/locate_candidates.py <角色> <卷号>` 按人名关键词 grep 命中行号，自动聚类成 cluster 草稿，写入 `CEU/_index_vol<N>.yaml`
+2. **两遍法抽取**（我直接做）：一遍机械列出候选片段里所有"说了/做了什么"的节拍（宁可过度收录）；二遍逐条判断是否构成 CEU 并按 schema 填字段；字段套不上时写 `schema_gap` 而不是硬凑；产出写入 `CEU/vol<N>_cluster_<ID>.yaml`
+3. **Schema 校验**（脚本）：`scripts/validate_ceu.py <角色>`——CEU 必填字段是否齐全、`event_id` 是否唯一、Character OS 文件里引用的 CEU 编号是否真实存在
+4. **Character OS 更新**（我直接做）：新 CEU 是否挑战现有 value_hierarchy/mental_models/decision_rules，触发修正（**必须字段级精确**，见 `logs/revision_log.md` 顶部说明）或记入 `contradictions.md`
+5. **schema 复核**（我直接做，卷末或 `schema_gaps.md` 积累到一定量时）：判断 `schema_gaps.md` 里的信号是否需要真正修改 schema，无论改不改都要留复核记录
+6. **卷内自测**（我直接做，可选）：对本卷预留的 1-2 个 cluster 跑预测任务（第3-4节协议），只根据 trigger+context 预测，再对照真实结果打分，记入 `construction_log.md` 的 `within_batch_accuracy`
+7. **过程指标统计**：汇总写入 `logs/construction_log.md`（见第8节）
+8. **收尾**：git commit（对应本批次改动，引用轮次 tag）+ 更新 `characters/<角色>/V<当前版本>/ROUND_STATUS.md`
 
 ### 阶段B 开发（卷十一～十二，尚未开发）
 
-沿用第3-4节定义的预测任务/打分协议，语料换成卷十一、十二。启动条件：阶段A 在卷一～十上跑完、且连续若干卷不再触发 Character OS 的实质性修正（即触发的 revision 数量明显收敛，见 `construction_log.md` 的 `triggered_revisions` 趋势）。启动后目前仍是 `[需判断]` 为主，由 Claude 在对话中手动执行：读 dev 卷 → 构造预测任务 → 组装当前模型 prompt → 生成预测 → 对照原文打分 → 写入 `eval_runs.md`。其中"对照原文核对结果"这一步一旦 dev 卷也有了正式 CEU 标注，可以 `[可自动化]` 做机械比对。
+沿用第3-4节定义的预测任务/打分协议，语料换成卷十一、十二。启动条件：阶段A 在卷一～十上跑完、且连续若干卷不再触发 Character OS 的实质性修正（即触发的 revision 数量明显收敛，见 `construction_log.md` 的 `triggered_revisions` 趋势）。启动后由我在对话中手动执行：读 dev 卷 → 构造预测任务 → 组装当前模型 prompt → 生成预测 → 对照原文打分 → 写入 `eval_runs.md`。
 
 ### 阶段C 评测（卷十三～十四，holdout）
 

@@ -20,6 +20,9 @@ import re
 import sys
 import yaml
 
+sys.path.insert(0, os.path.dirname(__file__))
+from _round_utils import resolve_round_dir  # noqa: E402
+
 ALWAYS_REQUIRED = ["event_id", "raw_text", "scene", "context", "participants", "evidence", "confidence"]
 REQUIRED_IF_SELF = ["choice", "value_conflict", "chosen_value", "underlying_belief"]
 
@@ -92,11 +95,12 @@ def find_ceu_references(character_dir):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("character", help="角色名，如 雅儿贝德")
+    ap.add_argument("--round", default=None, help="轮次目录名，如 V1.0；不传则用最新轮次")
     ap.add_argument("--root", default=None)
     args = ap.parse_args()
 
     root = args.root or os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
-    character_dir = os.path.join(root, "characters", args.character)
+    character_dir = resolve_round_dir(root, args.character, args.round)
     ceu_dir = os.path.join(character_dir, "CEU")
 
     if not os.path.isdir(ceu_dir):
@@ -131,7 +135,7 @@ def main():
 
     gaps = [(eid, fname) for eid, (fname, rec, sup) in records.items() if rec.get("schema_gap")]
     if gaps:
-        print(f"\n=== schema_gap 信号（{len(gaps)}条，应汇总进 logs/schema_gaps.md 供 schema-reviewer 复核）===")
+        print(f"\n=== schema_gap 信号（{len(gaps)}条，应汇总进 logs/schema_gaps.md 供下次schema复核处理）===")
         for eid, fname in gaps:
             print(f"  - {eid} ({fname})")
 

@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"/d/code/overload/\" 2>&1)",
+      "Bash(python \"/c/Users/19632/AppData/Local/Temp/claude/D--code-character/e603bab1-7dcc-4187-a56a-09fdcadfa50b/scratchpad/extract_character_raw.py\" \"source\" \"雅儿贝德\" \"source\")",
+      "Bash(powershell -Command \"\\(Get-Content -Path 'D:\\\\code\\\\character\\\\characters\\\\雅儿贝德\\\\source\\\\雅儿贝德_第十三卷验证集.txt' -Encoding UTF8 | Measure-Object -Line\\).Lines\")",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git restore *)",
+      "Bash(git rm *)",
+      "Bash(git commit *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git tag *)",
+      "Bash(ls -la ~/.claude/projects/ 2>&1 | head -30)",
+      "Bash(awk '{print $2}')",
+      "Read(//tmp/**)",
+      "Bash(python3 \"C:\\\\Users\\\\19632\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\D--code-character\\\\737e9e15-28d9-4e4c-b4d5-4613a5add0d1\\\\scratchpad\\\\extract_perms.py\")",
+      "Bash(cp /tmp/recent_transcripts.txt \"C:\\\\Users\\\\19632\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\D--code-character\\\\737e9e15-28d9-4e4c-b4d5-4613a5add0d1\\\\scratchpad\\\\recent_transcripts.txt\" && wc -l \"C:\\\\Users\\\\19632\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\D--code-character\\\\737e9e15-28d9-4e4c-b4d5-4613a5add0d1\\\\scratchpad\\\\recent_transcripts.txt\")",
+      "Bash(python3 extract_perms.py)",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 extract_perms2.py)"
+    ]
+  }
+}
