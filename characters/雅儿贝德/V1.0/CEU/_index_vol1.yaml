@@ -387,11 +387,11 @@ clusters:
   - 3719
   - 3720
   - 3722
-  brief: ''
-  status: pending
-  ceu_ids: []
+  brief: 安兹受"极度圣击"波及后，雅儿贝德爆发极端暴怒（详细酷刑威胁+身体异变征兆），单句"够了"后瞬间100%停止——与Q-001形成对照组
+  status: done
+  ceu_ids: [YLDB-V1-R-001]
   priority: high
-  notes: ''
+  notes: 目前情绪爆发强度最高的CEU，且证明decision_rule#2第三层例外（Q-001）是特例而非常态。
 - cluster_id: S
   line_range:
   - 3760
@@ -441,11 +441,11 @@ clusters:
   notes: ''
 progress_summary:
   clusters_total: 19
-  clusters_done: 17
+  clusters_done: 18
   clusters_partial: 0
-  clusters_pending: 2
+  clusters_pending: 1
   processing_order: sequential
-  next_recommended: R
+  next_recommended: S
 usage_note: >
   brief/priority/status 由处理该cluster时填写/更新。新会话恢复进度时：先看 progress_summary.next_recommended，
   再核对每个cluster的 status 字段（本文件曾出现过字段被trailing重复key覆盖导致status显示错误的bug，

@@ -20,7 +20,7 @@
 
 | 卷 | 状态 | 说明 |
 |---|---|---|
-| 卷一 | 进行中（17/19 done） | A-Q已处理完（G/I/N/O/P无CEU）。Q是本轮目前信息量最大的发现：decision_rule#2新增第三层例外，contradictions首次用上"本质性张力"分类。**下一个：cluster R**（见`_index_vol1.yaml`的`progress_summary.next_recommended`） |
+| 卷一 | 进行中（18/19 done） | A-R已处理完。R产出目前情绪爆发强度最高的CEU，并作为Q-001的对照组确认第三层例外是特例。**下一个：cluster S（卷一最后一个cluster）**（见`_index_vol1.yaml`的`progress_summary.next_recommended`） |
 | 卷二 | V0.1遗留，待复核 | 9/11 cluster 有CEU（V0.1产出），尚未按V1.0流程重新审视是否需要调整；cluster A(partial)/K待处理 |
 | 卷三～十 | 未开始 | |
 | 卷十一～十二（dev） | 未启动 | 待train阶段收敛 |
@@ -54,7 +54,7 @@
 
 ## 下一步（用户要求处理到卷五；本session的TaskList#1-8对应这个顺序）
 
-1. 卷一剩余2个cluster（R-S）
+1. 卷一剩余1个cluster（S，最后一个）
 2. 卷一末尾schema复核（`logs/schema_gaps.md`当前2条待复核）
 3. 回头审视卷二V0.1遗留CEU
 4. 卷三（先跑`locate_candidates.py 雅儿贝德 3`生成索引）
@@ -62,7 +62,7 @@
 6. 卷五（本轮当前阶段的目标终点）
 7. MM2/MM4/MM6/MM7 逐条回填三重验证标注（不必卡在卷一，可以和卷三~五并行积累证据后再做）
 
-**跨会话恢复进度**：看 `CEU/_index_vol1.yaml` 的 `progress_summary.next_recommended` 字段（当前=R），不要只看本文件的文字描述，以index文件的status字段为准（曾发生过index文件重复键导致status显示错误的bug，已修复并在index文件里写了防范说明）。
+**跨会话恢复进度**：看 `CEU/_index_vol1.yaml` 的 `progress_summary.next_recommended` 字段（当前=S），不要只看本文件的文字描述，以index文件的status字段为准（曾发生过index文件重复键导致status显示错误的bug，已修复并在index文件里写了防范说明）。
 
 ---
-最后更新：2026-07-18（卷一cluster O/P/Q完成，decision_rule#2新增第三层例外），对应 commit `ef1b95a`
+最后更新：2026-07-18（卷一cluster R完成，decision_rule#2对照组数据），对应 commit（待本次提交后回填）
