@@ -166,11 +166,11 @@ clusters:
   - 4147
   mention_lines:
   - 4132
-  brief: ''
-  status: pending
+  brief: 守护者围观蜥蜴人村落，雅儿贝德对一对蜥蜴人情侣的亲密举动随口感叹"好羡慕喔"
+  status: done
   ceu_ids: []
   priority: low
-  notes: ''
+  notes: 一句轻描淡写的集体闲聊式感叹，无独立选择/冲突场景，不构成CEU。
 - cluster_id: I
   line_range:
   - 4425
@@ -180,16 +180,19 @@ clusters:
   - 4465
   - 4484
   - 4485
-  brief: ''
-  status: pending
-  ceu_ids: []
+  brief: 蜥蜴人战后处置决策会议，安兹征询全体守护者意见时雅儿贝德给出纯粹附和式回答；亚乌菈领地接见蜥蜴人代表的插曲
+  status: done
+  ceu_ids: [YLDB-V4-I-001]
   priority: high
-  notes: ''
+  notes: >
+    卷四收官批次。I-001为"主动进言"行为线划定边界：她只在对议题有明确、具体利害判断时才会
+    主动发声（A-003/D-001/G-001），面对自己没有特别想法的低风险议题会默认附和，和其他守护者
+    表现一致——这是理解她"忠诚服从"与"独立判断"两种模式切换条件的重要证据。
 progress_summary:
   clusters_total: 9
-  clusters_done: 0
+  clusters_done: 9
   clusters_partial: 0
-  clusters_pending: 9
+  clusters_pending: 0
   processing_order: sequential
-  next_recommended: A
+  next_recommended: null   # 卷四已全部处理完
 usage_note: 本文件由 scripts/locate_candidates.py 机械生成（按人名grep聚类），brief/priority/status 需要处理该cluster时填写/更新，不代表已判断是否构成CEU。
