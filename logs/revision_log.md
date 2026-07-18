@@ -187,6 +187,23 @@ eval_after: 不适用
 delta: 不适用
 git_ref: 9e564bf
 
+## 2026-07-18 — relationship_rules"人类"档补充例外细节（M-001）
+
+触发：处理卷一cluster L（她不在场，无CEU）/M（她坦承蔑视人类但提到"有个女孩例外"，被提醒演技重要后收敛）/N（言行符合已有模型，未发现新维度，不单独立CEU）。
+
+修正前：relationship_rules.md"人类"档只记录"蔑视人类为低等生物，但不以虐待为乐"，没有例外情况的记录
+
+修正后：M-001新增细节——她提到对人类的蔑视"有个女孩例外"，未具名，可能指向本卷获救的姐妹之一。这条暂未修改relationship_rules.md正文（例外对象不明确，贸然写入可能误导），记录在CEU本身的underlying_belief字段里，留待后续卷如果出现更明确线索再补充档案。
+
+原因：这是本卷首次出现"她的蔑视有例外"这个信息，值得记录但证据强度不足以直接改写关系档案（不知道例外具体指谁），符合`character_os_template.md`"信息不足时的处理"规则——如实记录候选线索，不脑补，不强行下结论。
+
+change_type: 证据分级
+round: v1.0
+eval_before: 无
+eval_after: 不适用
+delta: 不适用
+git_ref: （待commit回填）
+
 ## 2026-07-17 — CEU schema v0.1 → v0.2
 
 触发：雅儿贝德测试中发现仅用 emotion/action/belief 字段不足以支撑 Value Hierarchy 推导（"雅儿贝德嫉妒夏提雅"信息量不够）。

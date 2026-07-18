@@ -20,7 +20,7 @@
 
 | 卷 | 状态 | 说明 |
 |---|---|---|
-| 卷一 | 进行中（11/19 done） | A-K已处理完（G/I无CEU）。K产出"最爱的人"第3次出现，正式转正为确认口癖。**下一个：cluster L**（见`_index_vol1.yaml`的`progress_summary.next_recommended`） |
+| 卷一 | 进行中（14/19 done） | A-N已处理完（G/I/N无CEU）。M新增"蔑视人类但有例外"细节。**下一个：cluster O**（见`_index_vol1.yaml`的`progress_summary.next_recommended`） |
 | 卷二 | V0.1遗留，待复核 | 9/11 cluster 有CEU（V0.1产出），尚未按V1.0流程重新审视是否需要调整；cluster A(partial)/K待处理 |
 | 卷三～十 | 未开始 | |
 | 卷十一～十二（dev） | 未启动 | 待train阶段收敛 |
@@ -54,7 +54,7 @@
 
 ## 下一步（用户要求处理到卷五；本session的TaskList#1-8对应这个顺序）
 
-1. 卷一剩余8个cluster（L-S）
+1. 卷一剩余5个cluster（O-S）
 2. 卷一末尾schema复核（`logs/schema_gaps.md`当前2条待复核）
 3. 回头审视卷二V0.1遗留CEU
 4. 卷三（先跑`locate_candidates.py 雅儿贝德 3`生成索引）
@@ -62,7 +62,7 @@
 6. 卷五（本轮当前阶段的目标终点）
 7. MM2/MM4/MM6/MM7 逐条回填三重验证标注（不必卡在卷一，可以和卷三~五并行积累证据后再做）
 
-**跨会话恢复进度**：看 `CEU/_index_vol1.yaml` 的 `progress_summary.next_recommended` 字段（当前=L），不要只看本文件的文字描述，以index文件的status字段为准（曾发生过index文件重复键导致status显示错误的bug，已修复并在index文件里写了防范说明）。
+**跨会话恢复进度**：看 `CEU/_index_vol1.yaml` 的 `progress_summary.next_recommended` 字段（当前=O），不要只看本文件的文字描述，以index文件的status字段为准（曾发生过index文件重复键导致status显示错误的bug，已修复并在index文件里写了防范说明）。
 
 ---
-最后更新：2026-07-18（卷一cluster I/J/K完成，"最爱的人"转正为确认口癖），对应 commit `9e564bf`
+最后更新：2026-07-18（卷一cluster L/M/N完成），对应 commit（待本次提交后回填）

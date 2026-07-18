@@ -290,11 +290,11 @@ clusters:
   - 2706
   mention_lines:
   - 2691
-  brief: ''
-  status: pending
+  brief: 她被安兹支开去村里散步，不在场，无CEU
+  status: done
   ceu_ids: []
   priority: low
-  notes: ''
+  notes: 确认为背景说明，跳过。
 - cluster_id: M
   line_range:
   - 2893
@@ -314,9 +314,9 @@ clusters:
   - 2956
   - 2969
   - 2981
-  brief: ''
-  status: pending
-  ceu_ids: []
+  brief: 她坦承蔑视人类"像踩虫子"，但提到"有个女孩例外"，被提醒演技重要后立刻收敛
+  status: done
+  ceu_ids: [YLDB-V1-M-001]
   priority: high
   notes: ''
 - cluster_id: N
@@ -327,11 +327,11 @@ clusters:
   - 3176
   - 3184
   - 3186
-  brief: ''
-  status: pending
+  brief: 她敏锐追问安兹为何以尊号立誓、迅速执行伏兵搜查命令；未展现超出已有模型的新维度，不单独立CEU
+  status: done
   ceu_ids: []
   priority: high
-  notes: ''
+  notes: 与葛杰夫告别场景，雅儿贝德言行完全符合已确立的MM1/decision_rules模式，未发现新信息，判断不构成独立CEU。
 - cluster_id: O
   line_range:
   - 3426
@@ -441,11 +441,11 @@ clusters:
   notes: ''
 progress_summary:
   clusters_total: 19
-  clusters_done: 11
+  clusters_done: 14
   clusters_partial: 0
-  clusters_pending: 8
+  clusters_pending: 5
   processing_order: sequential
-  next_recommended: L
+  next_recommended: O
 usage_note: >
   brief/priority/status 由处理该cluster时填写/更新。新会话恢复进度时：先看 progress_summary.next_recommended，
   再核对每个cluster的 status 字段（本文件曾出现过字段被trailing重复key覆盖导致status显示错误的bug，
