@@ -199,7 +199,7 @@ round: v2.0
 eval_before: 无
 eval_after: 待卷十完成后统一自测
 delta: 待定
-git_ref: <本次commit>
+git_ref: d6e5e3b
 
 ## 2026-07-19 — decision_rules规则5新增第四类击穿触发器（安兹的珍爱表达→情欲失控）+ 规则2补充"第三方武力威慑瞬效"
 
@@ -212,7 +212,7 @@ round: v2.0
 eval_before: 无
 eval_after: 待卷十完成后统一自测
 delta: 待定
-git_ref: <本次commit>
+git_ref: d6e5e3b
 
 ## 2026-07-19 — psychological_structure"自我保护性合理化"扩展为双向机制并转正confirmed
 
@@ -225,7 +225,7 @@ round: v2.0
 eval_before: 无
 eval_after: 待卷十完成后统一自测
 delta: 待定
-git_ref: <本次commit>
+git_ref: d6e5e3b
 
 ## 2026-07-19 — speech_register新增"失控态责任外化"（状态绑定语用规则）+ belief_system"未来投射"候选偏强
 
@@ -238,7 +238,7 @@ round: v2.0
 eval_before: 无
 eval_after: 待卷十完成后统一自测
 delta: 待定
-git_ref: <本次commit>
+git_ref: d6e5e3b
 
 ## 2026-07-19 — relational_graph三处更新（demiurge/shalltear/新增aura）+ preferences/dislikes/traits增量 + literary_techniques新增手法2
 
@@ -251,4 +251,4 @@ round: v2.0
 eval_before: 无
 eval_after: 待卷十完成后统一自测
 delta: 待定
-git_ref: <本次commit>
+git_ref: d6e5e3b
