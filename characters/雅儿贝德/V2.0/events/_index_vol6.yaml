@@ -1,0 +1,86 @@
+source: characters/雅儿贝德/source/全文/第六卷.txt
+total_lines: 4463
+total_mention_lines: 31
+last_scanned: 由 locate_candidates.py 自动生成，未经人工复核
+clusters:
+- cluster_id: A
+  line_range:
+  - 533
+  - 632
+  mention_lines:
+  - 548
+  - 549
+  - 555
+  - 556
+  - 558
+  - 560
+  - 563
+  - 565
+  - 566
+  - 569
+  - 578
+  - 582
+  - 584
+  - 587
+  - 592
+  - 594
+  - 598
+  - 600
+  - 602
+  - 603
+  - 607
+  - 609
+  - 611
+  - 612
+  - 616
+  - 617
+  brief: 私室独处（布偶缝制/后宫房沉溺）→安兹讯息远程受命（琪雅蕾救援）→公会旗帜秘密独白
+  status: done
+  event_ids: [YLDB-EV-V6-001]
+  priority: high
+  notes: 全卷唯一含雅儿贝德直接言行的场景，信息密度极高（7个turn，3处attribution分析）
+- cluster_id: B
+  line_range:
+  - 939
+  - 969
+  mention_lines:
+  - 954
+  brief: 拉娜才华的叙述性对比（旁白提及雅儿贝德与迪米乌哥斯为大陆上可与拉娜匹敌的智者）
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: 纯旁白提及，无雅儿贝德言行，不构成事件
+- cluster_id: C
+  line_range:
+  - 1222
+  - 1264
+  mention_lines:
+  - 1237
+  - 1249
+  brief: 迪米乌哥斯作战会议（转述雅儿贝德对守护者的严令+王座之厅待机部署）
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: >
+    她本人不在场，仅二手转述。转述内容（因守护者接连失误而严令+按计划在王座之厅待机）与
+    profile.yaml已有的talents（组织管理）和decision_rules一致，无新增信息量，不单独立事件
+- cluster_id: D
+  line_range:
+  - 3820
+  - 3872
+  mention_lines:
+  - 3835
+  - 3857
+  brief: 安兹与迪米乌哥斯对话中两处顺带提及（已授权雅儿贝德全权/讯息联络她准备战士化）
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: 她本人不在场，纯提及，不构成事件
+progress_summary:
+  clusters_total: 4
+  clusters_done: 1
+  clusters_partial: 0
+  clusters_pending: 0
+  processing_order: sequential
+  next_recommended: null
+usage_note: 本文件由 scripts/locate_candidates.py 机械生成（按人名grep聚类），brief/priority/status 需要处理该cluster时填写/更新，不代表已判断是否构成事件（Event）。

@@ -1,0 +1,177 @@
+# 雅儿贝德 卷六 事件时间线
+# Schema: spec/event_schema.md v1.0
+# 卷六全卷仅1个含雅儿贝德直接言行的场景（cluster A）；cluster B/C/D均为他人提及，见_index_vol6.yaml的skip说明
+
+- event_id: YLDB-EV-V6-001
+  time_stamp: 下火月（九月）四日 15:15（安兹以飞飞身份滞留耶·兰提尔期间，塞巴斯王都事件进行中）
+  location: 纳萨力克第九层，雅儿贝德的个人房间（原四十一位至尊的备用房间，安兹赐予）
+  global_background: >
+    安兹外出扮演冒险者飞飞，娜贝拉尔随行；王都方面塞巴斯收留的琪雅蕾被八指绑架，索琉香刚向
+    安兹汇报。此前夏提雅被控制事件、科塞特斯战败事件、塞巴斯擅自行动接连发生，守护者层面
+    存在连续失误的压力背景。
+  characters_present: [albedo, ainz（仅以讯息Message魔法远程通话，人不在场）]
+  source_reference: characters/雅儿贝德/source/全文/第六卷.txt 第544-617行
+
+  event_initial_dynamic_matrix:
+    albedo:
+      mental_fatigue:            # 原文无直接依据，留空；仅提及其日常职务"多的是让人眼睛酸痛的工作"
+      initial_emotional_vector: {幸福沉醉: 0.9, 对娜贝拉尔的怨气: 0.4}   # 前者"啊——好幸福喔"直接支撑；后者"借以宣泄对与安兹一同旅行的娜贝拉尔的怨气"直接支撑
+      hierarchical_intent_tree:
+        root_strategic_goal: 成为安兹最需要、最信赖的存在（profile.yaml ultimate_goal投影）
+        current_event_subgoal: 私人休憩充电（原文明示：进入这个房间养精蓄锐，对她来说是非常重要的事）
+        immediate_talk_intent:   # 事件开始时无谈话对象，留空
+
+  progress_timeline:
+    - turn_id: 1
+      actor_id: albedo
+      raw_quote: >
+        第547-554行：「哼哼哼——」开心地哼着自创自编的歌曲，雅儿贝德将针穿过毛线圈……雅儿贝德
+        脸上浮现出温柔的微笑。那表情洋溢着慈爱，宛如女神一般。「好！安兹大人的头部完成了！」……
+        她极其温柔地把毛线编的头盖骨放在桌上角落
+      action_description: 独自哼着自创歌曲，手工缝制Q版安兹布偶的头部，完成后满足握拳、温柔抚摸、极其温柔地安放
+      speech_content: 好！安兹大人的头部完成了！／好了，接下来做身体……
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics:
+          distance_meters: 未知（独处）
+          eye_contact: false
+
+    - turn_id: 2
+      actor_id: albedo
+      raw_quote: >
+        第560-581行：这里正是雅儿贝德的秘密房间之一，是连来房间打扫的女仆都不许进入、不可侵犯的
+        圣域。通称后宫房。「咕呼呼呼呼呼——」雅儿贝德发出奇怪的声音，跳了起来……动作有如橄榄球员
+        的擒抱……「咕呼呼呼呼。拜领安兹大人的床单做成的最新抱枕……等于是跟安兹大人同床共眠……」
+        把脸埋进抱枕里，雅儿贝德抽抽鼻子闻味道。「没有味道……呢。」……「啊——好幸福喔。」……
+        「啊——好想见安兹大人。……」她用力抱紧枕头，借以宣泄对与安兹一同旅行的娜贝拉尔的怨气。
+      action_description: >
+        在禁止一切女仆进入的秘密"后宫房"（堆满自制安兹抱枕/布偶）里，飞扑擒抱抱枕滚倒在地，
+        发出"咕呼呼"怪笑，埋脸闻嗅床单做的抱枕气味，对闻不到气味表示遗憾，抱紧枕头宣泄对
+        随行安兹的娜贝拉尔的怨气
+      speech_content: 咕呼呼呼呼……拜领安兹大人的床单做成的最新抱枕……等于是跟安兹大人同床共眠……／没有味道……呢。／啊——好幸福喔。／啊——好想见安兹大人。
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics:
+          distance_meters: 未知（独处）
+          eye_contact: false
+
+    - turn_id: 3
+      actor_id: albedo
+      raw_quote: >
+        第582-585行：「——雅儿贝德。」她身体吓得一震。雅儿贝德额上冒着冷汗，脸部抽搐地环顾四周，
+        确定声音是来自于魔法。「安、安兹大人！有何吩咐吗？」
+      action_description: 沉溺状态中被安兹的讯息魔法叫到，吓得身体一震、额上冒冷汗、脸部抽搐地环顾四周确认声源，随即切换为待命应答姿态
+      speech_content: 安、安兹大人！有何吩咐吗？
+      environmental_force_snapshot:
+        situational_pressure: 高（安兹突然"在场"——虽仅声音，但她无法确定自己刚才的状态是否被察觉）
+        spatial_proxemics:
+          distance_meters: 远程通讯
+          eye_contact: false
+
+    - turn_id: 4
+      actor_id: albedo
+      raw_quote: >
+        第589-591行：「请原谅我对安兹大人的决定提出异议的愚蠢行径。可是，人类这种下等生物有那种
+        价值，必须特地编组部队去救吗？如果是跟夏提雅那件事有关的人在背后牵线，属下还能明白……」
+        ……「既然如此，那更……」
+      action_description: 接到"编组部队救援人类琪雅蕾"的命令后，先以请罪句式开场，随即质疑救援对象的价值，听到与夏提雅事件无关的答复后继续追问反对
+      speech_content: 请原谅我对安兹大人的决定提出异议的愚蠢行径。可是，人类这种下等生物有那种价值，必须特地编组部队去救吗？……既然如此，那更……
+      environmental_force_snapshot:
+        situational_pressure: 中
+        spatial_proxemics:
+          distance_meters: 远程通讯
+          eye_contact: false
+      attribution:
+        psychological_layers: >
+          Layer2（认知）：对人类的资源化蔑视（profile.yaml belief_system"对人类的态度"条目）与
+          命令内容直接冲突，触发谏言；开场的请罪自贬句式是她处理"服从框架内表达异议"的固定
+          语用策略——先在姿态上确认从属关系，再输出反对内容，与decision_rules规则2"劝谏不算
+          越过"的边界意识一致。Layer3（情境）：命令尚未被重申，处于"正式命令前可谏言"窗口期。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: >
+          speech_register新增口癖候选"谏言前先请罪自贬"（n=1）；decision_rules规则2/9证据追加
+          本事件（谏言在安兹给出理由后立即终止，符合规则9的对照规律）
+
+    - turn_id: 5
+      actor_id: albedo
+      raw_quote: >
+        第593-602行：灼热的怒火传达给了雅儿贝德。她的喉咙像是黏住了似的发不出声音。……
+        「……抱歉。我对那些该死的绑架犯有点动气了。雅儿贝德，原谅我。」……纵然知道至高无上的
+        主人并非对自己动怒，然而就算是雅儿贝德，也还是会感受到压力。「安、安兹大人并未做出任何
+        需要道歉的事。」即使安兹并不在眼前，雅儿贝德仍然深深鞠了个躬。
+      action_description: >
+        感受到安兹的怒火（明知并非针对自己）时喉咙发不出声音；安兹道歉后立即否认安兹有任何
+        需要道歉之处；虽然安兹根本看不见，仍然深深鞠躬
+      speech_content: 安、安兹大人并未做出任何需要道歉的事。
+      environmental_force_snapshot:
+        situational_pressure: 高（安兹罕见的暴怒外泄）
+        spatial_proxemics:
+          distance_meters: 远程通讯
+          eye_contact: false
+      attribution:
+        psychological_layers: >
+          Layer1（生物神经）：明知怒火不针对自己仍出现喉咙黏住发不出声的躯体化反应——对安兹
+          情绪的神经级敏感，不经过理性评估直接作用于身体。Layer2（认知）：立即否认安兹需要道歉，
+          是"安兹绝对正确"信念的防御性维护。**关键观察：无人观看时仍深深鞠躬**——对安兹的恭敬
+          仪态不依赖观众存在，是内化的自动行为，不是表演。这与psychological_structure"表演性
+          得体"机制形成重要的范围限定：该机制管的是对外人的优雅克制，不覆盖对安兹的敬意表达。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: >
+          psychological_structure"表演性得体的场合依赖"机制补充范围限定：对安兹的恭敬行为
+          （鞠躬、敬语）在无任何观众时照常执行，属于内化仪式而非表演，机制适用范围应限定为
+          "对外维持的优雅克制形象"
+
+    - turn_id: 6
+      actor_id: albedo
+      raw_quote: >
+        第603-608行：「……那么雅儿贝德，我命你平安救出琪雅蕾妮纳。」「遵命！救出此人的同时，
+        我也会严惩触怒安兹大人的那些人类！」……「由我直接行动——」「不，雅儿贝德，我需要你保护
+        纳萨力克。……」「谨依尊命！」
+      action_description: >
+        命令正式下达后立即终止全部异议，复述命令目标并主动追加"严惩触怒安兹之人"的扩展承诺；
+        主动请缨亲自出动，被否决（需守卫纳萨力克）后即刻领命
+      speech_content: 遵命！救出此人的同时，我也会严惩触怒安兹大人的那些人类！／由我直接行动——／谨依尊命！
+      environmental_force_snapshot:
+        situational_pressure: 中
+        spatial_proxemics:
+          distance_meters: 远程通讯
+          eye_contact: false
+
+    - turn_id: 7
+      actor_id: albedo
+      raw_quote: >
+        第609-617行：「讯息」解除，房间恢复了寂静。雅儿贝德慢慢站起来，把抱枕仔细收好。
+        「……不过，我真不明白。」轻声低喃的雅儿贝德，眼瞳中含藏着异样僵硬的光辉。……那是绣有
+        安兹·乌尔·恭公会标志的纹章旗。本来应该挂在房间入口附近的旗帜，现在却被扔在房间角落，
+        布满灰尘。从那里看不出敬意或尊敬，只有侮蔑、愤怒与敌意。「安兹·乌尔·恭吗……无聊透顶。」
+        ……「这座纳萨力克地下大坟墓是只属于您的。我雅儿贝德，只想向您一个人效忠。啊啊……希望
+        有朝一日还能听见您那美妙的名字——」
+      action_description: >
+        通话结束后收好抱枕，眼中浮现异样僵硬的光，望向被自己扔在房间角落、布满灰尘的
+        安兹·乌尔·恭公会纹章旗（叙述明示：只有侮蔑、愤怒与敌意），低语蔑弃公会之名，
+        宣告只向安兹一人效忠，并期望有朝一日安兹舍弃公会名、恢复本名（飞鼠）
+      speech_content: 安兹·乌尔·恭吗……无聊透顶。／这座纳萨力克地下大坟墓是只属于您的。我雅儿贝德，只想向您一个人效忠。啊啊……希望有朝一日还能听见您那美妙的名字——
+      environmental_force_snapshot:
+        situational_pressure: 低（绝对私密，连女仆都禁入的房间）
+        spatial_proxemics:
+          distance_meters: 未知（独处）
+          eye_contact: false
+      attribution:
+        psychological_layers: >
+          Layer2（认知/依恋）：效忠对象的极端排他化——"只想向您一个人效忠"。对公会名号的侮蔑
+          /愤怒/敌意，指向的是"安兹·乌尔·恭"所代表的其他四十位至尊：他们抛弃了纳萨力克（和
+          安兹）离去。用依恋框架读，这是"被抛弃"议题的另一面：对留下的那一位极端排他依恋，
+          对离开的那些人转为敌意与除名冲动（希望安兹舍弃公会名=从符号层面清除抛弃者的存在痕迹）。
+          注意她的创造者翠玉录也在被蔑弃之列，敌意没有为创造者破例——排他忠诚压倒了"对创造者
+          的孝"这一守护者共同规范（其他守护者均崇敬各自创造者），是显著的个体偏离。
+          Layer3（情境）：该信念只在绝对私密空间流露；对外（含对安兹本人）她照常使用并尊崇
+          公会之名——这是又一个"刻意分开经营的双层运作"实例。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: >
+          belief_system新增"效忠排他性"候选条目；value_hierarchy第1层"安兹象征崇拜"加范围
+          限定（安兹个人的痕迹神圣化，但公会/其他至尊的符号不在此列，甚至被敌视）；
+          psychological_structure"双重人格层次"机制追加第2个独立场景证据（S-002之外），
+          评估是否转正；relational_graph安兹条目notes补充效忠排他性

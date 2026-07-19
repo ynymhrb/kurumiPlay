@@ -8,4 +8,4 @@ V0.1→V1.0（CEU格式）阶段的过程记录（run_id C001~C015，卷一~五�
 
 | run_id | date | round | git_ref | scope | candidate_scenes | events_extracted | yield_rate | skipped_with_reason | schema_violations_caught | triggered_revisions | triggered_structure_updates | within_batch_accuracy | cross_validation | notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| （尚无记录，下一次处理卷六时从这里开始） | | | | | | | | | | | | | | |
+| C016 | 2026-07-19 | v2.0 | 见commit | 卷六全卷（4 cluster） | 4 | 1 | 0.25 | B旁白提及/C二手转述无新信息/D纯提及，均无本人言行 | 1（profile.yaml普通标量内含冒号，写入时自查修复） | 6 | 2（双重人格转正+表演性得体范围限定） | 不适用（全卷仅1事件，无法预留自测场景） | 无 | 首个新Event schema处理卷；唯一事件7 turn/3处attribution，信息密度极高（效忠排他性为本卷最重要发现） |

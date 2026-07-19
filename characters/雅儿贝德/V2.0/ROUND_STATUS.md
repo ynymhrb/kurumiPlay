@@ -34,11 +34,22 @@
 - `profile.yaml`：v0.1（迁移+重整完成，MM2/MM4/MM6/MM7原有的"三重验证待回填"、value_hierarchy第3/5层"待坐实"等未完成事项原样保留，未因架构迁移而自动解决）
 - `literary_techniques.md`：v0.1（迁移，1条手法，n=1）
 
+## 卷六~卷十 训练进度（用户指令：连续处理，自主裁决）
+
+| 卷 | 状态 | 事件数 | 要点 |
+|---|---|---|---|
+| 卷六 | ✅ 完成 | 1（YLDB-EV-V6-001，7 turn） | 效忠排他性（只忠于安兹个人，私下敌视公会名号）为最重要发现；"双重人格层次"机制转正confirmed；"表演性得体"机制加范围限定（不覆盖对安兹的恭敬仪态）；preferences首次非空 |
+| 卷七 | ⏳ 待处理 | | |
+| 卷八 | ⏳ 待处理 | | |
+| 卷九 | ⏳ 待处理 | | |
+| 卷十 | ⏳ 待处理 | | 完成后做train阶段收尾（schema复核+机制状态复审+统一自测） |
+
 ## 下一步
 
-1. 卷六——第一个正式使用新Event schema处理的卷，先跑`scripts/locate_candidates.py 雅儿贝德 6`定位候选场景，再按`spec/event_schema.md`的两遍法产出`events/vol6.yaml`
-2. `profile.yaml`里MM2/MM4/MM6/MM7对应的belief_system条目仍未做三重验证回填，`value_hierarchy`第3/5层仍无正式证据支撑，这两项可以和卷六处理并行推进
-3. `psychological_structure`里4条机制全部标注`status: open`（样本量都只有1-2个场景），需要更多卷的证据来判断是否转正为`confirmed`
+1. 卷七起继续逐卷处理（locate_candidates.py → 两遍法 → events/volN.yaml → attribution → profile.yaml反馈）
+2. `profile.yaml`里MM2/MM4/MM6/MM7对应的belief_system条目仍未做三重验证回填，`value_hierarchy`第3/5层仍无正式证据支撑
+3. `psychological_structure`当前2条confirmed（表演性得体、双重人格层次）、2条open（依恋创伤、自我保护性合理化），open条目继续积累证据
+4. 卷十完成后统一跑卷内自测（各卷预留场景不足时改用回顾式预测校验），补齐revision_log里"待卷十完成后统一自测"的eval_after
 
 ---
-最后更新：2026-07-19（架构迁移到CSE完成，卷一~五处理方式定案为选项B，logs/归档整理完成）
+最后更新：2026-07-19（卷六处理完成，profile.yaml升至v0.2）

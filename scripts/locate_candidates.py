@@ -2,8 +2,8 @@
 """候选场景定位脚本（见 spec/eval_protocol.md 第7节步骤1）。
 
 对指定卷的原文按人名 grep 命中行号，自动聚类成 cluster 草稿，写入/更新
-characters/<角色>/V<轮次>/CEU/_index_vol<N>.yaml，供后续两遍法抽取时参考。
-只做机械定位，不判断是否构成 CEU。
+characters/<角色>/V<轮次>/events/_index_vol<N>.yaml，供后续两遍法抽取时参考。
+只做机械定位，不判断是否构成事件（Event）。
 
 用法：
     python3 locate_candidates.py <角色名> <卷号数字> [--round V1.0] [--gap 40] [--pad 15]
@@ -92,7 +92,7 @@ def main():
             "mention_lines": group,
             "brief": "",  # 待抽取时填写场景简述
             "status": "pending",
-            "ceu_ids": [],
+            "event_ids": [],
             "priority": "high" if len(group) >= 3 else "low",
             "notes": "",
         })
@@ -113,11 +113,11 @@ def main():
         },
         "usage_note": (
             "本文件由 scripts/locate_candidates.py 机械生成（按人名grep聚类），"
-            "brief/priority/status 需要处理该cluster时填写/更新，不代表已判断是否构成CEU。"
+            "brief/priority/status 需要处理该cluster时填写/更新，不代表已判断是否构成事件（Event）。"
         ),
     }
 
-    out_dir = os.path.join(round_dir, "CEU")
+    out_dir = os.path.join(round_dir, "events")
     os.makedirs(out_dir, exist_ok=True)
     out_path = os.path.join(out_dir, f"_index_vol{args.volume}.yaml")
 
