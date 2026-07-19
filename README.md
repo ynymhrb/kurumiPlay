@@ -10,12 +10,12 @@
 
 核心理念：小说人物蒸馏的目标不是写一份"这个人物是什么样的人"的简介，而是**提取决定人物言行的深层特征**——价值观、追求、所处环境、人物关系、年龄段、品格等——用这些特征去驱动、模拟人物在新场景下会说什么、会做什么，而不是死记她说过的话、做过的选择本身。
 
-## 两个入口 Skill
+## 本项目即 Skill
 
-整个项目的工作流封装为两个 Claude Code Skill（`.claude/skills/`），这是使用本项目的正式入口：
+整个项目本身就是一个 Claude Code Skill（根目录 `SKILL.md` 为入口），支持两种任务：
 
-- **`character-distill`（角色蒸馏）**：训练侧——开新角色/新轮次、逐卷提取事件、归因、更新profile、dev评估、日志与版本管理
-- **`character-predict`（言行预测）**：推理侧——只加载profile.yaml，走"定观众→存量优先→语域选档"强制三步协议，做盲测填充/新场景RolePlay生成/derivability audit
+- **角色蒸馏**（训练侧）：开新角色/新轮次、逐卷提取事件、归因、更新profile、dev评估、日志与版本管理，产出存放在 `characters/<角色>/` 下
+- **言行预测**（推理侧）：加载 `characters/<角色>/V<最新轮次>/profile.yaml`，走"定观众→存量优先→语域选档"强制三步协议，做盲测填充/新场景RolePlay生成/derivability audit
 
 ## 核心架构（V2.0，CSE认知仿真引擎设计）
 
@@ -60,9 +60,7 @@ Generation（两段式：先按心理内核生成写实反应，再判断是否�
 ```
 character/
 ├── README.md                            本文件
-├── .claude/skills/
-│   ├── character-distill/SKILL.md          角色蒸馏skill（训练流程入口）
-│   └── character-predict/SKILL.md          言行预测skill（推理流程入口，含三步协议）
+├── SKILL.md                             Skill入口：角色蒸馏+言行预测两种任务的完整流程
 ├── spec/
 │   ├── character_static_profile_schema.md  静态特质模型 schema（profile.yaml的结构定义）
 │   ├── event_schema.md                     动态事件/时间线 schema（events/*.yaml的结构定义）
