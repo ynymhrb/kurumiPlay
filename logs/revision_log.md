@@ -264,7 +264,7 @@ round: v2.0
 eval_before: 无
 eval_after: 待卷十完成后统一自测
 delta: 待定
-git_ref: <本次commit>
+git_ref: ac3667e
 
 ## 2026-07-19 — belief_system"效忠排他性"追加第2条推断性关联（"至高王"提案）+ traits新增"以更懂安兹为地位标志"
 
@@ -277,7 +277,7 @@ round: v2.0
 eval_before: 无
 eval_after: 待卷十完成后统一自测
 delta: 待定
-git_ref: <本次commit>
+git_ref: ac3667e
 
 ## 2026-07-19 — speech_register"神圣化升格解读"n 3→4 + relational_graph demiurge共构同盟注记
 
@@ -290,4 +290,4 @@ round: v2.0
 eval_before: 无
 eval_after: 待卷十完成后统一自测
 delta: 待定
-git_ref: <本次commit>
+git_ref: ac3667e
