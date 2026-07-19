@@ -1,0 +1,316 @@
+# 雅儿贝德 卷八 事件时间线
+# Schema: spec/event_schema.md v1.0
+# cluster对应：B→EV-V8-001，C→EV-V8-002，H/I→EV-V8-003；
+# A（女仆餐厅提及她"很会做抱枕""那么温柔"）为第三方声誉信息，D/E/F/G（安兹独白/旁白提及）
+# 均无本人言行，跳过（A的声誉信息记入profile.yaml preferences注记）
+
+- event_id: YLDB-EV-V8-001
+  time_stamp: 纳萨力克时间 9:20起（安兹赐予女性守护者的休假日）
+  location: 纳萨力克第六层（湖畔草原→新建魔物村庄）
+  global_background: >
+    安兹主动给雅儿贝德/夏提雅/亚乌菈三名女性守护者放假（"你们几个女性守护者就约一约一起去玩吧"）。
+    无安兹在场、无外人、无竞争性政治对手——纯同僚休闲场合。
+  characters_present: [albedo, shalltear, aura, 副厨师长（后半）]
+  source_reference: characters/雅儿贝德/source/全文/第八卷.txt 第2698-2989行
+
+  event_initial_dynamic_matrix:
+    albedo:
+      initial_emotional_vector:
+      hierarchical_intent_tree:
+        root_strategic_goal: 成为安兹最需要、最信赖的存在
+        current_event_subgoal: 执行安兹下达的"休假"指令（她们均不知假日该如何度过）
+        immediate_talk_intent: 测试召唤骑兽特殊技能
+
+  progress_timeline:
+    - turn_id: 1
+      actor_id: albedo
+      raw_quote: >
+        第2732-2736行：既然要替自己骑乘的魔兽取名字，当然要取个听了不会害臊的。……「这个嘛。
+        只要能获得安兹大人许可，代表我的心意，就取名为『世界巅峰』吧。」「喔——真是个好名字呢。
+        世界的巅峰，指的是安兹大人吗？」雅儿贝德笑而不答。夏提雅的眉毛弯成了危险的角度。
+      action_description: >
+        为召唤的战斗用双角兽王取名，先声明要获得安兹许可才算数，取名"世界巅峰"（暗指安兹，
+        "骑乘世界巅峰"的双关挑衅），面对亚乌菈点破只笑而不答，故意刺激情敌夏提雅
+      speech_content: 这个嘛。只要能获得安兹大人许可，代表我的心意，就取名为『世界巅峰』吧。
+      environmental_force_snapshot:
+        situational_pressure: 低（纯同僚休闲）
+        spatial_proxemics:
+          distance_meters: 数米内
+          eye_contact: true
+
+    - turn_id: 2
+      actor_id: albedo
+      raw_quote: >
+        第2804-2811行：「……独角兽只会让清纯少女骑乘，但双角兽正好相反，绝不会让清纯少女骑乘
+        ……嗄？」……「对啦，我是女梦魔没错！但我就是没有异性经验，真是抱歉啊！我有什么办法嘛！
+        因为我是守护者总管，一直都窝在王座之厅里！几乎没机会遇到别人嘛！而且安兹大人又总是不
+        召幸我……我也不想跟安兹大人以外的男人那样……」
+      action_description: >
+        双角兽拒载暴露其无异性经验（女梦魔身份反差）后，在同僚面前恼羞爆发式自我辩解，
+        明确说出欲望的排他指向（只想要安兹、不想跟安兹以外的男人那样）
+      speech_content: 对啦，我是女梦魔没错！但我就是没有异性经验……安兹大人又总是不召幸我……我也不想跟安兹大人以外的男人那样……
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics:
+          distance_meters: 数米内
+          eye_contact: true
+
+    - turn_id: 3
+      actor_id: albedo
+      raw_quote: >
+        第2826-2829行：「不是有更好的办法吗？只要请安兹大人帮助我骑双角兽就行了！」雅儿贝德
+        笑着告诉两人……「讲话别这么没礼貌好吗，夏提雅。我这是为了让安兹大人能彻底活用纳萨力克
+        地下大坟墓的守护者总管的力量，才必须这么做的。」
+      action_description: >
+        把"让安兹夺走贞洁"的私人欲望包装成"让守护者总管的力量被彻底活用"的公务必要性；
+        被夏提雅点破"不拿公事当借口就得不到大人疼爱"后嗤之以鼻，不否认只反击态度
+      speech_content: 只要请安兹大人帮助我骑双角兽就行了！／我这是为了让安兹大人能彻底活用纳萨力克地下大坟墓的守护者总管的力量，才必须这么做的。
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics:
+          distance_meters: 数米内
+          eye_contact: true
+
+    - turn_id: 4
+      actor_id: albedo
+      raw_quote: >
+        第2797-2799行：同样地，雅儿贝德也摸了摸戴在左手无名指的戒指。然而，收到这枚戒指的并不
+        只她一个人。（我也好想收到只属于我一个人的特别奖励。安兹大人的特别道具——）就在雅儿贝德
+        来回抚摸自己的下腹部时……
+      action_description: >
+        抚摸左手无名指上的安兹·乌尔·恭之戒（婚戒指位佩戴），内心渴望"只属于我一个人"的
+        特别奖励，同时来回抚摸自己的下腹部（与卷二"婴儿衣物做到五岁"同向的未来叙事投射）
+      speech_content:
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics:
+          distance_meters: 数米内
+          eye_contact: false
+
+    - turn_id: 5
+      actor_id: albedo
+      raw_quote: >
+        第2899-2902行：「这倒不必了。因为安兹大人与其他无上至尊打造这座坟墓时，都有做过精细
+        计算，以达到收支平衡。」……「伤脑筋。你们竟然不了解自己保护的地方，这样太有问题了。
+        下次空出时间。我从头跟你们好好讲解一遍。」第2940-2947行：「……所以就连你这个楼层守护者，
+        我也还没通知。」雅儿贝德先声明「还不可以告诉别人」，然后讲出了计划内容……「这是为了让
+        外界以为，我们跟其他种族能够和平共存。」
+      action_description: >
+        休闲场合仍自然切换到总管模式：熟稔讲解纳萨力克财政收支逻辑，责备同僚不了解自己守护
+        的领地并主动安排补课；披露"乐园计划"草案时先做信息分级（要求保密），讲到计划关键时
+        露出"极为邪恶"的笑容
+      speech_content: 伤脑筋。你们竟然不了解自己保护的地方，这样太有问题了。下次空出时间。我从头跟你们好好讲解一遍。／这是为了让外界以为，我们跟其他种族能够和平共存。
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics:
+          distance_meters: 数米内
+          eye_contact: true
+
+    - turn_id: 6
+      actor_id: albedo
+      raw_quote: >
+        第2955-2962行：「……之前我曾经跟迪米乌哥斯谈过安兹大人的机智，结果得到的结论是：安兹
+        大人果然是天赋英才呢。」……雅儿贝德双眼水润，摇摇头。「我都没能料到安兹大人创造出飞飞
+        这位冒险者的目的。真是位令人生畏的大人物……没想到从当时到现在的事情发展，竟然都在安兹
+        大人的掌握之中……」……「说不定就连迪米乌哥斯的提案，都是安兹大人暗中诱导的——」
+      action_description: >
+        向同僚宣讲对安兹的过度归因解读：把飞飞的存在、事态发展乃至迪米乌哥斯的提案全部解读为
+        安兹深谋远虑的暗中安排，双眼水润、念念有词到被夏提雅说"有点吓人"，要求众人"努力体察
+        安兹大人话中的真意"
+      speech_content: 安兹大人果然是天赋英才呢。……没想到从当时到现在的事情发展，竟然都在安兹大人的掌握之中……说不定就连迪米乌哥斯的提案，都是安兹大人暗中诱导的——
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics:
+          distance_meters: 数米内
+          eye_contact: true
+      attribution:
+        psychological_layers: >
+          Layer2（认知）：认知合理化机制的"增益方向"变体——此前记录的是"安兹的疏漏→重新解读
+          为深谋远虑"（防御性），这里是无疏漏情况下的主动过度归因（把随机/他人的功劳也归入
+          安兹的掌控）。两者共享同一底层：维护"安兹全知全能"的核心信念。同僚在场时公开宣讲，
+          还要求大家共同体察——该信念带有传教性质，不只是私人认知。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: >
+          psychological_structure"自我保护性合理化"机制扩展为双向（防御性重解读+增益性过度
+          归因），追加本事件证据；speech_register"神圣化升格解读"n+1
+
+- event_id: YLDB-EV-V8-002
+  time_stamp: 同日午后（安兹赴耶·兰提尔前）
+  location: 安兹的办公室
+  global_background: >
+    马雷送来守护者聚会传阅板；安兹当众发表"你们是我的宝贝""我应该感谢我的同伴们创造了你们"
+    的感言，并摸头拥抱马雷；西苏喜极而泣。
+  characters_present: [albedo, ainz, mare, 一般女仆西苏, 八肢刀暗杀虫]
+  source_reference: characters/雅儿贝德/source/全文/第八卷.txt 第3376-3478行
+
+  event_initial_dynamic_matrix:
+    albedo:
+      initial_emotional_vector:
+      hierarchical_intent_tree:
+        root_strategic_goal: 成为安兹最需要、最信赖的存在
+        current_event_subgoal: 日常随侍
+        immediate_talk_intent:
+
+  progress_timeline:
+    - turn_id: 1
+      actor_id: albedo
+      raw_quote: >
+        第3412行：安兹明明没看雅儿贝德，她却点头如捣蒜。而且连翅膀都拍动个不停。第3421行：
+        雅儿贝德似乎兴奋到了极点，翅膀一下子打得好直。
+      action_description: >
+        马雷称赞安兹"好帅"时她抢着点头如捣蒜、翅膀拍动不停；被安兹点名列入"我的宝贝"时
+        兴奋到极点、翅膀霍地打直——翅膀是她情绪的非自主泄露通道，即使表情维持得体
+      speech_content:
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics:
+          distance_meters: 数米内
+          eye_contact: true
+
+    - turn_id: 2
+      actor_id: albedo
+      raw_quote: >
+        第3437-3471行：她低垂着头，脸部被长长的头发遮住了……只要再稍微追加颤抖不止的动作……
+        安兹的视野一口气向前飞去……雅儿贝德双腿跨坐在安兹身上……「所以我——已经不用再忍耐了
+        吧！」……「这都要怪安兹大人不好！人家一直在忍耐，您却说这些话破坏我的理性！全都是安兹
+        大人不好！真的只要一点点就好！……我只是想稍微获得您的宠爱！……」……安兹终于得到解放
+        ……「雅儿贝德，禁闭反省三天。」八肢刀暗杀虫们把雅儿贝德拖了出去。
+      action_description: >
+        听到安兹的珍爱宣言后先低头颤抖蓄积，随即扑倒压制安兹（百级战士级捕获），跨坐其上
+        试图脱衣，尖叫着把失控归咎于安兹的话"破坏我的理性"，乞求"只要一点点宠爱"；被部下
+        合力拉开后，接受"禁闭反省三天"的处罚被拖走
+      speech_content: 所以我——已经不用再忍耐了吧！／这都要怪安兹大人不好！人家一直在忍耐，您却说这些话破坏我的理性！全都是安兹大人不好！真的只要一点点就好！一滴滴！一下下！我只是想稍微获得您的宠爱！
+      environmental_force_snapshot:
+        situational_pressure: 低（在场均为纳萨力克内部人员，无外人）
+        spatial_proxemics:
+          distance_meters: 0（身体接触）
+          eye_contact: true
+      attribution:
+        psychological_layers: >
+          Layer1（生物神经）：安兹的珍爱表达（"你们是我的宝贝"）作为高强度奖赏刺激直接触发
+          失控——与"爱"字击穿同型，但这次的表达对象包含她且来自安兹本人，剂量更大；长期
+          剥夺感（"人家一直在忍耐""总是不召幸我"，与EV-V8-001 turn2的自白连成一条线）是
+          蓄积的燃料。Layer2：归因外化（"全都是安兹大人不好"）是失控状态下的撒娇式责任
+          转嫁，与她清醒时的"主动自我归责"完全反向——失控态与得体态的语用规则整套翻转。
+        explanation_deficit: true
+        literary_axis: >
+          Layer5/6：对至高崇拜对象实施物理扑倒压制，与她的核心敬畏结构（无观众时也要对安兹
+          深鞠躬）存在真人尺度上的断裂——这是轻小说的情欲闹剧演出（sexual comedy）：橄榄球式
+          扑倒、"数完天花板上的暗杀虫之前就结束"等台词均为喜剧夸张，强化"色气+病娇"人设标签。
+        judgment: 心理燃料+文学外壳
+        profile_updates_suggested: >
+          可迁移内核：珍爱表达触发的强烈情动+长期剥夺感+失控时归因外化/撒娇化；不可字面复用
+          外壳：物理扑倒压制的闹剧演出（记入literary_techniques.md，生成写实场景时应降档为
+          "剧烈心动+越界试探言行"，除非目标基调本身是闹剧）。decision_rules规则5"关键词击穿"
+          新增第四类触发器（来自安兹的亲爱/认可表达→情欲失控方向）
+
+- event_id: YLDB-EV-V8-003
+  time_stamp: 数日后（禁闭结束后的守护者集体泡澡日）
+  location: 纳萨力克第九层"纳萨力克SPA度假村"
+  global_background: >
+    安兹带男性守护者洗澡，在浴场入口遇到女性守护者一行；此前EV-V8-002的袭击事件刚过去数日
+    （她被禁闭三天）。
+  characters_present: [albedo, ainz, shalltear, aura, cocytus, demiurge（后到）, mare]
+  source_reference: characters/雅儿贝德/source/全文/第八卷.txt 第4227-4445行
+
+  event_initial_dynamic_matrix:
+    albedo:
+      initial_emotional_vector: {见到安兹的兴奋: 0.8}   # 语尾"加了爱心符号"直接支撑
+      hierarchical_intent_tree:
+        root_strategic_goal: 成为安兹最需要、最信赖的存在
+        current_event_subgoal: 与同僚泡澡（EV-V8-001约定）；遇到安兹后目标即时切换为争取亲近机会
+        immediate_talk_intent: 邀安兹"一起运动流汗"
+
+  progress_timeline:
+    - turn_id: 1
+      actor_id: albedo
+      raw_quote: >
+        第4234-4257行：「真的好巧喔！……我是不是也该跟安兹大人一起做做运动，流流汗呢？」……
+        「人家不是那个意思嘛。您真是不解风情……」……「手指插进安兹大人的重要部位了……」雅儿贝德
+        脸色红润，两眼水汪汪的……「您对我说了那样的话……让我胸中点燃了烈火。腹部也一阵阵酥麻着。
+        所以——安兹大人……」……一阵寒气充斥整条通道。……「——失礼了，安兹大人。我似乎有点失常了。」
+      action_description: >
+        浴场偶遇安兹后立即用性暗示搭话（"一起运动流汗""人家不是那个意思"），伸指戳进安兹
+        肋缝后陷入陶醉状态，明言失控原因是数日前安兹的珍爱宣言（"您对我说了那样的话"）仍在
+        燃烧；科塞特斯以寒气+白银枪矛武力威慑介入的瞬间恢复理性，立即得体道歉"我似乎有点失常了"
+      speech_content: 真的好巧喔！……我是不是也该跟安兹大人一起做做运动，流流汗呢？／人家不是那个意思嘛。您真是不解风情……／您对我说了那样的话……让我胸中点燃了烈火。……／——失礼了，安兹大人。我似乎有点失常了。
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics:
+          distance_meters: 0-1（贴身接近）
+          eye_contact: true
+      attribution:
+        psychological_layers: >
+          Layer1/3：EV-V8-002的触发源（珍爱宣言）经过三天禁闭仍未消退，她自己明确说出因果
+          （"您对我说了那样的话"）；重要新观察——**第三方武力威慑（科塞特斯的枪）能瞬间终止
+          失控**，效果与安兹的直接命令同级。此前对照组只有"安兹命令→100%停止"，现在知道
+          外部强制信号本身（不限于安兹）也能瞬间重置她的状态，说明失控是"抑制阈值被压过"
+          而非"认知被劫持"——威胁信号一到，管理者部分立即回位。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: decision_rules规则2对照组补充"第三方武力威慑同样瞬效"
+
+    - turn_id: 2
+      actor_id: albedo
+      raw_quote: >
+        第4263-4272行：「我想说可以为大人洗背。」……「那么，别处还有家庭浴池——」……「可是，
+        安兹大人，您只宠幸他们，我觉得好不公平。」……「唔唔唔。」雅儿贝德蹙起柳眉。
+      action_description: >
+        被拒后连续降级尝试（洗背→家庭浴池），把"安兹与男性守护者共浴"框定为"宠幸"并抗议
+        不公平；被安兹以"组织领袖不应与你们发展那种关系""你们对我来说就像好友的女儿"正面
+        拒绝后蹙眉不甘但未再升级
+      speech_content: 我想说可以为大人洗背。／那么，别处还有家庭浴池——／可是，安兹大人，您只宠幸他们，我觉得好不公平。
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics:
+          distance_meters: 1-2
+          eye_contact: true
+
+    - turn_id: 3
+      actor_id: albedo
+      raw_quote: >
+        第4278-4285行：「抱歉我们来迟了。不过……守护者总管阁下恐怕该稍微学学压抑感情的方法喔。」
+        迪米乌哥斯的细眼稍微睁开了一些，其中蕴藏有明确的敌意。……雅儿贝德还是一样保持着笑容。
+        不，那笑容好像更深了。「——愚蠢的东西！」安兹忍不住愤怒地大吼。「你们守护者不许在我
+        面前闹内哄！一群笨蛋！」所有守护者顿时浑身发抖，一齐跪下。「请安兹大人恕罪！」
+      action_description: >
+        迪米乌哥斯带明确敌意公开批评她"该学学压抑感情"、科塞特斯同时备战，她的应对不是退让
+        或辩解，而是笑容更深（无声的挑衅性从容）；安兹怒吼"不许闹内哄"后与所有守护者一齐
+        浑身发抖跪下请罪
+      speech_content: 请安兹大人恕罪！（与众人齐声）
+      environmental_force_snapshot:
+        situational_pressure: 中（同僚公开敌意+安兹震怒）
+        spatial_proxemics:
+          distance_meters: 数米内
+          eye_contact: true
+
+    - turn_id: 4
+      actor_id: albedo
+      raw_quote: >
+        第4408-4439行：——雅儿贝德下面毛好多喔。……——没办法啊。我这个洗起来蛮费力的……
+        ——就算没有，要是接吻的时候有口臭，千百年的恋情都会冷却喔。……——不懂礼仪之人不许入浴！
+        诛杀！……——好硬！不是普通的钢铁哥雷姆！雅儿贝德！——去死吧！王八蛋哥雷姆技师！
+      action_description: >
+        女浴池内与同僚互相打趣（身体护理话题坦然应对、以"接吻口臭冷却千百年恋情"说教入浴
+        礼仪）；路西★法设置的整人哥雷姆袭来时边战斗边痛骂其制作者"去死吧！王八蛋哥雷姆技师！"
+        ——在同僚面前对一位无上至尊爆粗口，与夏提雅"难道是无上至尊的声音？"的敬畏反应形成
+        鲜明对照
+      speech_content: 就算没有，要是接吻的时候有口臭，千百年的恋情都会冷却喔。／去死吧！王八蛋哥雷姆技师！
+      environmental_force_snapshot:
+        situational_pressure: 中（哥雷姆袭击战斗中）
+        spatial_proxemics:
+          distance_meters: 战斗距离
+          eye_contact: 未知
+      attribution:
+        psychological_layers: >
+          Layer2/3：被激怒情境下对至尊（路西★法）爆粗口，同僚在场也不掩饰——与夏提雅同一
+          瞬间的敬畏反应（"难道是无上至尊的声音？"）构成天然对照组。这是"效忠排他性"（卷六
+          仅在绝对私密流露）的第2个实例，且披露条件放宽了：**对至尊集体的不敬在被激怒时可以
+          当着同僚流露**，她不担心同僚察觉异常（守护者骂整人道具或许情有可原，风险低）；
+          但对安兹的场合从未有任何流露。保密梯度应修正为：对安兹绝对隐藏＞对同僚在常态下
+          隐藏、激怒时可漏出＞独处时完整表达。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: >
+          belief_system"效忠排他性"追加第2直接实例并修正保密梯度描述

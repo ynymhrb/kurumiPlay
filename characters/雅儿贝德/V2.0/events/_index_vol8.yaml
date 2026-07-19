@@ -1,0 +1,210 @@
+source: characters/雅儿贝德/source/全文/第八卷.txt
+total_lines: 4481
+total_mention_lines: 103
+last_scanned: 由 locate_candidates.py 自动生成，未经人工复核
+clusters:
+- cluster_id: A
+  line_range:
+  - 2566
+  - 2637
+  mention_lines:
+  - 2581
+  - 2621
+  - 2622
+  brief: 女仆餐厅闲谈提及（布偶手艺/温柔声誉），第三方信息，已记入profile preferences
+  status: skipped
+  event_ids: []
+  priority: high
+  notes: ''
+- cluster_id: B
+  line_range:
+  - 2680
+  - 2997
+  mention_lines:
+  - 2695
+  - 2699
+  - 2705
+  - 2713
+  - 2714
+  - 2720
+  - 2722
+  - 2729
+  - 2732
+  - 2734
+  - 2736
+  - 2741
+  - 2743
+  - 2746
+  - 2748
+  - 2750
+  - 2782
+  - 2795
+  - 2797
+  - 2799
+  - 2801
+  - 2803
+  - 2806
+  - 2808
+  - 2812
+  - 2814
+  - 2822
+  - 2823
+  - 2827
+  - 2829
+  - 2838
+  - 2840
+  - 2843
+  - 2859
+  - 2878
+  - 2882
+  - 2889
+  - 2901
+  - 2903
+  - 2929
+  - 2930
+  - 2939
+  - 2941
+  - 2944
+  - 2954
+  - 2957
+  - 2961
+  - 2982
+  brief: 女性守护者休假日（双角兽/处女暴露/公事包装/戒指下腹/乐园计划/过度归因）
+  status: done
+  event_ids:
+  - YLDB-EV-V8-001
+  priority: high
+  notes: ''
+- cluster_id: C
+  line_range:
+  - 3337
+  - 3489
+  mention_lines:
+  - 3352
+  - 3353
+  - 3376
+  - 3400
+  - 3401
+  - 3412
+  - 3420
+  - 3421
+  - 3427
+  - 3437
+  - 3438
+  - 3447
+  - 3449
+  - 3452
+  - 3454
+  - 3456
+  - 3457
+  - 3461
+  - 3463
+  - 3464
+  - 3470
+  - 3471
+  - 3472
+  - 3474
+  brief: 办公室"宝贝"宣言→扑倒安兹→禁闭三天
+  status: done
+  event_ids:
+  - YLDB-EV-V8-002
+  priority: high
+  notes: ''
+- cluster_id: D
+  line_range:
+  - 3617
+  - 3647
+  mention_lines:
+  - 3632
+  brief: 安兹在耶·兰提尔的内心独白提及
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: E
+  line_range:
+  - 3680
+  - 3735
+  mention_lines:
+  - 3695
+  - 3720
+  brief: 旁白"雅儿贝德正在关禁闭"
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: F
+  line_range:
+  - 3750
+  - 3795
+  mention_lines:
+  - 3765
+  - 3780
+  brief: 安兹内心呼唤两大智囊不在场
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: G
+  line_range:
+  - 3876
+  - 3906
+  mention_lines:
+  - 3891
+  brief: 亚乌菈对话中安兹被问"爱雅儿贝德还是夏提雅"，她本人不在场
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: H
+  line_range:
+  - 4214
+  - 4305
+  mention_lines:
+  - 4229
+  - 4231
+  - 4233
+  - 4242
+  - 4244
+  - 4248
+  - 4250
+  - 4252
+  - 4254
+  - 4256
+  - 4258
+  - 4262
+  - 4265
+  - 4270
+  - 4271
+  - 4272
+  - 4279
+  - 4280
+  - 4290
+  brief: SPA偶遇：二次越界+科塞特斯威慑瞬止+迪米乌哥斯敌意冲突
+  status: done
+  event_ids:
+  - YLDB-EV-V8-003
+  priority: high
+  notes: ''
+- cluster_id: I
+  line_range:
+  - 4393
+  - 4453
+  mention_lines:
+  - 4408
+  - 4417
+  - 4438
+  brief: 女浴池闲谈+路西法哥雷姆袭击痛骂事件
+  status: done
+  event_ids:
+  - YLDB-EV-V8-003
+  priority: high
+  notes: ''
+progress_summary:
+  clusters_total: 9
+  clusters_done: 4
+  clusters_partial: 0
+  clusters_pending: 0
+  processing_order: sequential
+  next_recommended: null
+usage_note: 本文件由 scripts/locate_candidates.py 机械生成（按人名grep聚类），brief/priority/status 需要处理该cluster时填写/更新，不代表已判断是否构成事件（Event）。
