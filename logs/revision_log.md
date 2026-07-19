@@ -134,7 +134,7 @@ round: v2.0
 eval_before: 无
 eval_after: 待卷十完成后统一自测
 delta: 待定
-git_ref: <本次commit>
+git_ref: 98e2e44
 
 ## 2026-07-19 — decision_rules 新增候选规则13（推断性）+ psychological_structure"双重人格层次"追加第3场景 + belief_system"效忠排他性"推断性关联
 
@@ -147,7 +147,7 @@ round: v2.0
 eval_before: 无
 eval_after: 待卷十完成后统一自测
 delta: 待定
-git_ref: <本次commit>
+git_ref: 98e2e44
 
 ## 2026-07-19 — belief_system"秩序观"扩展（安兹必须是秩序顶点）+ decision_rules规则9/10证据追加
 
@@ -160,7 +160,7 @@ round: v2.0
 eval_before: 无
 eval_after: 待卷十完成后统一自测
 delta: 待定
-git_ref: <本次commit>
+git_ref: 98e2e44
 
 ## 2026-07-19 — decision_rules规则5"关键词击穿"新增第三类触发器 + speech_register"主动自我归责"n 2→3
 
@@ -173,7 +173,7 @@ round: v2.0
 eval_before: 无
 eval_after: 待卷十完成后统一自测
 delta: 待定
-git_ref: <本次commit>
+git_ref: 98e2e44
 
 ## 2026-07-19 — speech_register新增"神圣化升格解读"口癖（n=2）+ talents组织管理条目卷七实证
 
@@ -186,4 +186,4 @@ round: v2.0
 eval_before: 无
 eval_after: 待卷十完成后统一自测
 delta: 待定
-git_ref: <本次commit>
+git_ref: 98e2e44
