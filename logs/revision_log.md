@@ -393,4 +393,4 @@ change_type: 结构重构+1条逻辑新增+10条建议撤回
 round: v2.0
 eval_before: vol13盲测均分0.55（推理端错误与profile缺口混杂）
 eval_after: 待下一次盲测检验（推理流程改进：先查存量行为→按对象关系缩放语域）
-git_ref: 待回填
+git_ref: 8b51cff
