@@ -1,0 +1,346 @@
+# 雅儿贝德 卷七 事件时间线
+# Schema: spec/event_schema.md v1.0
+# cluster对应：A/B/C→EV-V7-001，E→EV-V7-002，G/H/I/J→EV-V7-003，K→EV-V7-004；
+# F（尼罗斯特拷问室独白提及"雅儿贝德那个丑八怪"）为第三方言论，不构成她的事件，跳过
+
+- event_id: YLDB-EV-V7-001
+  time_stamp: 塞巴斯王都事件结束后，安兹赴帝都前（全员大集会）
+  location: 纳萨力克第十层王座之厅
+  global_background: >
+    安兹召集史上最大规模集会（超过两百人）进行论功行赏并宣布今后方针；迪米乌哥斯当众提出
+    "征服世界"框架与"建立纳萨力克国家"提案。
+  characters_present: [albedo, ainz, demiurge, sebas, solution, entoma, 全体守护者与精锐仆役]
+  source_reference: characters/雅儿贝德/source/全文/第七卷.txt 第24-182行
+
+  event_initial_dynamic_matrix:
+    albedo:
+      initial_emotional_vector:    # 原文对事件开始时她的情绪无直接描写，留空
+      hierarchical_intent_tree:
+        root_strategic_goal: 成为安兹最需要、最信赖的存在
+        current_event_subgoal: 以守护者总管身份立于王座旁完成大典仪式性职责
+        immediate_talk_intent:
+
+  progress_timeline:
+    - turn_id: 1
+      actor_id: albedo
+      raw_quote: >
+        第38-41行：这个问题让守护者总管雅儿贝德相当烦恼，不知道该不该将他们与NPC同等看待。
+        当她请示安兹时，安兹破颜一笑，高声说放在最低地位就行了。……听了宽宏大量的主人做出的
+        判断，雅儿贝德虽然感动得落泪，却不能回答「属下明白了」，她烦恼了半天，最后决定破例将
+        主人创造的不死者们排成直排而非横排，把这个问题蒙混过去。
+      action_description: >
+        （叙述回溯，发生于集会筹备期）为安兹亲手创造的不死者的座次烦恼并请示；听到安兹"放最低
+        地位就行"的判断后感动落泪，却无法照办——最终采用折中方案（直排而非横排）技术性执行
+        命令字面、实质维护"安兹造物不可怠慢"的更高价值，把问题蒙混过去
+      speech_content:
+      environmental_force_snapshot:
+        situational_pressure: 低（筹备期独自决策）
+        spatial_proxemics:
+          distance_meters: 未知
+          eye_contact: 未知
+      attribution:
+        psychological_layers: >
+          Layer2（认知）：安兹的明示判断（自己的造物最低贱）与她的核心价值（安兹的一切神圣
+          不可怠慢）冲突。她既不能违令、也无法执行，产出第三条路：技术性合规的折中（直排）。
+          这是decision_rules里尚未记录的新模式——不是危机违令（规则2第三层例外），而是
+          **和平场景下对"字面服从vs实质尊崇"冲突的柔性解法**。同时"感动得落泪"是把安兹的
+          随口判断升格为"宽宏大量"的神圣化解读。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: >
+          decision_rules新增候选规则12（折中执行模式）；speech_register新增"对安兹日常言行
+          做神圣化升格解读（感动落泪级）"行为特征（本卷两例，另见EV-V7-004 turn6）
+
+    - turn_id: 2
+      actor_id: albedo
+      raw_quote: >
+        第173-174行：「我的意见也相同，安兹大人。做为组织浮上台面，就可以公然应对问题。不用
+        像现在这样只能派遣极少数人员，私底下悄悄探查。」
+      action_description: 方针辩论中表态支持迪米乌哥斯"浮上台面"提案，并给出自己的论证（公开应对优于地下刺探）
+      speech_content: 我的意见也相同，安兹大人。做为组织浮上台面，就可以公然应对问题。不用像现在这样只能派遣极少数人员，私底下悄悄探查。
+      environmental_force_snapshot:
+        situational_pressure: 中（两百人大典公开发言）
+        spatial_proxemics:
+          distance_meters: 王座斜前方侍立位
+          eye_contact: 未知
+
+    - turn_id: 3
+      actor_id: albedo
+      raw_quote: >
+        第176-179行：「所以要从地下支配王国，用各种手段让纳萨力克这个组织获得认可，对吧？
+        可是安兹大人统治的这片土地，若得沦为哪个国家的一个组织，我可不同意喔。」……
+        「这又是为什么呢？」
+      action_description: >
+        对迪米乌哥斯的方案先复述确认要点，随即亮出红线——安兹统治的土地不可从属于任何国家；
+        对迪米乌哥斯的回应继续追问论据，直到对方给出"建立纳萨力克国家"的完整提案
+      speech_content: 所以要从地下支配王国……对吧？可是安兹大人统治的这片土地，若得沦为哪个国家的一个组织，我可不同意喔。／这又是为什么呢？
+      environmental_force_snapshot:
+        situational_pressure: 中
+        spatial_proxemics:
+          distance_meters: 王座斜前方侍立位
+          eye_contact: 未知
+
+- event_id: YLDB-EV-V7-002
+  time_stamp: 安兹从帝都归返当日（工作者入侵演习开始前）
+  location: 王座之厅
+  global_background: >
+    迪米乌哥斯的计划引诱帝国工作者小队入侵纳萨力克，安兹命雅儿贝德利用实战视察她调整过的
+    防卫系统（限用免费陷阱）。
+  characters_present: [albedo, ainz]
+  source_reference: characters/雅儿贝德/source/全文/第七卷.txt 第1876-1922行
+
+  event_initial_dynamic_matrix:
+    albedo:
+      initial_emotional_vector: {迎接安兹的喜悦: 0.8}   # "花朵绽放般的笑容""蕴含着爱怜的光彩"直接支撑
+      hierarchical_intent_tree:
+        root_strategic_goal: 成为安兹最需要、最信赖的存在
+        current_event_subgoal: 向安兹展示自己调整的防卫系统的价值（演习是她的业务考核场）
+        immediate_talk_intent: 迎接归返+汇报准备状态
+
+  progress_timeline:
+    - turn_id: 1
+      actor_id: albedo
+      raw_quote: >
+        第1876-1884行：「欢迎回家，安兹大人。」……深深鞠躬的女性抬起头来，绝世美貌浮现着花朵
+        绽放般的笑容，一直线地——好像看不见其他事物似的凝视着安兹。……「万无一失，我想一定能
+        让各位贵客好好享受一番。」
+      action_description: 深鞠躬迎接传送归来的安兹，抬头后以专注到"看不见其他事物"的目光凝视，确认演习准备万无一失（用"贵客""款待"反讽入侵者）
+      speech_content: 欢迎回家，安兹大人。／万无一失，我想一定能让各位贵客好好享受一番。
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics:
+          distance_meters: 数米内
+          eye_contact: true
+
+    - turn_id: 2
+      actor_id: albedo
+      raw_quote: >
+        第1903-1907行：「我想不会。不过，有个问题想请问大人，如果是入侵者封锁了入口，阿里阿德涅
+        会启动吗？」……「那么如果是人类操作进行的话，又会如何呢？」
+      action_description: 就阿里阿德涅系统的边界条件向安兹连续提出两个具体技术追问（入侵者封锁入口/人类手动操作两种情形）
+      speech_content: 我想不会。不过，有个问题想请问大人，如果是入侵者封锁了入口，阿里阿德涅会启动吗？／那么如果是人类操作进行的话，又会如何呢？
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics:
+          distance_meters: 数米内
+          eye_contact: true
+
+    - turn_id: 3
+      actor_id: albedo
+      raw_quote: >
+        第1919-1920行：「雅儿贝德，不许让任何一个人安然离开，知道吗？」「这是当然了，请大人
+        好好欣赏这些擅闯无上至尊堡垒的愚蠢盗贼，会有什么样的下场。还有……大人之前说过想找人
+        当剑术实验的白老鼠，要选哪一批人才好呢？」
+      action_description: >
+        领命后把处刑框架转述为"请大人欣赏愚蠢盗贼的下场"的表演；主动想起并提醒安兹此前随口
+        提过的需求（剑术练习对象），请他当场挑选
+      speech_content: 这是当然了，请大人好好欣赏这些擅闯无上至尊堡垒的愚蠢盗贼，会有什么样的下场。还有……大人之前说过想找人当剑术实验的白老鼠，要选哪一批人才好呢？
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics:
+          distance_meters: 数米内
+          eye_contact: true
+
+- event_id: YLDB-EV-V7-003
+  time_stamp: 演习当夜（工作者"四谋士"小队被引入第六层竞技场）
+  location: 纳萨力克第六层圆形竞技场
+  global_background: >
+    冒用无上至尊之名的工作者小队"四谋士"被安兹亲自迎战（练习剑术兼处刑），雅儿贝德以
+    "决斗助手"身份随行，亚乌菈亦在场。
+  characters_present: [albedo, ainz, aura, 四谋士小队, shalltear（贵宾席）]
+  source_reference: characters/雅儿贝德/source/全文/第七卷.txt 第2934-3294行
+
+  event_initial_dynamic_matrix:
+    albedo:
+      initial_emotional_vector:
+      hierarchical_intent_tree:
+        root_strategic_goal: 成为安兹最需要、最信赖的存在
+        current_event_subgoal: 以决斗助手身份护卫并辅助安兹的处刑演出
+        immediate_talk_intent:
+
+  progress_timeline:
+    - turn_id: 1
+      actor_id: albedo
+      raw_quote: >
+        第3009-3010行：「……雅儿贝德、亚乌菈，还有其他听得见我的声音的守护者们，捂起你们的
+        耳朵。」绝世美女与黑暗精灵男孩，都各自塞住了耳朵。……美女则是可爱地用手盖住耳朵。
+        两人这就是在表示：您接下来说的话，我们都没听见。
+      action_description: 安兹要抱怨计划（守护者不该听的"任性"）前命众人捂耳，她立即可爱地用手盖住耳朵，配合完成"没听见"的仪式
+      speech_content:
+      environmental_force_snapshot:
+        situational_pressure: 中（处刑现场，敌我均在场）
+        spatial_proxemics:
+          distance_meters: 安兹身侧
+          eye_contact: 未知
+
+    - turn_id: 2
+      actor_id: albedo
+      raw_quote: >
+        第3112-3120行：「——安兹大人，是不是该玩够了呢？」……「恕我失礼，但我认为放任假冒
+        无上至尊之名的傲慢盗匪继续享受自由，似乎是一件令人难以容忍的事。给予他们慈悲的时间
+        是不是该结束了呢？」「欸，雅儿贝德，怎么可以对安兹大人——」「——不，亚乌菈。她说得的
+        确没错。」……「真是太精彩了。不愧是贵为我等统治者的无上至尊。」……「怎么说是场面话呢！
+        我是真心如此认为的。」
+      action_description: >
+        主动打断安兹与敌人的缠斗，以"恕我失礼"开场进言收尾（论据：放任冒名者享受自由难以容忍）；
+        亚乌菈当场质疑她对安兹无礼，但安兹采纳其进言；随后盛赞安兹表现，被安兹说是场面话时
+        立刻认真反驳"我是真心如此认为的"
+      speech_content: ——安兹大人，是不是该玩够了呢？／恕我失礼，但我认为放任假冒无上至尊之名的傲慢盗匪继续享受自由，似乎是一件令人难以容忍的事。……／真是太精彩了。不愧是贵为我等统治者的无上至尊。／怎么说是场面话呢！我是真心如此认为的。
+      environmental_force_snapshot:
+        situational_pressure: 中（公开场合，同僚在场）
+        spatial_proxemics:
+          distance_meters: 安兹身侧
+          eye_contact: true
+      attribution:
+        psychological_layers: >
+          Layer3（情境）：同僚亚乌菈认为打断安兹是无礼（对照组：其他守护者不敢），她照常进言
+          且论证成立被采纳——decision_rules规则9"谏言成功要素"的又一正例（清晰论证+议题不涉
+          安兹安全+立场不受公开场合影响）。进言的实质驱动仍是"维护安兹的尊严"（冒名者不可
+          享受慈悲），与规则10的保护性维权同源但方向正确。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: decision_rules规则9证据追加本事件
+
+    - turn_id: 3
+      actor_id: albedo
+      raw_quote: >
+        第3274-3278行：「——雅儿贝德。这附近地表上有看到强者的身影吗？」「没有，我想只是无聊
+        的谎话罢了。」「是真的！」……「有精钢级冒险者『漆黑』的飞飞在！……」雅儿贝德这时第一次
+        慌了起来。她张皇失措地向安兹低头道歉。「这……这真是失礼了！的确有位强者！请……请原谅
+        我！」
+      action_description: >
+        回答安兹的情报询问称附近无强者；敌方喊出"飞飞"（安兹的冒险者化名）后，全场唯一一次
+        张皇失措——因为自己的回答在字面上否定了"飞飞是强者"（等于贬低了安兹本人），立即低头
+        连声道歉请求原谅
+      speech_content: 没有，我想只是无聊的谎话罢了。／这……这真是失礼了！的确有位强者！请……请原谅我！
+      environmental_force_snapshot:
+        situational_pressure: 中
+        spatial_proxemics:
+          distance_meters: 安兹身侧
+          eye_contact: true
+      attribution:
+        psychological_layers: >
+          Layer1/2：全程冷静的她唯一一次慌乱，触发点不是敌情误判本身（军事错误），而是发觉
+          自己的话语在符号层面构成了"否定安兹的强大"——对"贬低安兹"这件事的恐慌远超对业务
+          失误的在意。与"爱""同伴"关键词击穿类似，这里是**自己无意中冒犯安兹**成为击穿冷静的
+          触发器。主动自我归责口癖的又一实例（本次为高强度惶恐版）。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: >
+          speech_register"主动自我归责"n+1并扩展场合；decision_rules规则5的"关键词击穿"
+          子机制补充新触发类型（自己无意中构成对安兹的冒犯）
+
+- event_id: YLDB-EV-V7-004
+  time_stamp: 演习次日凌晨结束后
+  location: 王座之厅
+  global_background: >
+    入侵者全灭、演习成功收尾；安兹检视花费记录并评价雅儿贝德的防卫调整；随后她提出组建
+    "无上至尊搜索队"的秘密提案。
+  characters_present: [albedo, ainz, entoma（后半段）]
+  source_reference: characters/雅儿贝德/source/全文/第七卷.txt 第3540-3633行
+
+  event_initial_dynamic_matrix:
+    albedo:
+      initial_emotional_vector: {等待考核评价的紧张: 0.6}   # "神色紧张地等待评价"直接支撑
+      hierarchical_intent_tree:
+        root_strategic_goal: 成为安兹最需要、最信赖的存在
+        current_event_subgoal: 获得防卫演习的正面评价；随后推进秘密部队提案
+        immediate_talk_intent: 先听取评价，再择机开口提案
+
+  progress_timeline:
+    - turn_id: 1
+      actor_id: albedo
+      raw_quote: >
+        第3541-3544行：他对神色紧张地等待评价的雅儿贝德破颜一笑……「非常好。……看来今后可以
+        放心把防卫工作交给你了。」「谢谢您的赞美。」雅儿贝德神情明显松了口气，深深低头致谢。
+      action_description: 神色紧张地等待安兹对防卫系统的评价，获得"今后可以放心交给你"的认可后明显松了口气，深深低头致谢
+      speech_content: 谢谢您的赞美。
+      environmental_force_snapshot:
+        situational_pressure: 中（业务考核时刻）
+        spatial_proxemics:
+          distance_meters: 王座旁
+          eye_contact: true
+
+    - turn_id: 2
+      actor_id: albedo
+      raw_quote: >
+        第3548-3587行：「那么可以占用您些许时间吗？其实我有件事想向安兹大人提议。」……
+        「——是的。」她先环顾四周后才开口。……「我有另一件提议，希望能允许我组成搜索无上至尊
+        的直属部队。」……「比方说如果听到了佩罗罗奇诺大人的情报，夏提雅必定会不顾一切地擅自
+        行动……」「……得到翠玉录桑的情报时，你不会失控吗？」「请放心。我身为纳萨力克守护者
+        总管，绝不会做出那样的行为。我向您保证。」……「还有另一件事，这个组织我希望能尽量保密，
+        不让其他守护者知道。」……「请大人放心！执行最重要指令的秘密特别部队，绝不会让安兹大人
+        后悔的。」安兹心中觉得不解。这个回答的讲法好像有点怪怪的。
+      action_description: >
+        确认安兹时间后，先环顾四周再压低话题——以"确认情报真伪+搜索至尊下落"为由申请组建
+        自己直属的秘密部队；论证链完整：其他守护者听到各自创造者情报会失控、自己保证不会、
+        迪米乌哥斯太忙、要求潘朵拉·亚克特为副官、要求对其他守护者保密（理由：防情报泄露落入
+        陷阱）；最后的表态"执行最重要指令的秘密特别部队"措辞怪异，让安兹隐约觉得不对但未深究
+      speech_content: （见raw_quote，论证链全文较长）
+      environmental_force_snapshot:
+        situational_pressure: 中（她主动制造的私密对话窗口）
+        spatial_proxemics:
+          distance_meters: 王座旁
+          eye_contact: true
+      attribution:
+        psychological_layers: >
+          Layer2（认知/动机）：整套论证在组织逻辑上无懈可击，且每一步都预先堵住安兹可能的
+          质疑（谁来做→为何是我→我会不会失控→为何保密）——这是深思熟虑的说服设计，不是
+          即兴请求。**推断性关联（明确标注：原文未明说）**：结合卷六"效忠排他性"（对其他至尊
+          的私下敌意，含自己的创造者翠玉录）与"最重要指令"这个安兹听着发怪的措辞，该部队的
+          真实用途存在与表面理由不一致的可能——她对"得到翠玉录情报时不会失控"的保证，可能
+          字面为真（她不会因喜悦失控），但隐藏了相反方向的动机。原文只给了"措辞怪异"这一个
+          信号，判断保持开放，不定论。Layer3（情境）：环顾四周+要求对守护者保密，说明她清楚
+          这个提案的敏感性并主动管理信息边界。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: >
+          psychological_structure"双重人格层次"追加第3个场景证据（对安兹本人运用说服设计
+          获取秘密授权）；decision_rules新增候选规则13（推断性标注）；belief_system"效忠排他性"
+          追加推断性关联证据
+
+    - turn_id: 3
+      actor_id: albedo
+      raw_quote: >
+        第3593-3609行：「另外我有一事相问，可以将露贝德的指挥权交给我吗？」「不行。」……
+        「说来难为情，大人愿意听吗？」……「难得有这机会，我想组成一支最强小队。」「哈哈哈哈——！」
+        ……「安兹大人！」……「当然可以，就去组成你的梦幻队伍吧。……」「谢谢安兹大人！」
+      action_description: >
+        追加请求纳萨力克最强个体露贝德（她的妹妹）的指挥权，被拒后没有坚持论证，而是难为情地
+        说出孩子气的真实理由（想组一支最强小队），逗笑安兹后反而获得批准；对安兹的大笑露出
+        困扰神情
+      speech_content: 可以将露贝德的指挥权交给我吗？／说来难为情，大人愿意听吗？／难得有这机会，我想组成一支最强小队。／安兹大人！／真的可以吗？／谢谢安兹大人！
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics:
+          distance_meters: 王座旁
+          eye_contact: true
+
+    - turn_id: 4
+      actor_id: albedo
+      raw_quote: >
+        第3613-3630行：雅儿贝德的语气听起来很僵硬……「……安兹大人，您会不会觉得不愉快？应该让
+        安特玛以外的女仆来才对。我会好好训斥她们的。」……「不，只是觉得不该让安兹大人听到那个
+        讲话失礼的女孩的声音——」……「您真是……太温柔了。连对肮脏的小偷都如此慈悲为怀，真不愧
+        是无上至尊。若是听到安兹大人现在这一席话，纳萨力克内的所有人必然都会感动落泪的！」
+        雅儿贝德感动万分地说。
+      action_description: >
+        对前来报告的安特玛语气僵硬，主动向安兹提议训斥安排此事的女仆（理由：不该让安兹听到
+        "讲话失礼"的声音）——安兹本人毫不在意；听到安兹的"供养论"（猎物要用尽是礼貌）后感动
+        万分，把这番日常言论升格为"全纳萨力克必然感动落泪"的伟大慈悲
+      speech_content: ……安兹大人，您会不会觉得不愉快？应该让安特玛以外的女仆来才对。我会好好训斥她们的。／您真是……太温柔了。……若是听到安兹大人现在这一席话，纳萨力克内的所有人必然都会感动落泪的！
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics:
+          distance_meters: 王座旁
+          eye_contact: true
+      attribution:
+        psychological_layers: >
+          Layer3（情境/代理人状态）：在安兹未表态、也无任何不悦的情况下，抢先代入"维护安兹
+          听觉体验"的角色提议惩罚下属——decision_rules规则10"保护性侵略误判"的又一实例
+          （方向：礼仪维权而非安全维权，强度轻于V4-D-002）。"感动落泪"升格解读与EV-V7-001
+          turn1同款，本卷已两例。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: >
+          decision_rules规则10证据追加；speech_register新增"神圣化升格解读"条目（n=2）

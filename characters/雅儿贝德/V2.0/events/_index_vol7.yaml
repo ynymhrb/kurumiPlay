@@ -1,0 +1,177 @@
+source: characters/雅儿贝德/source/全文/第七卷.txt
+total_lines: 3985
+total_mention_lines: 45
+last_scanned: 由 locate_candidates.py 自动生成，未经人工复核
+clusters:
+- cluster_id: A
+  line_range:
+  - 23
+  - 65
+  mention_lines:
+  - 38
+  - 41
+  - 42
+  - 50
+  brief: 王座之厅大集会：排位折中叙述回溯（事件turn1）
+  status: done
+  event_ids:
+  - YLDB-EV-V7-001
+  priority: high
+  notes: ''
+- cluster_id: B
+  line_range:
+  - 96
+  - 130
+  mention_lines:
+  - 111
+  - 114
+  - 115
+  brief: 方针辩论：支持浮上台面
+  status: done
+  event_ids:
+  - YLDB-EV-V7-001
+  priority: high
+  notes: ''
+- cluster_id: C
+  line_range:
+  - 159
+  - 193
+  mention_lines:
+  - 174
+  - 177
+  - 178
+  brief: 方针辩论：主权红线质询
+  status: done
+  event_ids:
+  - YLDB-EV-V7-001
+  priority: high
+  notes: ''
+- cluster_id: D
+  line_range:
+  - 279
+  - 335
+  mention_lines:
+  - 294
+  - 296
+  - 320
+  brief: 安兹在帝都的独白/对话中提及（想象共寝/气消了），她本人无言行
+  status: skipped
+  event_ids: []
+  priority: high
+  notes: ''
+- cluster_id: E
+  line_range:
+  - 1863
+  - 1937
+  mention_lines:
+  - 1878
+  - 1885
+  - 1886
+  - 1887
+  - 1893
+  - 1897
+  - 1898
+  - 1919
+  - 1922
+  brief: 迎接归返+防卫演习部署
+  status: done
+  event_ids:
+  - YLDB-EV-V7-002
+  priority: high
+  notes: ''
+- cluster_id: F
+  line_range:
+  - 2451
+  - 2481
+  mention_lines:
+  - 2466
+  brief: 尼罗斯特拷问室独白称她"丑八怪"，第三方言论
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: G
+  line_range:
+  - 2919
+  - 2949
+  mention_lines:
+  - 2934
+  brief: 竞技场入场（决斗助手）
+  status: done
+  event_ids:
+  - YLDB-EV-V7-003
+  priority: low
+  notes: ''
+- cluster_id: H
+  line_range:
+  - 2994
+  - 3037
+  mention_lines:
+  - 3009
+  - 3022
+  brief: 竞技场捂耳服从
+  status: done
+  event_ids:
+  - YLDB-EV-V7-003
+  priority: low
+  notes: ''
+- cluster_id: I
+  line_range:
+  - 3101
+  - 3131
+  mention_lines:
+  - 3116
+  brief: 竞技场进言"玩够了"+真心话反驳
+  status: done
+  event_ids:
+  - YLDB-EV-V7-003
+  priority: low
+  notes: ''
+- cluster_id: J
+  line_range:
+  - 3259
+  - 3294
+  mention_lines:
+  - 3274
+  - 3277
+  - 3279
+  brief: 情报误判慌乱道歉（飞飞事件）
+  status: done
+  event_ids:
+  - YLDB-EV-V7-003
+  priority: high
+  notes: ''
+- cluster_id: K
+  line_range:
+  - 3526
+  - 3645
+  mention_lines:
+  - 3541
+  - 3544
+  - 3549
+  - 3560
+  - 3567
+  - 3579
+  - 3583
+  - 3585
+  - 3596
+  - 3603
+  - 3605
+  - 3610
+  - 3613
+  - 3619
+  - 3630
+  brief: 演习复盘+秘密部队提案+露贝德指挥权+训斥提议
+  status: done
+  event_ids:
+  - YLDB-EV-V7-004
+  priority: high
+  notes: ''
+progress_summary:
+  clusters_total: 11
+  clusters_done: 9
+  clusters_partial: 0
+  clusters_pending: 0
+  processing_order: sequential
+  next_recommended: null
+usage_note: 本文件由 scripts/locate_candidates.py 机械生成（按人名grep聚类），brief/priority/status 需要处理该cluster时填写/更新，不代表已判断是否构成事件（Event）。
