@@ -1,0 +1,179 @@
+# 雅儿贝德 profile 追溯文件（profile_trace.yaml）v0.8
+# 与 profile.yaml 配套：profile.yaml 只保留推理逻辑，本文件承载证据链/置信度详情/逐卷来源/变更记录。
+# 键名与 profile.yaml 字段一一对应。v0.7及之前版本的完整叙述性limitation文本见git历史
+# （git show e15fc6d:characters/雅儿贝德/V2.0/profile.yaml 等）。
+
+belief_system:
+  至尊中心主义:
+    confidence: 已转正（三重验证：跨场景复现✓ 生成力✓ 排他性✓）
+    evidence: [YLDB-V1-A-001, YLDB-V1-B-001, YLDB-V1-C-001, YLDB-V1-S-001, YLDB-V3-E-003, YLDB-V3-I-002]
+    provenance: 起源=世界转移瞬间第一动作是关切飞鼠（V1-B-001）
+  起源观:
+    confidence: 已表态确认，与情绪层存在张力
+    evidence: [YLDB-V1-S-001, YLDB-V3-E-004]
+    provenance: 反问"改变之前我是怎样的人"逼出"贱人"答案后表态"现在的我也很好"
+  秩序观:
+    confidence: 已转正
+    evidence: [YLDB-V3-D-001, YLDB-EV-V7-001]
+    provenance: 被称"同伴"当场失控（V3）；主权红线"我可不同意"（卷七方针大会→建国提案）
+  对人类态度:
+    confidence: 已转正
+    evidence: [YLDB-V2-G-003, YLDB-V3-D-002, YLDB-V3-I-003]
+    provenance: 处决"如同切萝卜叶子"；主动提议屠灭族群作资源；区别于迪米乌哥斯的施虐倾向
+  至尊象征崇拜:
+    confidence: 已转正
+    evidence: [YLDB-V2-G-001, YLDB-V2-G-002, YLDB-EV-V6-001]
+    provenance: 卷六范围限定——公会纹章旗被私下敌视弃置，象征崇拜仅指安兹个人痕迹
+  未来投射:
+    confidence: 已转正（V2/V8/V10三卷四实例；正确预测婚戒指位、新娘修行等未观测行为；其他守护者无此类配偶级自我定位）
+    evidence: [YLDB-V2-G-002, YLDB-EV-V8-001, YLDB-EV-V10-001, YLDB-EV-V10-005]
+    provenance: 婴儿衣物做到五岁（V2）→婚戒指位+抚摸下腹部（V8）→习惯化+夫君自称+新娘修行（V10）
+  效忠排他性:
+    confidence: >
+      已转正（4个直接场景跨4卷：卷六蓄意表达/卷八激怒流露/卷十情绪峰值流露/卷十一epilogue
+      踩旗+消灭宣言；与夏提雅等的敬畏形成多次对照）。另有3条推断性关联暗线（秘密部队/至高王
+      提案/精神控制道具搜寻），方向一致但每环单看都有正当解释，整体不定论。卷十一确认意愿
+      层面（"哪怕守护者也一概消灭"），行动层面无证据。
+    evidence: [YLDB-EV-V6-001, YLDB-EV-V8-003, YLDB-EV-V10-003, YLDB-EV-V11-002, YLDB-EV-V7-004（推断）, YLDB-EV-V9-001（推断）, YLDB-EV-V10-005（推断）, YLDB-EV-V10-001（关联）]
+    provenance: 创造者翠玉录也在被蔑弃之列（与其他守护者崇敬创造者的规范形成个体偏离）；保密梯度为卷八修正
+
+value_hierarchy:
+  rank0_被需要:
+    confidence: 候选，暂不正式排序（仅1场景直接支撑；更像驱动所有层级的底层机制而非平级价值）
+    evidence: [YLDB-V3-F-001]
+    provenance: 安兹无恶意自嘲被解读为抛弃预兆→当场崩溃下跪+自裁提议
+  rank1_安兹本人及象征物:
+    evidence: [YLDB-V1-B-001, YLDB-V2-G-001, YLDB-V2-G-002, YLDB-EV-V6-001]
+  rank2_安兹真正利益:
+    evidence: [YLDB-V2-P-002, YLDB-V2-B-001]
+  rank3_纳萨力克存续:
+    evidence: []
+    provenance: 原种子证据因可溯源问题移除，待坐实
+  rank5_自身荣耀:
+    evidence: []
+    provenance: 待验证假设
+
+decision_rules:
+  rule2:
+    evidence: [YLDB-V2-B-001, YLDB-V1-J-001, YLDB-V1-Q-001, YLDB-V1-R-001, YLDB-V3-C-003, YLDB-EV-V6-001, YLDB-EV-V8-003]
+    provenance: >
+      三层例外结构的对照组：无预先生效命令时安兹一句新命令即100%停止（说明第三层例外只在
+      "生效命令期间出现新威胁"组合下触发）；谏言强度对照：涉安兹安全→近乎僵持，不涉→安兹
+      给理由即不再坚持；卷八补充失控终止条件（科塞特斯寒气+白银枪矛瞬效）
+  rule5:
+    evidence: [YLDB-V2-P-001, YLDB-V3-D-001, YLDB-EV-V7-003, YLDB-EV-V8-001, YLDB-EV-V8-002, YLDB-EV-V8-003]
+    provenance: >
+      击穿触发器逐卷发现史：爱/同伴（V1-V3）→无意冒犯安兹（卷七"飞飞不是强者"惶恐道歉）→
+      珍爱表达（卷八"你们是我的宝贝"→情欲失控持续数日，禁闭三天后仍越界）。公务包装实例：
+      "让守护者总管的力量被彻底活用"（V8-001，被夏提雅点破不否认）
+  rule7:
+    evidence: [YLDB-V1-C-002, YLDB-EV-V6-001]
+    provenance: 卷一逐字复诵；卷六复述目标+扩展承诺（"救出此人的同时，我也会严惩触怒安兹大人的那些人类！"）
+  rule8:
+    evidence: [YLDB-V3-D-002]
+    provenance: 处决前试挥武器，原文点明因"这是安兹的命令"
+  rule9:
+    evidence: [YLDB-V4-A-003, YLDB-V4-D-001, YLDB-EV-V6-001, YLDB-EV-V7-003, YLDB-EV-V10-002]
+    provenance: >
+      失败案例V3-C-003（力度轻）/V3-E-002（自我说服接受）共同点是议题触及安兹判断错误；
+      卷七正例：竞技场"该玩够了"进言被采纳（亚乌菈认为无礼）；卷十：纪律议题坚持三轮主张
+      斩首刑，安兹苦笑表情击穿（"您这表情太奸诈了"）——"理性服从vs感情服从"结构性张力
+  rule10:
+    evidence: [YLDB-V4-D-002, YLDB-EV-V7-004]
+    provenance: 卷七轻量级实例：抢先提议训斥安排虫声女仆
+  rule11:
+    evidence: [YLDB-V4-I-001]
+  rule12:
+    confidence: 候选（1场景）
+    evidence: [YLDB-EV-V7-001]
+    provenance: 安兹造物座次事件（命令"放最低"→执行"直排而非横排"）
+  rule13:
+    confidence: 推断性，判断保持开放
+    evidence: [YLDB-EV-V7-004, YLDB-EV-V10-005]
+    provenance: 三个独立信号：秘密部队提案措辞怪异/至高王提案/精神控制道具搜寻直寄本人+"忘了讲"淡化
+  rule14:
+    evidence: [YLDB-EV-V10-005]
+    provenance: 被恶心男子触碰到咬牙切齿仍留用傀儡，惩罚延迟到"用完之后打落地面"
+
+attachment_style:
+  confidence: 候选偏强
+  evidence: [YLDB-V3-F-001, YLDB-EV-V10-003]
+  provenance: 获脸颊吻时脱口"我以为您绝对不会理我的"并真哭——预期基线为零+最小回应即决堤
+
+preferences_evidence: [YLDB-EV-V6-001, YLDB-EV-V8-001, YLDB-EV-V8-003, YLDB-EV-V10-001, YLDB-EV-V10-007]
+traits_evidence:
+  独占欲: [YLDB-EV-V6-001, YLDB-EV-V8-001, YLDB-EV-V8-003, YLDB-EV-V10-002]
+  更懂安兹地位货币: [YLDB-EV-V9-001, YLDB-EV-V8-001]
+talents_evidence:
+  组织管理: [YLDB-EV-V7-004（防卫系统获安兹正式认可）, YLDB-EV-V7-002（阿里阿德涅边界条件追问）]
+  武器化印象操纵: [YLDB-EV-V10-004, YLDB-EV-V10-005]
+  经济治理: [YLDB-EV-V10-005, YLDB-EV-V8-001]
+
+relational_graph:
+  ainz:
+    provenance: 效忠排他性见belief_system同名条目；无观众鞠躬=YLDB-EV-V6-001 turn5
+  shalltear:
+    provenance: 背叛事件时讨伐请缨→安兹否决后完全支持复活；卷八日常斗嘴affinity 0.3→0.4
+  demiurge:
+    provenance: 卷八SPA敌意事件tension 0.3→0.4；卷九共构同盟；卷十消遣性支配
+  nabe:
+    provenance: 卷六怨气tension 0.1→0.3
+  renner:
+    provenance: 卷十新增（handler+同类相知；V9"很想会会她"伏笔落地）
+
+speech_register:
+  升格解读:
+    evidence: [YLDB-EV-V7-001, YLDB-EV-V7-004, YLDB-EV-V9-001]
+    provenance: 被指出是场面话时认真反驳"我是真心如此认为的"（V7-003）
+  自我归责: {evidence: [YLDB-EV-V7-003 turn3（高强度惶恐版）]}
+  接令复述: {evidence: [YLDB-V1-C-002, YLDB-EV-V6-001]}
+  失控态责任外化: {evidence: [YLDB-EV-V8-002, YLDB-EV-V8-003]}
+  粗俗骂詈: {evidence: [YLDB-EV-V8-003, YLDB-EV-V10-005]}
+  配偶级自称: {evidence: [YLDB-EV-V10-001, YLDB-EV-V10-005]}
+  怪笑: {evidence: [YLDB-EV-V6-001 turn2]}
+  请罪自贬: {evidence: [YLDB-EV-V6-001 turn4]}
+  称呼演变: {evidence: [YLDB-EV-V10-003], provenance: 峰值瞬间"遵命，飞鼠大人！"}
+
+psychological_structure:
+  依恋创伤结构:
+    status: open（前两类表现各1场景，第三类推断性）
+    evidence: [YLDB-V3-F-001, YLDB-V4-I-002, YLDB-EV-V6-001]
+    provenance: 灵庙崩溃下跪与主动觉察安兹孤独此前被误判为两个独立特质；对离去至尊的敌意为推断性第三表现
+  认知加工:
+    status: confirmed
+    evidence: [YLDB-V3-E-002, YLDB-EV-V8-001, YLDB-EV-V9-001, YLDB-EV-V10-002, YLDB-EV-V10-007, YLDB-V4-G-001, YLDB-EV-V11-001, YLDB-EV-V11-004]
+    provenance: >
+      形态发现史：防御向（V3未回收尸体→"早已料到"）→增益向（V8飞飞归入安兹掌控）→
+      生产性共构（V9共建叙事成为实际政策；V10确认个体稳定能力+随时在线）→deflect guilt
+      +即时重构（V11）。边界=V4-G-001连续追问战略漏洞
+  双重人格层次:
+    status: confirmed（3独立场景；具体算计边界待细化）
+    evidence: [YLDB-V1-S-002, YLDB-EV-V6-001, YLDB-EV-V7-004]
+  表演性得体:
+    status: confirmed（场合依赖模式≥3场景；"关键词击穿""主动离场"子机制仍候选）
+    evidence: [YLDB-V1-C-002, YLDB-V1-E-002, YLDB-V1-H-002, YLDB-V3-C-001, YLDB-V3-D-001, YLDB-V4-F-001, YLDB-EV-V6-001, YLDB-EV-V10-004, YLDB-EV-V10-005]
+    provenance: >
+      "对安兹零虚饰"一句为v0.8新增：vol13盲测A9/A10复盘产物（她当场承认没想到五项+向迪米
+      乌哥斯求助/深深鞠躬撤回提案），与卷七惶恐道歉、自我归责catchphrase（n=3）共同支撑；
+      见logs/dev_predictions/vol13_scored.md复盘一节
+
+# ================= 变更记录 =================
+# v0.8（2026-07-19，结构重构+vol13盲测反馈）
+# - 结构：profile.yaml拆分为推理简洁版（行为逻辑）+本追溯文件（证据/置信度/来源/变更记录），
+#   动机：过程字段堆积导致推理时注意力分散（用户指示）。逐卷provenance叙述压缩保留于此，
+#   完整原文见git历史v0.7。
+# - 内容：唯一新增"对安兹零虚饰"一句（表演性得体机制的corollary）。vol13盲测初版报告的
+#   10条逐字段修正建议经复盘判定为过拟合，全部撤回（错误归属为推理端而非profile缺口），
+#   见logs/dev_predictions/vol13_scored.md。
+# - speech_register honorific_level增加"对下位者/同僚内部场合：口语直白"一行——非新机制，
+#   是语域四分档中已有档位的语体标注补全（vol13复盘归因3）。
+# v0.7（卷十一dev反馈，2026-07-19）
+# - 認知加工surface_behaviors追加deflect guilt形态+即时重构；効忠排他性evidence追加V11-002
+#   （踩旗+消灭宣言，迄今最强直接证据）+confidence措辞更新（意愿层面确认）
+# v0.6（卷十反馈）：効忠排他性/未来投射转正；规则14；语域四分档；武器化印象操纵；renner节点等
+# v0.5（卷九反馈）：生产性共构；至高王推断关联；升格解读n=4
+# v0.4（卷八反馈）：击穿第四类；保密梯度；合理化双向转正；失控态外化；aura节点
+# v0.3（卷七反馈）：规则12/13；主权红线；击穿第三类；升格解读新增
+# v0.2（卷六反馈）：効忠排他性候选新增；表演性得体范围限定；双重人格转正
+# v0.1（架构迁移）：从CEU体系迁移重整
+# 各版本详细触发/原因见 logs/revision_log.md 对应条目；v0.1~v0.7完整字段文本见git历史。

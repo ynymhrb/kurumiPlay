@@ -379,3 +379,18 @@ round: v2.0
 eval_before: dev derivability audit score 0.6
 eval_after: 修正后方向与强度均可推导
 git_ref: e15fc6d
+
+## 2026-07-19 — profile结构重构：拆分为profile.yaml（推理简洁版）+ profile_trace.yaml（追溯文件），版本v0.7→v0.8
+
+触发：vol13盲测（logs/dev_predictions/vol13_blind.md → vol13_scored.md，均分0.55）+用户复盘反馈两条：(1) 逐字段打补丁是过拟合，修正只能是通用属性/简短逻辑；(2) profile中过程字段/追溯字段堆积会导致推理时注意力分散，应单独文件承载。
+修正前：profile.yaml v0.7共607行，行为逻辑与evidence数组/confidence详情/逐卷provenance叙述/变更记录混排。
+修正后：profile.yaml v0.8约230行（纯行为逻辑，每条含一词status）；新建profile_trace.yaml承载全部证据链/置信度/来源史/变更记录，键名与profile一一对应；v0.1~v0.7完整文本经git历史可溯。
+内容变更（仅3处，其余为纯搬移/压缩）：
+1. psychological_structure"表演性得体"新增一句corollary"对安兹零虚饰"（面具观众永不含安兹，失败处理默认自我归责/求助，只有隐瞒[规则13]没有虚饰）——vol13盲测A9/A10复盘产物，与卷七惶恐道歉+自我归责catchphrase(n=3)共同支撑。
+2. speech_register honorific_level补全"对下位者/同僚内部场合：口语直白"语体标注（四分档已有档位的表述补全，非新机制）。
+3. vol13_scored.md初版的10条逐字段修正建议全部撤回（复盘判定：多数失败归属为推理端错误——面具机制用错观众/发明字段外新行为/文风迁移不足——而非profile缺口）。
+change_type: 结构重构+1条逻辑新增+10条建议撤回
+round: v2.0
+eval_before: vol13盲测均分0.55（推理端错误与profile缺口混杂）
+eval_after: 待下一次盲测检验（推理流程改进：先查存量行为→按对象关系缩放语域）
+git_ref: 待回填
