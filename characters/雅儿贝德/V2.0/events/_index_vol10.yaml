@@ -1,0 +1,475 @@
+source: characters/雅儿贝德/source/全文/第十卷.txt
+total_lines: 4895
+total_mention_lines: 253
+last_scanned: 由 locate_candidates.py 自动生成，未经人工复核
+clusters:
+- cluster_id: A
+  line_range:
+  - 11
+  - 79
+  mention_lines:
+  - 26
+  - 33
+  - 35
+  - 37
+  - 39
+  - 40
+  - 42
+  - 45
+  - 47
+  - 48
+  - 57
+  - 62
+  - 64
+  brief: 序章私室独处（嗅闻仪式/下腹部习惯自制/心爱的夫君/服从例外）
+  status: done
+  event_ids:
+  - YLDB-EV-V10-001
+  priority: high
+  notes: ''
+- cluster_id: B
+  line_range:
+  - 225
+  - 636
+  mention_lines:
+  - 240
+  - 243
+  - 245
+  - 246
+  - 257
+  - 258
+  - 260
+  - 262
+  - 263
+  - 265
+  - 274
+  - 280
+  - 285
+  - 289
+  - 295
+  - 299
+  - 301
+  - 304
+  - 309
+  - 312
+  - 316
+  - 329
+  - 330
+  - 331
+  - 342
+  - 349
+  - 352
+  - 353
+  - 355
+  - 357
+  - 364
+  - 365
+  - 370
+  - 377
+  - 379
+  - 380
+  - 384
+  - 395
+  - 401
+  - 406
+  - 409
+  - 410
+  - 426
+  - 427
+  - 431
+  - 434
+  - 436
+  - 437
+  - 438
+  - 439
+  - 441
+  - 442
+  - 443
+  - 446
+  - 449
+  - 451
+  - 452
+  - 455
+  - 456
+  - 457
+  - 460
+  - 463
+  - 470
+  - 474
+  - 475
+  - 477
+  - 481
+  - 482
+  - 502
+  - 503
+  - 504
+  - 515
+  - 529
+  - 531
+  - 545
+  - 546
+  - 547
+  - 550
+  - 551
+  - 553
+  - 555
+  - 557
+  - 558
+  - 561
+  - 562
+  - 567
+  - 569
+  - 579
+  - 580
+  - 594
+  - 598
+  - 601
+  - 608
+  - 618
+  - 621
+  brief: 早间政务（欲望探测/斩首刑抗辩/制服提案/大腿争夺/出使提案）
+  status: done
+  event_ids:
+  - YLDB-EV-V10-002
+  priority: high
+  notes: ''
+- cluster_id: C
+  line_range:
+  - 722
+  - 752
+  mention_lines:
+  - 737
+  brief: 安兹与潘朵拉对话提及
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: D
+  line_range:
+  - 793
+  - 825
+  mention_lines:
+  - 808
+  - 810
+  brief: 安兹独白提及（护卫人选考量）
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: E
+  line_range:
+  - 841
+  - 924
+  mention_lines:
+  - 856
+  - 860
+  - 862
+  - 890
+  - 909
+  brief: 女仆二手转述"新娘修行"（已入profile preferences）
+  status: skipped
+  event_ids: []
+  priority: high
+  notes: ''
+- cluster_id: F
+  line_range:
+  - 943
+  - 983
+  mention_lines:
+  - 958
+  - 960
+  - 963
+  - 968
+  brief: 安兹外出场景提及
+  status: skipped
+  event_ids: []
+  priority: high
+  notes: ''
+- cluster_id: G
+  line_range:
+  - 1280
+  - 1310
+  mention_lines:
+  - 1295
+  brief: 安兹独白提及（冒险者工会点子）
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: H
+  line_range:
+  - 1739
+  - 1838
+  mention_lines:
+  - 1754
+  - 1760
+  - 1767
+  - 1768
+  - 1779
+  - 1782
+  - 1784
+  - 1789
+  - 1790
+  - 1792
+  - 1795
+  - 1797
+  - 1804
+  - 1811
+  - 1823
+  brief: 王都抵达外交（次席宣示/层级传达）
+  status: done
+  event_ids:
+  - YLDB-EV-V10-004
+  priority: high
+  notes: ''
+- cluster_id: I
+  line_range:
+  - 1857
+  - 1954
+  mention_lines:
+  - 1872
+  - 1875
+  - 1879
+  - 1886
+  - 1887
+  - 1889
+  - 1891
+  - 1893
+  - 1901
+  - 1909
+  - 1916
+  - 1924
+  - 1925
+  - 1931
+  - 1939
+  brief: 王室宴会（寂寞侧脸钓鱼菲利浦）
+  status: done
+  event_ids:
+  - YLDB-EV-V10-004
+  priority: high
+  notes: ''
+- cluster_id: J
+  line_range:
+  - 1994
+  - 2024
+  mention_lines:
+  - 2009
+  brief: 提及
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: K
+  line_range:
+  - 2042
+  - 2072
+  mention_lines:
+  - 2057
+  brief: 提及
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: L
+  line_range:
+  - 2131
+  - 2301
+  mention_lines:
+  - 2146
+  - 2154
+  - 2157
+  - 2160
+  - 2166
+  - 2167
+  - 2170
+  - 2173
+  - 2176
+  - 2212
+  - 2218
+  - 2223
+  - 2229
+  - 2251
+  - 2252
+  - 2253
+  - 2254
+  - 2255
+  - 2257
+  - 2259
+  - 2261
+  - 2266
+  - 2268
+  - 2269
+  - 2273
+  - 2274
+  - 2275
+  - 2278
+  - 2285
+  - 2286
+  brief: 菲利浦舞会（搂肩隐忍/休息室爆发/战略耐心）
+  status: done
+  event_ids:
+  - YLDB-EV-V10-005
+  priority: high
+  notes: ''
+- cluster_id: M
+  line_range:
+  - 2313
+  - 2439
+  mention_lines:
+  - 2328
+  - 2334
+  - 2363
+  - 2374
+  - 2383
+  - 2384
+  - 2387
+  - 2393
+  - 2395
+  - 2399
+  - 2402
+  - 2409
+  - 2411
+  - 2412
+  - 2415
+  - 2417
+  - 2421
+  - 2423
+  - 2424
+  brief: 八指指挥（期货/精神控制道具）+拉娜秘密会面
+  status: done
+  event_ids:
+  - YLDB-EV-V10-005
+  - YLDB-EV-V10-006
+  priority: high
+  notes: ''
+- cluster_id: N
+  line_range:
+  - 2681
+  - 2785
+  mention_lines:
+  - 2696
+  - 2697
+  - 2699
+  - 2703
+  - 2706
+  - 2707
+  - 2710
+  - 2711
+  - 2714
+  - 2719
+  - 2725
+  - 2726
+  - 2730
+  - 2737
+  - 2741
+  - 2742
+  - 2745
+  - 2748
+  - 2750
+  - 2752
+  - 2753
+  - 2755
+  - 2756
+  - 2757
+  - 2758
+  - 2759
+  - 2767
+  - 2770
+  brief: 送行吻别（真哭/飞鼠大人）
+  status: done
+  event_ids:
+  - YLDB-EV-V10-003
+  priority: high
+  notes: ''
+- cluster_id: O
+  line_range:
+  - 3383
+  - 3413
+  mention_lines:
+  - 3398
+  brief: 安兹视角提及
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: P
+  line_range:
+  - 3436
+  - 3467
+  mention_lines:
+  - 3451
+  - 3452
+  brief: 安兹视角提及
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: Q
+  line_range:
+  - 3561
+  - 3591
+  mention_lines:
+  - 3576
+  brief: 安兹视角提及
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: R
+  line_range:
+  - 3750
+  - 3780
+  mention_lines:
+  - 3765
+  brief: 安兹视角提及
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: S
+  line_range:
+  - 4620
+  - 4666
+  mention_lines:
+  - 4635
+  - 4651
+  brief: 安兹视角提及
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: T
+  line_range:
+  - 4741
+  - 4864
+  mention_lines:
+  - 4756
+  - 4758
+  - 4759
+  - 4760
+  - 4767
+  - 4774
+  - 4779
+  - 4783
+  - 4785
+  - 4802
+  - 4805
+  - 4816
+  - 4831
+  - 4838
+  - 4844
+  - 4849
+  brief: 尾声：代理国政+调戏迪米乌哥斯+单独共构解读
+  status: done
+  event_ids:
+  - YLDB-EV-V10-007
+  priority: high
+  notes: ''
+progress_summary:
+  clusters_total: 20
+  clusters_done: 8
+  clusters_partial: 0
+  clusters_pending: 0
+  processing_order: sequential
+  next_recommended: null
+usage_note: 本文件由 scripts/locate_candidates.py 机械生成（按人名grep聚类），brief/priority/status 需要处理该cluster时填写/更新，不代表已判断是否构成事件（Event）。

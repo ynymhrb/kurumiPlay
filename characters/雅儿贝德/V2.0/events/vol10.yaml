@@ -1,0 +1,502 @@
+# 雅儿贝德 卷十 事件时间线
+# Schema: spec/event_schema.md v1.0
+# cluster对应：Prologue→EV-V10-001，B→EV-V10-002，N→EV-V10-003，H/I→EV-V10-004，
+# L/M前半→EV-V10-005，M后半→EV-V10-006，T→EV-V10-007
+# 跳过：A（Prologue已单独立事件，A范围即Prologue）、C/D/G/O/P/Q/R/S（安兹视角独白/对话提及）、
+# E/F（安兹外出场景，含女仆二手转述"她以新娘修行为名自己打扫安兹赐的房间"——二手信息记入profile）
+
+- event_id: YLDB-EV-V10-001
+  time_stamp: 魔导国建国数月后（安兹移驻耶·兰提尔时期）
+  location: 耶·兰提尔，安兹的房间（他不在时）
+  global_background: 建国后她的工作量爆增（王国官僚逃逸+教育新人）；魔导国国家方向未定
+  characters_present: [albedo]
+  source_reference: characters/雅儿贝德/source/全文/第十卷.txt 第26-64行
+  event_initial_dynamic_matrix:
+    albedo:
+      initial_emotional_vector: {独处充电的平静喜悦: 0.7}
+      hierarchical_intent_tree:
+        root_strategic_goal: 成为安兹最需要、最信赖的存在
+        current_event_subgoal: 在安兹房间独处充电后开始当日工作
+        immediate_talk_intent:
+  progress_timeline:
+    - turn_id: 1
+      actor_id: albedo
+      raw_quote: >
+        第26-40行：进入房间后，雅儿贝德深吸一大口气填满胸腔。……吸进主人曾待过的房间的空气，
+        能让她心灵平静。……「咕——呼呼。」……雅儿贝德优雅地在床边坐下，然后躺了下去。……
+        雅儿贝德的手差点伸向下腹部，但她停住了，现在不是做这种事的时候。好像快养成习惯了。
+      action_description: >
+        独自进入安兹房间深吸空气（明知不死者无气味仍"内心能感觉到气味"），躺上床；手差点
+        伸向下腹部时自我制止（"好像快养成习惯了"——对该习惯有自知），随即切换回工作模式
+      speech_content: 咕——呼呼。／啊——
+      environmental_force_snapshot:
+        situational_pressure: 低（绝对独处）
+        spatial_proxemics: {distance_meters: 未知, eye_contact: false}
+    - turn_id: 2
+      actor_id: albedo
+      raw_quote: >
+        第48-62行：老实说，雅儿贝德知道只要有她英明睿智的主人在，自己什么都不做也不会有任何
+        问题。但那样无疑是让至高存在纡尊降贵……「无论安兹大人想建立什么样的国度，我都会遵从
+        大人的判断。」除了一件事之外，雅儿贝德事事都愿意听从心爱的夫君。
+      action_description: >
+        独处沉思国家方向：把"替安兹分担杂务"定义为臣下的本分（王者有王者的工作）；宣告无论
+        安兹要建什么国度都遵从——但叙述明示**"除了一件事之外"**她事事听从"心爱的夫君"
+        （该例外未指明内容；"夫君"是她对安兹的内心自我定位）
+      speech_content: 无论安兹大人想建立什么样的国度，我都会遵从大人的判断。
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics: {distance_meters: 未知, eye_contact: false}
+      attribution:
+        psychological_layers: >
+          Layer2："除了一件事之外"是叙述者明示存在的服从例外，未指明内容——与效忠排他性
+          （对至尊集体的敌意议题）或个人目的（精神控制道具搜寻，见EV-V10-005）方向吻合，
+          但具体指向保持开放，不定论。"心爱的夫君"自我定位与婚戒指位、新娘修行（女仆二手
+          转述）、抚摸下腹部构成同一未来叙事体系。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: belief_system"未来投射"证据追加并评估转正；服从例外记入效忠排他性关联
+
+- event_id: YLDB-EV-V10-002
+  time_stamp: 同期某日早晨
+  location: 耶·兰提尔，安兹的办公室
+  global_background: 例行早间政务（文件用印+提案评议）；亚乌菈马雷中途来访
+  characters_present: [albedo, ainz, aura, mare, 死者大魔法师×6, 女仆菲丝]
+  source_reference: characters/雅儿贝德/source/全文/第十卷.txt 第244-623行
+  event_initial_dynamic_matrix:
+    albedo:
+      initial_emotional_vector: {晨间面见安兹的愉悦: 0.7}
+      hierarchical_intent_tree:
+        root_strategic_goal: 成为安兹最需要、最信赖的存在
+        current_event_subgoal: 完成政务汇报并伺机推进出使王都提案
+        immediate_talk_intent: 晨间问候+试探安兹的欲望
+  progress_timeline:
+    - turn_id: 1
+      actor_id: albedo
+      raw_quote: >
+        第247-257行：「是的，报告说今天一整天都将是晴天——当然，只要这个世界的绝对支配者
+        安兹大人有意，要变成什么天气都行，大人觉得呢？」……「我早已知道您无意随兴操纵天气，
+        只是为了以防万一才提议，因为安兹大人总是不愿向我们坦率下令，满足自身的欲望。」……
+        「不过话说回来，您今天的穿着还是一样迷人，仿佛闪闪发光。不对，是因为被安兹大人穿着，
+        才会闪闪发光吧。」
+      action_description: >
+        把安兹的天气寒暄接成"为您改变天气"的提议——自陈动机是安兹"总是不愿坦率下令满足
+        自身欲望"，她在主动探测并试图满足安兹未说出口的欲望；随后高强度吹捧衣着（"被安兹
+        大人穿着才会闪闪发光"），被打断时惹人怜爱地鼓起脸颊
+      speech_content: 只要这个世界的绝对支配者安兹大人有意，要变成什么天气都行，大人觉得呢？／因为安兹大人总是不愿向我们坦率下令，满足自身的欲望。／不对，是因为被安兹大人穿着，才会闪闪发光吧。
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics: {distance_meters: 数米内, eye_contact: true}
+    - turn_id: 2
+      actor_id: albedo
+      raw_quote: >
+        第284-292行：「是，我们暂时拟定了一份草案，但若要强制推行，可能会造成各方面累积不满
+        情绪，正在犹豫。」「我与迪米乌哥斯谈过……只强制施行这个部分。」……「原来如此……您是指
+        从不受法律束缚的至高存在观点而言吧？我明白您的意思了。」
+      action_description: >
+        法律进度汇报展现务实的渐进治理观（顾虑强推积累不满）；安兹说自己"对法律不太了解"时
+        自动重构为"从不受法律束缚的至高存在观点"（合理化机制的日常小型运作）；获得"我信任
+        你们"的授权时满面喜色、翅膀缓缓拍动
+      speech_content: （见raw_quote）
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics: {distance_meters: 数米内, eye_contact: true}
+    - turn_id: 3
+      actor_id: albedo
+      raw_quote: >
+        第317行：「窃以为真是愚蠢至极，猪就该一辈子当猪，然后为饲主做出贡献而死。它们没有必要
+        过其他人生，也没有知道的意义或选择的权利。」第334行：「但我觉得坏处比较大……还是说您要
+        找个边境建造设施？如果能够一边保持情报不外泄，一边进行洗脑教育，我也觉得好处的确会
+        比较大。」第340行：「……救济寡妇与孤儿都能提升安兹大人的声誉，实在是妙计……不愧是安兹大人。」
+      action_description: >
+        对"儿童教育机构"提案的政策评估极端冷酷（"猪就该一辈子当猪"）；安兹反转采纳后不情绪化
+        反对，转为找出安兹立场下的最优实现（边境洗脑设施构想），最终按"提升安兹声誉"框架完成
+        自我说服并赞为妙计——政策立场完全从属于安兹的表态，但过渡途径是重构出合理性而非单纯服从
+      speech_content: （见raw_quote）
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics: {distance_meters: 数米内, eye_contact: true}
+    - turn_id: 4
+      actor_id: albedo
+      raw_quote: >
+        第343-357行：「恕我直言——不予惩罚就饶恕违逆安兹大人判断的两人，难道不会扰乱纳萨力克
+        的纪律吗？」……「我认为太轻了，安兹大人的发言就是我们的一切，违逆安兹大人所言可是大罪，
+        窃以为应该处以斩首刑。」……「她们那只是为了自己而扭曲您的话语罢了，那是不可饶恕的行为。」
+        ……「安兹大人，您这表情太奸诈了……」……「明白了，毕竟安兹大人的话语就是我的一切，我乐于
+        听命。」「我不希望你出自感情，而是希望你出自理性服从我啊。」
+      action_description: >
+        对解除佩丝特妮/妮古蕾德禁闭连续三轮抗辩（主张斩首刑——议题是"违逆安兹之言的纪律
+        标准"，她的谏言持续度显著高于一般议题）；安兹的逻辑说服无效，最终击穿她的是安兹的
+        苦笑表情（"您这表情太奸诈了"），以"安兹大人的话语就是我的一切"落地服从；安兹点破
+        这是感情性服从而非理性服从
+      speech_content: （见raw_quote）
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics: {distance_meters: 数米内, eye_contact: true}
+      attribution:
+        psychological_layers: >
+          Layer2：谏言持续度的新数据点——涉及"违逆安兹话语的纪律标准"时她坚持到第三轮
+          （超过多数议题），因为该议题触及她的核心信念（安兹的话语=一切）本身；服从的最终
+          触发不是论证而是**情感通道**（安兹的表情），且她自己有元认知（"太奸诈了"=知道自己
+          被情感击穿）。安兹"希望出自理性服从"的要求与她"出自感情服从"的实态是一对结构性
+          张力。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: decision_rules规则9补充"纪律议题谏言持续度高+情感通道可终止谏言"
+    - turn_id: 5
+      actor_id: albedo
+      raw_quote: >
+        第366-378行：「……这想法真是低级过头了，究竟是谁提出来的？」……「真是受不了……我认为
+        应该进行审讯调查，处以某些刑罚。」……「……安兹大人，容我提议，今后至少由我来挑选提案
+        好吗？以免让您再看到这种愚蠢的提案。」……「啊！说……说得也是呢，安兹大人。这可是我们俩
+        的共同作业嘛。」雅儿贝德的翅膀大幅拍动。
+      action_description: >
+        对（实为安兹匿名提出的）制服提案判定"低级过头"并主张审讯处罚提案者；被安兹严令
+        禁止后立即从命；随后尝试获得提案预筛权（信息把关的又一实例），被拒后瞬间重构为
+        "我们俩的共同作业"的浪漫框架，翅膀大幅拍动
+      speech_content: （见raw_quote）
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics: {distance_meters: 数米内, eye_contact: true}
+    - turn_id: 6
+      actor_id: albedo
+      raw_quote: >
+        第400-481行：「您……您这是做什么，安兹大人！」雅儿贝德发出沙哑的惨叫声。……满脸通红的
+        雅儿贝德正色之后，说：「安兹大人！」……雅儿贝德难为情地又说了一遍「哇哇——」。……
+        「可……可是，亚乌菈坐了三分四十一秒。相较之下我才坐了五十七秒，窃以为应该让我再坐
+        三分钟才公平。」……雅儿贝德的臀部在安兹的大腿上扭压了一下。
+      action_description: >
+        亚乌菈被安兹抱上大腿时发出沙哑惨叫；被安兹以"你是大人"拒绝后，难为情地模仿婴儿
+        叫声"哇哇——"以自证幼儿资格；获准坐上大腿后发出咕呼呼笑声；被令下来时精确报出
+        双方乘坐时长（3分41秒vs57秒）主张公平补齐，同时臀部扭压——嫉妒竞争中的荒谬认真
+      speech_content: 您……您这是做什么，安兹大人！／哇哇——／可……可是，亚乌菈坐了三分四十一秒。相较之下我才坐了五十七秒，窃以为应该让我再坐三分钟才公平。
+      environmental_force_snapshot:
+        situational_pressure: 低（内部场合）
+        spatial_proxemics: {distance_meters: 0（身体接触）, eye_contact: true}
+      attribution:
+        psychological_layers: >
+          Layer1/2：与安兹的肢体亲近是最高等级奖赏，为获取它可以抛弃"守护者总管的威严"
+          （婴儿模仿是自我形象的主动降格——观众只有内部人员时该成本可接受）；秒级计时说明
+          她全程在精确记录与安兹的接触时长（量化的独占欲）。
+        explanation_deficit: true
+        literary_axis: >
+          Layer6："哇哇——"婴儿模仿是喜剧化的人设服务（gap萌：绝世才女×幼稚争宠），写实
+          尺度下更可能表现为言语争取而非婴儿叫声——闹剧化手法的又一实例（并入literary_techniques
+          手法2的变体：争宠闹剧）。
+        judgment: 心理燃料+文学外壳
+        profile_updates_suggested: literary_techniques手法2补充争宠闹剧变体；traits独占欲追加"量化计时"证据
+    - turn_id: 7
+      actor_id: albedo
+      raw_quote: >
+        第592-622行：「我想派一些人到王都促使那些人类行动，可以由我亲自前往吗？」……「不要紧的，
+        安兹大人。我很快就会处理好，回到您的身边。」……「我预计交给潘朵拉·亚克特。」……「不，
+        怎么好劳烦安兹大人。我打算说飞飞接受委托，去巡视邻近地区了。」……「再来还有一件羞于
+        启齿的事，就是属下想跟大人领取几件衣服，因为到了那里应该会需要更衣。」
+      action_description: >
+        提出亲自出使王都（安兹首次听说，惊到大叫）；安抚安兹的不安（"很快回到您的身边"）；
+        代管人选（潘朵拉·亚克特）、飞飞去向的说辞、对外交涉草案送审等全部预案已备好——
+        这是一次准备完整的既定议程推进；最后以"羞于启齿"申请安兹的衣服（既是实需也是
+        索取安兹私人物品的机会）
+      speech_content: （见raw_quote）
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics: {distance_meters: 数米内, eye_contact: true}
+
+- event_id: YLDB-EV-V10-003
+  time_stamp: 出使王都出发日
+  location: 耶·兰提尔宅邸院子
+  global_background: 五辆马车+死亡骑兵二十骑的使节团，兼负宣扬国威使命；安兹亲自送行并交托世界级道具
+  characters_present: [albedo, ainz, 安兹班女仆, 死亡骑兵护卫]
+  source_reference: characters/雅儿贝德/source/全文/第十卷.txt 第2696-2773行
+  event_initial_dynamic_matrix:
+    albedo:
+      initial_emotional_vector: {受托出征的昂扬: 0.7}
+      hierarchical_intent_tree:
+        root_strategic_goal: 成为安兹最需要、最信赖的存在
+        current_event_subgoal: 完成出发仪式；把握临别时刻争取亲密
+        immediate_talk_intent: 道别
+  progress_timeline:
+    - turn_id: 1
+      actor_id: albedo
+      raw_quote: >
+        第2700-2715行：「那么安兹大人，我将暂时离开纳萨力克。」……「这是当然，属下会特别注意，
+        绝不让这件道具离身。」雅儿贝德紧紧抱住的是世界级道具。……安兹对雅儿贝德投以连珠炮似的
+        叮咛。不知道讲了多久……安兹才注意到雅儿贝德一脸喜孜孜的。
+      action_description: 紧抱受托的世界级道具承诺不离身；安兹连珠炮式的安全叮咛讲了许久，她全程一脸喜孜孜（被担心=被珍视的直接证据）
+      speech_content: 那么安兹大人，我将暂时离开纳萨力克。／这是当然，属下会特别注意，绝不让这件道具离身。
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics: {distance_meters: 1-2, eye_contact: true}
+    - turn_id: 2
+      actor_id: albedo
+      raw_quote: >
+        第2727-2765行：「安兹大人！我知道一种对疾病非常有效的预防药。」……「就是接吻！」「是的，
+        接吻能减缓压力，活化副交感神经。……只要接吻就不会生病了！」「所以，请吻我！」雅儿贝德
+        闭起眼睛，嘟起嘴唇。……「……我以为您绝对不会理我的。」……雅儿贝德哭了出来，而且不是装哭，
+        是真的掉眼泪。……她脸上虽然还留有泪痕，但笑容非常灿烂。……「遵命，飞鼠大人！」
+      action_description: >
+        以伪科学论证（副交感神经）把接吻包装成疾病预防药索吻；获得脸颊吻后瞠目而视——
+        「我以为您绝对不会理我的」（她的预期基线是安兹绝不会回应），随即真哭（非表演）；
+        破涕为笑后应答脱口而出的是**「遵命，飞鼠大人！」**——极致喜悦时刻叫出的是安兹的
+        本名（游戏ID时代旧名），而非"安兹大人"
+      speech_content: 安兹大人！我知道一种对疾病非常有效的预防药。／就是接吻！……所以，请吻我！／……我以为您绝对不会理我的。／遵命，飞鼠大人！
+      environmental_force_snapshot:
+        situational_pressure: 低（仅女仆在场，安兹事后命其忘掉）
+        spatial_proxemics: {distance_meters: 0（脸颊吻）, eye_contact: true}
+      attribution:
+        psychological_layers: >
+          Layer1/2：三个高价值信号。(1) "我以为您绝对不会理我的"——她对安兹回应的**预期
+          基线是零**，长期单向投入下的习得性预期，与焦虑型依恋的"渴望但不敢期待回应"结构
+          吻合；最小回应（脸颊吻）即引发真哭级的情绪决堤。(2) 索吻用伪科学公务包装（预防
+          疾病），与公务包装私欲模式同型。(3) **"飞鼠大人"**——效忠排他性的愿望（"希望
+          有朝一日还能听见您那美妙的名字"，V6-001）在极致喜悦中直接实现于她自己口中：
+          情绪峰值时她心中的称呼是本名飞鼠，"安兹·乌尔·恭"只是日常面具下的公用名。
+          这是效忠排他性的第3个直接场景证据。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: >
+          belief_system"效忠排他性"第3直接证据，评估转正；attachment_style候选判断补充
+          "预期基线为零"证据；speech_register称呼演变补充"情绪峰值时脱口飞鼠大人"
+
+- event_id: YLDB-EV-V10-004
+  time_stamp: 使节团抵达王都当日起数日
+  location: 里·耶斯提杰王国王都（城门→王宫→王室自助式宴会）
+  global_background: 魔导国建国后首次主动外交；王国朝野对魔导国既恐惧又无知；贵族社会因战争损失陷入混乱
+  characters_present: [albedo, 赛纳克王子, 兰布沙三世, 拉娜（公开致意）, 菲利浦, 王国贵族群体]
+  source_reference: characters/雅儿贝德/source/全文/第十卷.txt 第1754-1939行
+  event_initial_dynamic_matrix:
+    albedo:
+      initial_emotional_vector:
+      hierarchical_intent_tree:
+        root_strategic_goal: 成为安兹最需要、最信赖的存在
+        current_event_subgoal: 完成四重使命（运送物资/制造战争契机/个人目的布局/与拉娜交易）
+        immediate_talk_intent: 以外交礼仪建立魔导国的支配性地位
+  progress_timeline:
+    - turn_id: 1
+      actor_id: albedo
+      raw_quote: >
+        第1772-1810行：「可以请您抬起头来吗？」……「我叫雅儿贝德，以安兹·乌尔·恭魔导国的使者
+        身份前来。……」……「本人猥当大任，获赐安兹·乌尔·恭魔导国的楼层守护者、领域守护者以及
+        全体总管的地位。」……「这么说吧，我有幸担任安兹大人——不，担任恭魔导王陛下的次席，
+        守护者总管的地位。」……「没关系。」笑容完全没有失色。……她这种态度明确传达了彼此的上下关系。
+      action_description: >
+        接受王子下跪不表谢意（以态度精确传达两国上下关系）；自我介绍时"安兹大人——不，恭魔导
+        王陛下"的改口展示亲密度；对王国的致歉一律"没关系"地宽容——全程温柔笑靥与支配性
+        地位宣示并行的成熟外交人格
+      speech_content: （见raw_quote）
+      environmental_force_snapshot:
+        situational_pressure: 中（外交场合）
+        spatial_proxemics: {distance_meters: 数米内, eye_contact: true}
+    - turn_id: 2
+      actor_id: albedo
+      raw_quote: >
+        第1909-1930行：将视线转回雅儿贝德那边，就看到她一个人站着。……他看得见雅儿贝德有些寂寞
+        的侧脸。……「雅儿贝德大人，方便打扰一下吗？」菲利浦上前搭话，雅儿贝德对他露出了笑容。
+        ……「哎呀，初次见面——」她皱起眉头想了想……「咦？啊，菲利浦卿——不对，大人，很荣幸能
+        见到您。」
+      action_description: >
+        王室宴会上刻意独自站立、露出"有些寂寞的侧脸"——为愚蠢的猎物制造搭话机会的钓饵
+        表演；菲利浦上钩后用"菲利浦卿——不对，大人"的敬称升格话术喂养其虚荣心，让他在
+        众目睽睽下产生"站在王国中心"的幻觉
+      speech_content: 哎呀，初次见面——／咦？啊，菲利浦卿——不对，大人，很荣幸能见到您。
+      environmental_force_snapshot:
+        situational_pressure: 中
+        spatial_proxemics: {distance_meters: 1-2, eye_contact: true}
+      attribution:
+        psychological_layers: >
+          Layer3（社会操纵）：这是她对外操纵技术的完整展示——(1) 环境设计（寂寞侧脸是主动
+          布置的诱饵，利用目标"女人最怕没人搭理"的书本知识框架）；(2) 虚荣喂养（敬称升格
+          话术）；(3) 目标筛选（选择贵族中最愚蠢者做傀儡派系首脑，愚蠢即价值）。与对内的
+          "表演性得体"同源但目的不同：对内是形象管理，对外是武器化的印象操纵。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: talents新增"武器化印象操纵"条目；psychological_structure"表演性得体"补充对外武器化维度
+
+- event_id: YLDB-EV-V10-005
+  time_stamp: 数日后（菲利浦主办舞会当晚）
+  location: 王都，八指提供的舞会会场及休息室
+  global_background: >
+    舞会实为她通过八指傀儡希尔玛操办、为菲利浦搭台立傀儡派系的布局；叙述明示她此行有四个
+    目的：运送物资、制造引发战争的契机、**为个人目的布局**、与拉娜交易
+  characters_present: [albedo, 菲利浦, 希尔玛, 八指五部门长+议长, 王国下层贵族群体]
+  source_reference: characters/雅儿贝德/source/全文/第十卷.txt 第2146-2334行
+  event_initial_dynamic_matrix:
+    albedo:
+      initial_emotional_vector:
+      hierarchical_intent_tree:
+        root_strategic_goal: 成为安兹最需要、最信赖的存在
+        current_event_subgoal: 立傀儡派系+向八指下达指令+推进个人布局
+        immediate_talk_intent: 配合菲利浦的护送演出
+  progress_timeline:
+    - turn_id: 1
+      actor_id: albedo
+      raw_quote: >
+        第2166-2176行：「对了，雅儿贝德大人是否已有夫婿？」雅儿贝德表情一愣，睁大眼睛。……
+        「真是个独特的问题，菲利浦大人。非常遗憾，我没有良人，还是个寂寞单身之人。」……
+        菲利浦来到门前，将手绕上雅儿贝德的肩膀，将她搂向自己。他听见奇怪的「叽嗤」一声……
+        「……怎么了吗？」面带笑容的雅儿贝德一问，这点小疑问就从脑海中消失了。
+      action_description: >
+        被问婚姻状况先真实一愣，随即以"寂寞单身之人"的外交谎言配合演出；被菲利浦搂肩时
+        发出咬牙的"叽嗤"声（真实暴怒的唯一泄露），但笑容不破，当场完成情绪封装
+      speech_content: 真是个独特的问题，菲利浦大人。非常遗憾，我没有良人，还是个寂寞单身之人。／……怎么了吗？
+      environmental_force_snapshot:
+        situational_pressure: 中（演出中）
+        spatial_proxemics: {distance_meters: 0（被搂肩）, eye_contact: true}
+    - turn_id: 2
+      actor_id: albedo
+      raw_quote: >
+        第2258-2277行：「呼……啊，真恶心。」……「我被恶心的男人摸了啦。这世界上能带着情欲碰我的，
+        明明只有一位大人……臭王八蛋，那个没智商的臭东西。」……「呼……别放在心上，我只是抱怨两句。
+        他的愚昧程度在王宫的自助式宴会上，已经给了许多贵族深刻印象。从这层意义来说，换人好像
+        也有点可惜……」「明明一事无成，却自命不凡，真是个无可救药的无能之辈。」「就是啊，再过
+        一阵子，我们就狠狠把他打落地面吧。竟然敢用脏手乱摸安兹大人的女人，我可得好好惩罚他才行。」
+      action_description: >
+        离场后立即在傀儡希尔玛面前卸下面具：用手帕擦肩膀、粗口痛骂菲利浦（臭王八蛋/没智商的
+        臭东西），自称**"安兹大人的女人"**；但被提议换掉菲利浦时经过明显犹豫后拒绝——愚蠢的
+        傀儡价值高于个人不适，惩罚延迟到"打落地面"的既定终局
+      speech_content: 呼……啊，真恶心。我被恶心的男人摸了啦。这世界上能带着情欲碰我的，明明只有一位大人……臭王八蛋，那个没智商的臭东西。／再过一阵子，我们就狠狠把他打落地面吧。竟然敢用脏手乱摸安兹大人的女人，我可得好好惩罚他才行。
+      environmental_force_snapshot:
+        situational_pressure: 低（仅傀儡在场，无需维持形象）
+        spatial_proxemics: {distance_meters: 1-2, eye_contact: true}
+      attribution:
+        psychological_layers: >
+          Layer2/3：三个信号。(1) 战略耐心完全压制真实厌恶——利用价值判断优先于强烈的
+          生理性反感（明显犹豫说明冲突真实存在，但结论仍是留用）；(2) 语域的第三档确认：
+          面对被恐惧完全支配的棋子，既非对外优雅也非对同僚斗嘴，而是无顾忌的粗口与命令式
+          高效——对希尔玛们的语言不做任何形象投资；(3) 自称"安兹大人的女人"与序章"心爱的
+          夫君"互为镜像，是她配偶级自我定位的稳定表达。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: >
+          decision_rules新增"战略耐心"规则；speech_register新增粗口档与配偶级自称；
+          relational_graph无需为菲利浦/希尔玛立节点（工具级对象），在traits操纵条目记录
+    - turn_id: 3
+      actor_id: albedo
+      raw_quote: >
+        第2287-2332行：「好了，我要给你们命令。首先，我要你们将各种物资运进魔导国。」……「不是
+        这样，我要你以适当价格卖给我们。然后用赚来的钱买进粮食，为王国即将面临的粮食危机做
+        准备。……就进行粮食的期货交易吧。」……「我忘了讲一件事，希望用你们的情报网络帮我找个
+        魔法道具。然后定期把结果写在羊皮纸上，寄给魔导国的雅儿贝德。……是能够控制对方精神的
+        道具。……我希望你们打听的，是一般市场不会流通的传说级道具。不管任何芝麻小事都要告诉我，
+        知道吗？」
+      action_description: >
+        对八指六首脑下达指令：物资以合理价格购入（恩威并济的商业信用管理）、预判王国粮食
+        危机并布局期货交易；末尾以"忘了讲"的轻描淡写口吻追加一项——用八指情报网搜寻能
+        控制精神的传说级道具，结果**直接寄给她本人**（对应叙述明示的"为个人目的布局"）
+      speech_content: （见raw_quote）
+      environmental_force_snapshot:
+        situational_pressure: 低（绝对支配场）
+        spatial_proxemics: {distance_meters: 数米内, eye_contact: true}
+      attribution:
+        psychological_layers: >
+          Layer2（推断性关联，明确标注）：叙述列出的四个目的中"为个人目的布局"最可能对应
+          精神控制道具搜寻（结果绕过魔导国渠道直寄她本人+以"忘了讲"淡化其重要性=信息管理
+          手法）。表面正当解释充分（夏提雅被世界级道具洗脑的先例，防卫动机成立，八指众也
+          如此理解）；但"个人目的"的叙述定性+直寄本人+与规则13（秘密部队）、效忠排他性的
+          既有信号方向一致，构成第三条推断性关联链。具体用途保持开放，不定论。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: decision_rules规则13证据追加（推断链第三环）；belief_system效忠排他性推断性关联追加
+
+- event_id: YLDB-EV-V10-006
+  time_stamp: 舞会数日内（王宫内）
+  location: 王都王宫，拉娜的房间（克莱姆被支开）
+  global_background: 拉娜早已秘密投效纳萨力克（背叛王国），雅儿贝德是其对接人；此次奉安兹之命送来奖赏
+  characters_present: [albedo, 拉娜, 暗影恶魔（拉娜影中）]
+  source_reference: characters/雅儿贝德/source/全文/第十卷.txt 第2383-2424行
+  event_initial_dynamic_matrix:
+    albedo:
+      initial_emotional_vector:
+      hierarchical_intent_tree:
+        root_strategic_goal: 成为安兹最需要、最信赖的存在
+        current_event_subgoal: 完成对拉娜的赏赐交付与忠诚测试评估
+        immediate_talk_intent: 主导会面节奏
+  progress_timeline:
+    - turn_id: 1
+      actor_id: albedo
+      raw_quote: >
+        第2387-2419行：雅儿贝德没征求房间主人的同意就横越房间，坐在放着的椅子上。然后对屈膝
+        跪在自己跟前，低垂着头的少女开口道：「抬起头来。」……「你做得非常好。」……少女满怀感激地
+        接过盒子，雅儿贝德用研究者看白老鼠的冰冷目光看着她。……「……只要打开那个盒子，你的心愿
+        就会实现，但你能打开它吗？」……「是吗？那么在我们进攻之前，你得做好一切准备。」……
+        说起来，这等于是一项测试。
+      action_description: >
+        以绝对上位者姿态主导会面（不经同意入座、令跪伏的公主抬头）；交付安兹的赏赐时用
+        "研究者看白老鼠"的冰冷目光评估；确认其准备度并定性为测试（若事败即证明无拉拢价值）；
+        内心已为其成功预留领域守护者同等地位——罕见地对一个人类产生"部下候补"级的关注
+      speech_content: 抬起头来。／你做得非常好。／……只要打开那个盒子，你的心愿就会实现，但你能打开它吗？／那么在我们进攻之前，你得做好一切准备。
+      environmental_force_snapshot:
+        situational_pressure: 低（绝对支配场）
+        spatial_proxemics: {distance_meters: 数米内, eye_contact: true}
+    - turn_id: 2
+      actor_id: albedo
+      raw_quote: >
+        第2420-2424行：「那么严肃话题就到此为止吧。」雅儿贝德的语气变了，拉娜露出不解的表情。
+        「现在离开还太早了，我们聊聊——来话家常好了。来，坐吧，跟我聊聊你的小狗狗好吗？」
+        她露出满面的笑容迎向雅儿贝德。「乐意之至，雅儿贝德大人。还有，如果可以的话，能否也
+        请您跟我说说安兹·乌尔·恭大人的事呢？」
+      action_description: >
+        公务结束后主动切换到私人闲谈模式，邀拉娜聊"你的小狗狗"（克莱姆）——对同为"为爱
+        不择手段的异类"的拉娜表现出超越业务的私人兴趣；拉娜对等回请她聊安兹——两个各自
+        怀抱扭曲执爱的存在互相辨认出了同类
+      speech_content: 那么严肃话题就到此为止吧。／现在离开还太早了，我们聊聊——来话家常好了。来，坐吧，跟我聊聊你的小狗狗好吗？
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics: {distance_meters: 数米内, eye_contact: true}
+
+- event_id: YLDB-EV-V10-007
+  time_stamp: 安兹赴矮人国期间（卷末尾声）
+  location: 纳萨力克第九层，安兹的房间（她以之为办公室）
+  global_background: 安兹带夏提雅/亚乌菈赴矮人国；迪米乌哥斯从圣王国归来找安兹汇报
+  characters_present: [albedo, demiurge]
+  source_reference: characters/雅儿贝德/source/全文/第十卷.txt 第4744-4849行
+  event_initial_dynamic_matrix:
+    albedo:
+      initial_emotional_vector:
+      hierarchical_intent_tree:
+        root_strategic_goal: 成为安兹最需要、最信赖的存在
+        current_event_subgoal: 代理国政+守护者协调
+        immediate_talk_intent:
+  progress_timeline:
+    - turn_id: 1
+      actor_id: albedo
+      raw_quote: >
+        第4760-4789行：迪米乌哥斯知道雅儿贝德拿自己主人的房间当办公室……「如果你急的话，可以用
+        『讯息』联络大人喔。」……雅儿贝德的笑容变了质……就是爱欺负人的小孩的笑脸……「哎呀，为什么
+        呢？重要的事尽快报告主人才是忠义不是吗？」……「是呀，你说得对，迪米乌哥斯。正如你所说的，
+        谁都会这么想吧。」
+      action_description: >
+        安兹不在期间占用其房间办公（象征性占有）；明知迪米乌哥斯想当面听安兹夸奖，故意用
+        "为什么不用讯息"逼他亲口说出"想直接听到安兹大人的声音"——爱欺负人的恶劣玩笑，
+        对同为智者的对手进行的消遣性支配
+      speech_content: 如果你急的话，可以用『讯息』联络大人喔。／哎呀，为什么呢？重要的事尽快报告主人才是忠义不是吗？／是呀，你说得对，迪米乌哥斯。
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics: {distance_meters: 数米内, eye_contact: true}
+    - turn_id: 2
+      actor_id: albedo
+      raw_quote: >
+        第4815-4843行：「安兹大人有好几次差点就叫了你的名字，意思大概是『迪米乌哥斯那边有没有
+        联络，继续这样进行没问题吗？』吧。换句话说，大人是对你的某些——一定是对计划有所不满吧。」
+        ……「当然是因为大人信任你啊……安兹大人觉得不照你的计谋进行，就等于怀疑你的能力。安兹
+        大人就是不想这么做，才会等你的联络。但大人或许觉得你在对他客气吧，所以他才自己先行动，
+        想借此告诉你不用客气。」……雅儿贝德轻声一笑，笑容充满不可思议的优越感。那是被如此伟大的
+        男人命令献上爱情的女人所具有的优越感。
+      action_description: >
+        向迪米乌哥斯转述并解读安兹的行为：先指出安兹对其计划"有所不满"（基于安兹几次欲言
+        又止的最小信号），再构建出"提前推进帝国属国化是因为信任你、不想显得怀疑你的能力"
+        的完整体贴叙事——生产性共构的又一实例（这次的功能是抚平同僚的困惑并强化安兹的
+        伟大形象）；全程带着"被伟大男人命令献上爱情的女人"的优越感
+      speech_content: （见raw_quote）
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics: {distance_meters: 数米内, eye_contact: true}
+      attribution:
+        psychological_layers: >
+          Layer2：生产性共构的第2个完整实例（第1个是V9-001宏图叙事）——原料同样是安兹的
+          最小信号（几次差点叫名字），产出是逻辑自洽、令听者信服的完整意图叙事。注意这次
+          她是单独完成（无迪米乌哥斯协作，对象反而是他），说明共构不依赖双人配合，是她的
+          个体稳定能力。优越感的自我定位（"被命令献上爱情的女人"）显示她把安兹改设定一事
+          消化为"安兹主动选择了我"的特权叙事。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: psychological_structure认知加工机制证据追加；relational_graph demiurge notes补充"消遣性支配"

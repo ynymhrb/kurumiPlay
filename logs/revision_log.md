@@ -54,7 +54,7 @@ git_ref: a329bd1
 change_type: 字段新增
 round: v2.0
 eval_before: 无
-eval_after: 待卷十完成后统一自测
+eval_after: C020回顾式检验（见construction_log，accuracy≈0.53，回顾式非盲测）
 delta: 待定
 git_ref: 7b98e74
 
@@ -67,7 +67,7 @@ git_ref: 7b98e74
 change_type: 范围限定
 round: v2.0
 eval_before: 无
-eval_after: 待卷十完成后统一自测
+eval_after: C020回顾式检验（见construction_log，accuracy≈0.53，回顾式非盲测）
 delta: 待定
 git_ref: 7b98e74
 
@@ -80,7 +80,7 @@ git_ref: 7b98e74
 change_type: 证据分级
 round: v2.0
 eval_before: 无
-eval_after: 待卷十完成后统一自测
+eval_after: C020回顾式检验（见construction_log，accuracy≈0.53，回顾式非盲测）
 delta: 待定
 git_ref: 7b98e74
 
@@ -93,7 +93,7 @@ git_ref: 7b98e74
 change_type: 范围限定
 round: v2.0
 eval_before: 无
-eval_after: 待卷十完成后统一自测
+eval_after: C020回顾式检验（见construction_log，accuracy≈0.53，回顾式非盲测）
 delta: 待定
 git_ref: 7b98e74
 
@@ -106,7 +106,7 @@ git_ref: 7b98e74
 change_type: 重命名精确化
 round: v2.0
 eval_before: 无
-eval_after: 待卷十完成后统一自测
+eval_after: C020回顾式检验（见construction_log，accuracy≈0.53，回顾式非盲测）
 delta: 待定
 git_ref: 7b98e74
 
@@ -119,7 +119,7 @@ git_ref: 7b98e74
 change_type: 字段新增
 round: v2.0
 eval_before: 无
-eval_after: 待卷十完成后统一自测
+eval_after: C020回顾式检验（见construction_log，accuracy≈0.53，回顾式非盲测）
 delta: 待定
 git_ref: 7b98e74
 
@@ -132,7 +132,7 @@ git_ref: 7b98e74
 change_type: 字段新增
 round: v2.0
 eval_before: 无
-eval_after: 待卷十完成后统一自测
+eval_after: C020回顾式检验（见construction_log，accuracy≈0.53，回顾式非盲测）
 delta: 待定
 git_ref: 98e2e44
 
@@ -145,7 +145,7 @@ git_ref: 98e2e44
 change_type: 候选机制新增
 round: v2.0
 eval_before: 无
-eval_after: 待卷十完成后统一自测
+eval_after: C020回顾式检验（见construction_log，accuracy≈0.53，回顾式非盲测）
 delta: 待定
 git_ref: 98e2e44
 
@@ -158,7 +158,7 @@ git_ref: 98e2e44
 change_type: 范围限定
 round: v2.0
 eval_before: 无
-eval_after: 待卷十完成后统一自测
+eval_after: C020回顾式检验（见construction_log，accuracy≈0.53，回顾式非盲测）
 delta: 待定
 git_ref: 98e2e44
 
@@ -171,7 +171,7 @@ git_ref: 98e2e44
 change_type: 范围限定
 round: v2.0
 eval_before: 无
-eval_after: 待卷十完成后统一自测
+eval_after: C020回顾式检验（见construction_log，accuracy≈0.53，回顾式非盲测）
 delta: 待定
 git_ref: 98e2e44
 
@@ -184,7 +184,7 @@ git_ref: 98e2e44
 change_type: 字段新增
 round: v2.0
 eval_before: 无
-eval_after: 待卷十完成后统一自测
+eval_after: C020回顾式检验（见construction_log，accuracy≈0.53，回顾式非盲测）
 delta: 待定
 git_ref: 98e2e44
 
@@ -197,7 +197,7 @@ git_ref: 98e2e44
 change_type: 证据分级
 round: v2.0
 eval_before: 无
-eval_after: 待卷十完成后统一自测
+eval_after: C020回顾式检验（见construction_log，accuracy≈0.53，回顾式非盲测）
 delta: 待定
 git_ref: d6e5e3b
 
@@ -210,7 +210,7 @@ git_ref: d6e5e3b
 change_type: 范围限定
 round: v2.0
 eval_before: 无
-eval_after: 待卷十完成后统一自测
+eval_after: C020回顾式检验（见construction_log，accuracy≈0.53，回顾式非盲测）
 delta: 待定
 git_ref: d6e5e3b
 
@@ -223,7 +223,7 @@ git_ref: d6e5e3b
 change_type: 证据分级
 round: v2.0
 eval_before: 无
-eval_after: 待卷十完成后统一自测
+eval_after: C020回顾式检验（见construction_log，accuracy≈0.53，回顾式非盲测）
 delta: 待定
 git_ref: d6e5e3b
 
@@ -236,7 +236,7 @@ git_ref: d6e5e3b
 change_type: 字段新增
 round: v2.0
 eval_before: 无
-eval_after: 待卷十完成后统一自测
+eval_after: C020回顾式检验（见construction_log，accuracy≈0.53，回顾式非盲测）
 delta: 待定
 git_ref: d6e5e3b
 
@@ -249,7 +249,7 @@ git_ref: d6e5e3b
 change_type: 字段新增
 round: v2.0
 eval_before: 无
-eval_after: 待卷十完成后统一自测
+eval_after: C020回顾式检验（见construction_log，accuracy≈0.53，回顾式非盲测）
 delta: 待定
 git_ref: d6e5e3b
 
@@ -262,7 +262,7 @@ git_ref: d6e5e3b
 change_type: 范围限定
 round: v2.0
 eval_before: 无
-eval_after: 待卷十完成后统一自测
+eval_after: C020回顾式检验（见construction_log，accuracy≈0.53，回顾式非盲测）
 delta: 待定
 git_ref: ac3667e
 
@@ -275,7 +275,7 @@ git_ref: ac3667e
 change_type: 证据分级
 round: v2.0
 eval_before: 无
-eval_after: 待卷十完成后统一自测
+eval_after: C020回顾式检验（见construction_log，accuracy≈0.53，回顾式非盲测）
 delta: 待定
 git_ref: ac3667e
 
@@ -288,6 +288,71 @@ git_ref: ac3667e
 change_type: 证据分级
 round: v2.0
 eval_before: 无
-eval_after: 待卷十完成后统一自测
+eval_after: C020回顾式检验（见construction_log，accuracy≈0.53，回顾式非盲测）
 delta: 待定
 git_ref: ac3667e
+
+## 2026-07-19 — belief_system"效忠排他性"候选偏强→已转正（三重验证）
+
+触发：YLDB-EV-V10-003 turn2——获得安兹脸颊吻的极致喜悦瞬间，应答脱口而出"遵命，飞鼠大人！"（第3个直接场景，情绪峰值时她心中的称呼是本名，与V6"希望有朝一日还能听见您那美妙的名字"直接呼应）。
+修正前：候选偏强（2直接+2推断）。
+修正后：已转正——跨场景复现✓（3直接场景跨3卷：蓄意表达/激怒流露/峰值流露）、有生成力✓、有排他性✓（与夏提雅等的敬畏反应多次直接对照）；推断性关联增至3条（秘密部队/至高王/精神控制道具搜寻），暗线指向仍保持开放；同时收录V10-001"除了一件事之外事事听从"的叙述明示例外。
+原因：三重验证标准达成；"飞鼠大人"证据的特殊价值在于它是无意识流露（非蓄意表达也非激怒），覆盖了第三种流露条件。
+change_type: 证据分级
+round: v2.0
+eval_before: 无
+eval_after: 见C020回顾式检验
+delta: 待定
+git_ref: <本次commit>
+
+## 2026-07-19 — belief_system"未来投射"转正 + attachment_style升候选偏强 + speech_register称呼演变峰值规则
+
+触发：YLDB-EV-V10-001（"心爱的夫君"自称+下腹部习惯自制）、女仆二手转述（"新娘修行"亲自打扫）、YLDB-EV-V10-003（"我以为您绝对不会理我的"+真哭）。
+修正前：未来投射候选偏强（2实例）；attachment_style候选（1场景）；称呼演变只有"待追踪"注记。
+修正后：未来投射转正（V2/V8/V10三卷四实例，三重验证通过）；attachment_style升候选偏强（"预期基线为零+最小回应即情绪决堤"是焦虑型的典型结构）；称呼演变补充生成规则——常态"安兹大人"，仅极致情绪峰值可让"飞鼠大人"泄出。
+原因：三条相互独立的证据链在本卷同时增强；attachment_style保留候选级是因为焦虑型的另一半特征（对分离的持续性焦虑监控）尚无直接场景。
+change_type: 证据分级
+round: v2.0
+eval_before: 无
+eval_after: 见C020回顾式检验
+delta: 待定
+git_ref: <本次commit>
+
+## 2026-07-19 — decision_rules新增规则14"战略耐心" + 规则9"情感通道终止谏言"补充 + 规则13推断链第三环
+
+触发：YLDB-EV-V10-005（搂肩咬牙但笑容不破→休息室爆发→仍拒绝换掉菲利浦）；YLDB-EV-V10-002 turn4（斩首刑三轮抗辩被安兹苦笑表情击穿，"您这表情太奸诈了……我乐于听命"）；YLDB-EV-V10-005 turn3（精神控制道具搜寻直寄本人+"忘了讲"淡化）。
+修正前：无"厌恶与利用价值分离"规则；规则9只覆盖论证通道；规则13推断链2环。
+修正后：新增规则14（惩罚延迟到用完之后，真实犹豫说明冲突存在但结论稳定）；规则9补充——纪律议题（触及"安兹话语=一切"信念本身）谏言持续度最高，且情感通道（安兹的表情）可以终止论证通道终止不了的谏言，她对此有元认知；规则13第三环并明确"每环单看均有正当解释，整体不定论"。
+原因：规则14填补了"对工具级对象"的行为空白；"情感通道"发现修正了此前"谏言终止=被说服"的隐含假设——安兹的情感表达是比论证更强的终止器。
+change_type: 字段新增
+round: v2.0
+eval_before: 无
+eval_after: 见C020回顾式检验
+delta: 待定
+git_ref: <本次commit>
+
+## 2026-07-19 — psychological_structure"表演性得体"新增对外武器化维度+语域四分档；"认知加工"确认个体稳定能力
+
+触发：YLDB-EV-V10-004（寂寞侧脸钓饵/敬称升格话术）、YLDB-EV-V10-005（咬牙声泄露但笑容不破/对棋子粗口）、YLDB-EV-V10-007（单独完成共构解读"因为信任你"）、YLDB-EV-V10-002（"不了解法律"→"至高存在观点"的日常小型共构）。
+修正前：表演性得体只描述防守性形象管理；共构能力只有双人协作实例。
+修正后：表演性得体补充进攻性工具维度（钓饵表演/虚荣喂养），语域完整四分档（对外武器化优雅/同僚斗嘴/棋子粗口零投资/对安兹内化恭敬）；认知加工机制确认共构不依赖协作、随时在线（日常小型运作）。
+原因：四分档语域是生成多场景对话的核心依据；"共构随时在线"意味着生成任何她解释安兹行为的台词都应默认走升格/体贴化路径。
+change_type: 范围限定
+round: v2.0
+eval_before: 无
+eval_after: 见C020回顾式检验
+delta: 待定
+git_ref: <本次commit>
+
+## 2026-07-19 — talents新增2条+relational_graph新增renner节点+speech_register新增2条口癖+literary_techniques手法2扩充
+
+触发：YLDB-EV-V10-004/005（操纵技术全景+期货布局）、YLDB-EV-V10-006（拉娜handler关系+同类相知）、YLDB-EV-V10-001/005（配偶级自称）、YLDB-EV-V8-003+V10-005（粗口档n=2）、YLDB-EV-V10-002 turn6（争宠闹剧）。
+修正前：talents 2条；无renner节点；无粗口/配偶自称口癖；手法2 n=2。
+修正后：talents+2（武器化印象操纵/经济治理）；renner节点（handler的冰冷评估+超越业务的私人兴趣双层结构）；口癖+2（粗口档p 0.4/配偶级自称p 0.4）；手法2并入争宠闹剧变体（n=3，p 0.5）并新增初步规律——文学外壳集中于"对安兹的欲望表达"主题且仅限内部场合，对外场景一律写实。
+原因：卷十是她对外行动的首个完整样本，操纵技术从"推测能力"变为"已观测行为清单"；文学手法的"内外分界"规律对生成尺度控制价值极大。
+change_type: 字段新增
+round: v2.0
+eval_before: 无
+eval_after: 见C020回顾式检验
+delta: 待定
+git_ref: <本次commit>
