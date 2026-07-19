@@ -366,7 +366,7 @@ change_type: 字段追加
 round: v2.0
 eval_before: dev derivability audit score 0.7 on this behavior
 eval_after: 修正后该行为可完全推导
-git_ref: 待回填
+git_ref: e15fc6d
 
 ## 2026-07-19 — belief_system"効忠排他性"evidence追加V11-002+confidence措辞微调（意愿层面确认）
 
@@ -378,5 +378,4 @@ change_type: 证据追加+措辞微调
 round: v2.0
 eval_before: dev derivability audit score 0.6
 eval_after: 修正后方向与强度均可推导
-git_ref: 待回填
-git_ref: c09dede
+git_ref: e15fc6d
