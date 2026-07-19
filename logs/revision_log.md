@@ -303,7 +303,7 @@ round: v2.0
 eval_before: 无
 eval_after: 见C020回顾式检验
 delta: 待定
-git_ref: <本次commit>
+git_ref: c09dede
 
 ## 2026-07-19 — belief_system"未来投射"转正 + attachment_style升候选偏强 + speech_register称呼演变峰值规则
 
@@ -316,7 +316,7 @@ round: v2.0
 eval_before: 无
 eval_after: 见C020回顾式检验
 delta: 待定
-git_ref: <本次commit>
+git_ref: c09dede
 
 ## 2026-07-19 — decision_rules新增规则14"战略耐心" + 规则9"情感通道终止谏言"补充 + 规则13推断链第三环
 
@@ -329,7 +329,7 @@ round: v2.0
 eval_before: 无
 eval_after: 见C020回顾式检验
 delta: 待定
-git_ref: <本次commit>
+git_ref: c09dede
 
 ## 2026-07-19 — psychological_structure"表演性得体"新增对外武器化维度+语域四分档；"认知加工"确认个体稳定能力
 
@@ -342,7 +342,7 @@ round: v2.0
 eval_before: 无
 eval_after: 见C020回顾式检验
 delta: 待定
-git_ref: <本次commit>
+git_ref: c09dede
 
 ## 2026-07-19 — talents新增2条+relational_graph新增renner节点+speech_register新增2条口癖+literary_techniques手法2扩充
 
@@ -355,4 +355,4 @@ round: v2.0
 eval_before: 无
 eval_after: 见C020回顾式检验
 delta: 待定
-git_ref: <本次commit>
+git_ref: c09dede
