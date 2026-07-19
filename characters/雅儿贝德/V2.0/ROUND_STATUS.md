@@ -63,7 +63,7 @@
 | 卷十一 | ✅ 完成 | 4（EV-V11-001~004，14 turn） | 加权均分 0.93 | 矮人国远征卷她留守（yield仅0.18）；Epilogue独处场景为効忠排他性**迄今最强直接证据**（踩踏公会旗帜+消灭守护者宣言）；4处gap中2处修入profile（deflect guilt形态+即時重構→認知加工surface_behaviors追加；排他性evidence+confidence措辞微调）；profile升至v0.7 |
 | 卷十二 | ✅ 完成 | 1（EV-V12-001，3 turn） | 加权均分 0.97 | 圣王国使节卷（外部POV限制信息）；她以宰相身份主导外交接见——外部视角完美验证"表演性得体"机制（outsider完全无法读穿面具）；唯一gap是安兹权威→轻微身体回应的连续谱中间点，不修正；profile维持v0.7 |
 
-**dev阶段方法说明**：因为连续叙事文本中trigger与response交织（无法先冻结预测再读答案），dev阶段采用"derivability audit"替代盲测——逐行为判断profile现有字段能否推导出该行为，带引用链。透明声明：pre-training contamination使准确率偏高，关注点在"引用链能否建立"（gap识别）而非绝对数字。详见 `logs/dev_predictions/vol11.md`。
+**dev阶段方法说明**：因为连续叙事文本中trigger与response交织（无法先冻结预测再读答案），dev阶段采用"derivability audit"替代盲测——逐行为判断profile现有字段能否推导出该行为，带引用链。透明声明：pre-training contamination使准确率偏高，关注点在"引用链能否建立"（gap识别）而非绝对数字。详见 `logs/predictions/vol11.md`。
 
 ## dev阶段（卷十一~十二）完成——里程碑总结
 
@@ -83,7 +83,7 @@
 |---|---|
 | 盲测均分 | **0.55**（116有效项，5场景：木屋0.63/独白0.90/团战0.53/拍卖0.50/休假0.69） |
 | 对比dev | derivability 0.93/0.97 → blind 0.55，**方法论级发现：derivability是必要非充分条件** |
-| 报告 | `logs/dev_predictions/vol13_blind.md`（预测）+ `vol13_scored.md`（评分+复盘） |
+| 报告 | `logs/predictions/vol13_blind.md`（预测）+ `vol13_scored.md`（评分+复盘） |
 
 **复盘结论（用户指导后修订）**：多数失败归属**推理端错误**而非profile缺口——(1) 把面具机制用到了安兹身上（A9让她对安兹虚饰能力，违背忠诚逻辑）；(2) 发明字段外新行为而不调用已建模的高概率行为；(3) 语域生成文风迁移不足（书面行政腔覆盖了口语直白档）。初版10条逐字段修正建议判定为**过拟合，全部撤回**。修正原则确立：**只加通用属性、能简短描述的内在逻辑，不加场景限定补丁**。
 

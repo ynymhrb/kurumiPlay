@@ -155,7 +155,7 @@ psychological_structure:
     provenance: >
       "对安兹零虚饰"一句为v0.8新增：vol13盲测A9/A10复盘产物（她当场承认没想到五项+向迪米
       乌哥斯求助/深深鞠躬撤回提案），与卷七惶恐道歉、自我归责catchphrase（n=3）共同支撑；
-      见logs/dev_predictions/vol13_scored.md复盘一节
+      见logs/predictions/vol13_scored.md复盘一节
 
 # ================= 变更记录 =================
 # v0.8（2026-07-19，结构重构+vol13盲测反馈）
@@ -164,7 +164,7 @@ psychological_structure:
 #   完整原文见git历史v0.7。
 # - 内容：唯一新增"对安兹零虚饰"一句（表演性得体机制的corollary）。vol13盲测初版报告的
 #   10条逐字段修正建议经复盘判定为过拟合，全部撤回（错误归属为推理端而非profile缺口），
-#   见logs/dev_predictions/vol13_scored.md。
+#   见logs/predictions/vol13_scored.md。
 # - speech_register honorific_level增加"对下位者/同僚内部场合：口语直白"一行——非新机制，
 #   是语域四分档中已有档位的语体标注补全（vol13复盘归因3）。
 # v0.7（卷十一dev反馈，2026-07-19）

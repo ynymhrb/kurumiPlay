@@ -382,7 +382,7 @@ git_ref: e15fc6d
 
 ## 2026-07-19 — profile结构重构：拆分为profile.yaml（推理简洁版）+ profile_trace.yaml（追溯文件），版本v0.7→v0.8
 
-触发：vol13盲测（logs/dev_predictions/vol13_blind.md → vol13_scored.md，均分0.55）+用户复盘反馈两条：(1) 逐字段打补丁是过拟合，修正只能是通用属性/简短逻辑；(2) profile中过程字段/追溯字段堆积会导致推理时注意力分散，应单独文件承载。
+触发：vol13盲测（logs/predictions/vol13_blind.md → vol13_scored.md，均分0.55）+用户复盘反馈两条：(1) 逐字段打补丁是过拟合，修正只能是通用属性/简短逻辑；(2) profile中过程字段/追溯字段堆积会导致推理时注意力分散，应单独文件承载。
 修正前：profile.yaml v0.7共607行，行为逻辑与evidence数组/confidence详情/逐卷provenance叙述/变更记录混排。
 修正后：profile.yaml v0.8约230行（纯行为逻辑，每条含一词status）；新建profile_trace.yaml承载全部证据链/置信度/来源史/变更记录，键名与profile一一对应；v0.1~v0.7完整文本经git历史可溯。
 内容变更（仅3处，其余为纯搬移/压缩）：
