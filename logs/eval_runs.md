@@ -4,7 +4,8 @@
 
 | eval_id | date | type | model_ref | test_set | n_cases | predictive_accuracy | style_score | notes |
 |---|---|---|---|---|---|---|---|---|
-| （尚无记录） | | | | | | | | |
+| E001 | 2026-07-19 | holdout（盲测） | profile v0.7（报告落盘于8b51cff） | 雅儿贝德-卷十三验证集（84占位符/116有效项） | 116 | 0.55 | 未单独评 | 首次真正盲测；复盘归因多数失败为推理端错误，催生prediction_protocol三步协议；contamination caveat适用（补登记录，原始报告见logs/predictions/vol13_scored.md） |
+| E002 | 2026-07-20 | dev（盲测调试） | profile v0.8 @ e4c0268 | 雅儿贝德-卷十一验证集（BD特典drama段30项） | 30 | 0.57（机制0.80分开计） | 3/5 | **非干净盲测**（本卷已被train/audit消费过，分数仅供gap识别）；推理端调试轮：产出协议v1.1两条+profile v0.9四条通用修正；机制0.80vs总分0.57定位主要损失在文风渲染层 |
 
 ## 字段说明
 

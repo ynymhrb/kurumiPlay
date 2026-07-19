@@ -1,4 +1,4 @@
-# 雅儿贝德 profile 追溯文件（profile_trace.yaml）v0.8
+# 雅儿贝德 profile 追溯文件（profile_trace.yaml）v0.9
 # 与 profile.yaml 配套：profile.yaml 只保留推理逻辑，本文件承载证据链/置信度详情/逐卷来源/变更记录。
 # 键名与 profile.yaml 字段一一对应。v0.7及之前版本的完整叙述性limitation文本见git历史
 # （git show e15fc6d:characters/雅儿贝德/V2.0/profile.yaml 等）。
@@ -78,6 +78,12 @@ decision_rules:
       失败案例V3-C-003（力度轻）/V3-E-002（自我说服接受）共同点是议题触及安兹判断错误；
       卷七正例：竞技场"该玩够了"进言被采纳（亚乌菈认为无礼）；卷十：纪律议题坚持三轮主张
       斩首刑，安兹苦笑表情击穿（"您这表情太奸诈了"）——"理性服从vs感情服从"结构性张力
+  rule9_作用域补充:
+    confidence: 候选（v0.9新增，1直接场景）
+    evidence: [vol11-BD7房间事件]
+    provenance: >
+      求住安兹房间被拒→"是吗……"零坚持即刻让渡+羽翼脱力垂下（对照政务谏言可坚持三轮）。
+      vol11盲测#14误用谏言规则于私愿场合，据此补作用域。
   rule10:
     evidence: [YLDB-V4-D-002, YLDB-EV-V7-004]
     provenance: 卷七轻量级实例：抢先提议训斥安排虫声女仆
@@ -104,6 +110,7 @@ preferences_evidence: [YLDB-EV-V6-001, YLDB-EV-V8-001, YLDB-EV-V8-003, YLDB-EV-V
 traits_evidence:
   独占欲: [YLDB-EV-V6-001, YLDB-EV-V8-001, YLDB-EV-V8-003, YLDB-EV-V10-002]
   更懂安兹地位货币: [YLDB-EV-V9-001, YLDB-EV-V8-001]
+  翅膀情绪通道: [vol11-BD7房间事件×4处（扇动=急切/垂落=失落/伸展=喜悦/飞行取物）]
 talents_evidence:
   组织管理: [YLDB-EV-V7-004（防卫系统获安兹正式认可）, YLDB-EV-V7-002（阿里阿德涅边界条件追问）]
   武器化印象操纵: [YLDB-EV-V10-004, YLDB-EV-V10-005]
@@ -133,6 +140,14 @@ speech_register:
   怪笑: {evidence: [YLDB-EV-V6-001 turn2]}
   请罪自贬: {evidence: [YLDB-EV-V6-001 turn4]}
   称呼演变: {evidence: [YLDB-EV-V10-003], provenance: 峰值瞬间"遵命，飞鼠大人！"}
+  语体动力学:
+    confidence: v0.9新增（单场景6实例+跨卷旁证1）
+    evidence: [vol11-BD7房间事件×6处, YLDB-EV-V10-003]
+    provenance: >
+      vol11盲测复盘M1：高唤起时GT全为短爆发（"聊，聊聊！""是吗……""如您所言"
+      "是！不必说当然的！""请看""遵命。安兹大人"），预测系统性偏长偏雅；论证长句
+      仅见于求房间陈述（有说服目标）。跨卷旁证=卷十峰值"遵命，飞鼠大人！"。
+      见logs/predictions/vol11_scored.md
 
 psychological_structure:
   依恋创伤结构:
@@ -145,7 +160,9 @@ psychological_structure:
     provenance: >
       形态发现史：防御向（V3未回收尸体→"早已料到"）→增益向（V8飞飞归入安兹掌控）→
       生产性共构（V9共建叙事成为实际政策；V10确认个体稳定能力+随时在线）→deflect guilt
-      +即时重构（V11）。边界=V4-G-001连续追问战略漏洞
+      +即时重构（V11）。边界=V4-G-001连续追问战略漏洞。deflect guilt作用域限定为v0.9新增：
+      vol11盲测#26——安兹的社交性道歉（内衣尴尬）未触发deflect，她按当下情绪状态（唤起）
+      反应；对照#10统治过失级自责（房间疏失）触发恩赐话术。
   双重人格层次:
     status: confirmed（3独立场景；具体算计边界待细化）
     evidence: [YLDB-V1-S-002, YLDB-EV-V6-001, YLDB-EV-V7-004]
@@ -158,6 +175,12 @@ psychological_structure:
       见logs/predictions/vol13_scored.md复盘一节
 
 # ================= 变更记录 =================
+# v0.9（2026-07-20，vol11 dev盲测复盘——推理端调试轮）
+# - 四项通用修正（全部过防过拟合门槛，无场景补丁）：speech_register新增"语体动力学"（情绪峰值
+#   句长骤缩，6实例+跨卷旁证）；认知加工deflect guilt补作用域（限统治/职责级自责）；规则9补
+#   作用域（政务谏言可坚持vs私愿被拒零坚持，候选）；traits新增翅膀情绪通道（候选）。
+# - 同批协议修正（spec/prediction_protocol.md v1.1）：第0步状态继承+第0.5步邻接上下文反推。
+# - 评分：0.57/机制0.80/文风3/5（contamination声明有效，分数仅供gap识别）。
 # v0.8（2026-07-19，结构重构+vol13盲测反馈）
 # - 结构：profile.yaml拆分为推理简洁版（行为逻辑）+本追溯文件（证据/置信度/来源/变更记录），
 #   动机：过程字段堆积导致推理时注意力分散（用户指示）。逐卷provenance叙述压缩保留于此，
