@@ -68,6 +68,7 @@ character/
 │   ├── psychological_structure_protocol.md 深层心理机制记录方法论（取代"矛盾记录"）
 │   ├── expression_dna_protocol.md          语言风格提取方法论（产出speech_register字段）
 │   ├── eval_protocol.md                    评估协议：训练轮次版本化、train/dev/test切分、pipeline
+│   ├── prediction_protocol.md              言行预测协议：加载纪律、三步推理协议、盲测评分复盘
 │   └── _history/                           归档：旧版CEU_schema.md、character_os_template.md
 ├── scripts/                              自动化脚本（候选场景定位），流程本身按skill文档执行
 │   └── _history/                         归档：旧版validate_ceu.py、reconcile_round.py（CEU格式专用）

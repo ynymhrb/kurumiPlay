@@ -1,6 +1,6 @@
 # 评估协议（Eval Protocol）
 
-版本：v1.0（架构迁移：CSE认知仿真引擎设计，取代旧版CEU+多文件Character OS的pipeline；本次是eval_protocol.md自身的大版本进位，因为流程本身发生了实质变化，不只是新增小节）
+版本：v1.1（v1.0→v1.1：§9生成pipeline的TODO占位已被`spec/prediction_protocol.md`正式承接，本节改为指向；其余不变。v1.0为架构迁移：CSE认知仿真引擎设计，取代旧版CEU+多文件Character OS的pipeline）
 
 目的：让每次对角色模型（`profile.yaml` 静态特质 + `events/` 动态事件序列）的修改，都能回答两个问题——**这次改动是变好了还是变坏了？哪类改动倾向于变好、哪类倾向于变坏？**——而不是停留在"感觉上更合理了"。
 
@@ -107,17 +107,9 @@
 
 字段基本不变，命名同步调整为事件模型术语：`run_id`/`date`/`round`/`git_ref`/`scope`/`candidate_scenes`/`events_extracted`（原`ceu_extracted`）/`yield_rate`/`skipped_with_reason`/`schema_violations_caught`/`triggered_revisions`/`triggered_structure_updates`（原`triggered_contradictions`，对应psychological_structure的新增/更新）/`within_batch_accuracy`/`cross_validation`/`notes`。
 
-## 9. 生成阶段 pipeline（TODO占位，尚未实际验证）
+## 9. 生成/预测阶段 pipeline → 见 `spec/prediction_protocol.md`
 
-两段式生成逻辑（详见`attribution_framework.md`"生成阶段如何使用"一节）：
-
-```
-1. 定位新场景触发的心理内核（来自profile.yaml相关字段的归纳）
-2. 结合新场景写实尺度，先生成写实反应（draft）
-3. 检索 literary_techniques.md 是否有可复用的文学手法
-4. 判断是否套用（TODO，暂定标准：基调匹配+情绪类型匹配+按p(n)加权随机，需实际生成案例验证后校准）
-5. 套用 → 风格化版本；不套用 → 写实版
-```
+推理侧正本已独立成文（v1.1起）：加载纪律、第0步事件建模、强制三步推理协议（定观众→存量优先→语域选档）、输出格式、盲测评分与复盘、RolePlay模式，全部见`prediction_protocol.md`。原TODO中的两段式文学加工（写实draft→按p(n)判断是否套用literary_techniques手法）已并入其三步协议的第3步；`attribution_framework.md`"生成阶段如何使用"一节仍是文学化判断的方法论依据。
 
 ## 10. 关于CSE设计文档中"暂不实现"的部分（记录以便追溯决策依据）
 

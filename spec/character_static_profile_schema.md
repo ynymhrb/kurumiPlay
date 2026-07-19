@@ -1,12 +1,20 @@
 # 角色静态特质模型 Schema（Character Static Profile）
 
-版本：v1.0（取代 `spec/_history/CEU_schema.md` 和 `spec/_history/character_os_template.md` 描述的旧版CEU+多文件Character OS结构）
+版本：v0.2（取代 `spec/_history/CEU_schema.md` 和 `spec/_history/character_os_template.md` 描述的旧版CEU+多文件Character OS结构）
 
 ## 定位
 
 这是"认知仿真引擎（CSE）"架构里的模块一·静态部分：存储角色长期固化的本质属性，全局只读/受控更新。与之相对的是"动态状态"（情绪、瞬时意图），只存在于`event_schema.md`定义的事件/轮次结构里，不在这里固化。
 
-物理存储：`characters/<角色>/V<版本>/profile.yaml`，单文件，人工/LLM直接编辑。
+物理存储（v0.2起为双文件）：`characters/<角色>/V<版本>/profile.yaml` + `profile_trace.yaml`，人工/LLM直接编辑。
+
+## 双文件纪律：profile.yaml 与 profile_trace.yaml
+
+- **`profile.yaml`（推理文件）**：只保留推理所需的行为逻辑，保持简洁；每条仅带一词级status标注（confirmed/open/候选等）。预测时（见`prediction_protocol.md`）只加载这个文件。
+- **`profile_trace.yaml`（追溯文件）**：证据链（event_id列表）、置信度详情、逐卷来源史（provenance）、变更记录，**键名与profile.yaml一一对应**。
+- 分离理由：追溯内容混进推理文件会稀释推理时的注意力（vol13盲测复盘确立，见`logs/revision_log.md` v0.7→v0.8重构条目）。
+- **同步规则**：任何新增证据/修正都必须两边同步——行为逻辑进profile，证据/原因进trace；只改一边视为未完成的修正。
+- 下方"字段结构"定义的是profile.yaml；trace文件对每个键可挂`evidence`/`confidence`/`provenance`子项，文件尾部以注释块维护版本变更记录。
 
 ## 字段结构
 
@@ -85,6 +93,10 @@ p(n) = min(0.3 + 0.1 × (n-1), 0.8)
 ## 修改规则
 
 任何字段的增/删/改都必须先在此文件的"变更记录"落一条说明，才能生效。变更记录格式沿用旧版CEU_schema.md的约定（写明改了什么、为什么），具体触发/修正前/修正后/原因的详细记录写入 `logs/revision_log.md`（保持现有审计纪律，见该文件顶部说明）。
+
+## v0.2（2026-07-20，双文件纪律入schema）
+
+新增"双文件纪律"一节：`profile_trace.yaml`（证据链/置信度/来源史/变更记录，键名与profile.yaml对应）正式入schema——该实践在vol13盲测复盘后已实际执行（profile v0.7→v0.8拆分），但schema文档一直未跟上，本次补齐。物理存储说明同步改为双文件。另：修正文件头版本号笔误（此前误写"v1.0"，实际为v0.1，各处外部引用均为v0.1）。
 
 ## v0.1（本轮新建，2026-07-19）
 
