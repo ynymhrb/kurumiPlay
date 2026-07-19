@@ -56,7 +56,7 @@ round: v2.0
 eval_before: 无
 eval_after: 待卷十完成后统一自测
 delta: 待定
-git_ref: <本次commit>
+git_ref: 7b98e74
 
 ## 2026-07-19 — value_hierarchy 第1层"安兹象征崇拜"范围限定
 
@@ -69,7 +69,7 @@ round: v2.0
 eval_before: 无
 eval_after: 待卷十完成后统一自测
 delta: 待定
-git_ref: <本次commit>
+git_ref: 7b98e74
 
 ## 2026-07-19 — psychological_structure"双重人格层次"机制 open→confirmed
 
@@ -82,7 +82,7 @@ round: v2.0
 eval_before: 无
 eval_after: 待卷十完成后统一自测
 delta: 待定
-git_ref: <本次commit>
+git_ref: 7b98e74
 
 ## 2026-07-19 — psychological_structure"表演性得体的场合依赖"机制范围限定
 
@@ -95,7 +95,7 @@ round: v2.0
 eval_before: 无
 eval_after: 待卷十完成后统一自测
 delta: 待定
-git_ref: <本次commit>
+git_ref: 7b98e74
 
 ## 2026-07-19 — speech_register 2条口癖新增 + "命令逐字复诵"重命名扩围（n=1→2）；decision_rules规则7同步
 
@@ -108,7 +108,7 @@ round: v2.0
 eval_before: 无
 eval_after: 待卷十完成后统一自测
 delta: 待定
-git_ref: <本次commit>
+git_ref: 7b98e74
 
 ## 2026-07-19 — preferences首次非空+traits新增"独占欲强"+relational_graph两处更新+依恋机制推断性证据追加
 
@@ -121,4 +121,4 @@ round: v2.0
 eval_before: 无
 eval_after: 待卷十完成后统一自测
 delta: 待定
-git_ref: <本次commit>
+git_ref: 7b98e74
