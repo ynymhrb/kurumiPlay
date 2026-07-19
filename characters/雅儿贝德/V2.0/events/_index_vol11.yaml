@@ -1,0 +1,323 @@
+source: characters/雅儿贝德/source/全文/第十一卷.txt
+total_lines: 11734
+total_mention_lines: 86
+last_scanned: 由 locate_candidates.py 自动生成，未经人工复核
+clusters:
+- cluster_id: A
+  line_range:
+  - 157
+  - 216
+  mention_lines:
+  - 172
+  - 201
+  brief: 安兹/第三方间接提及，无本人言行
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: B
+  line_range:
+  - 239
+  - 303
+  mention_lines:
+  - 254
+  - 258
+  - 288
+  brief: 安兹/第三方间接提及，无本人言行
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: C
+  line_range:
+  - 421
+  - 451
+  mention_lines:
+  - 436
+  brief: 安兹/第三方间接提及，无本人言行
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: D
+  line_range:
+  - 628
+  - 658
+  mention_lines:
+  - 643
+  brief: 安兹/第三方间接提及，无本人言行
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: E
+  line_range:
+  - 689
+  - 719
+  mention_lines:
+  - 704
+  brief: 安兹/第三方间接提及，无本人言行
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: F
+  line_range:
+  - 908
+  - 938
+  mention_lines:
+  - 923
+  brief: 安兹/第三方间接提及，无本人言行
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: G
+  line_range:
+  - 2618
+  - 2680
+  mention_lines:
+  - 2633
+  - 2665
+  brief: 安兹/第三方间接提及，无本人言行
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: H
+  line_range:
+  - 2813
+  - 2843
+  mention_lines:
+  - 2828
+  brief: 安兹/第三方间接提及，无本人言行
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: I
+  line_range:
+  - 3063
+  - 3094
+  mention_lines:
+  - 3078
+  - 3079
+  brief: 安兹/第三方间接提及，无本人言行
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: J
+  line_range:
+  - 4665
+  - 4695
+  mention_lines:
+  - 4680
+  brief: 安兹/第三方间接提及，无本人言行
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: K
+  line_range:
+  - 4752
+  - 4790
+  mention_lines:
+  - 4767
+  - 4774
+  - 4775
+  brief: 安兹/第三方间接提及，无本人言行
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: L
+  line_range:
+  - 5145
+  - 5175
+  mention_lines:
+  - 5160
+  brief: 安兹/第三方间接提及，无本人言行
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: M
+  line_range:
+  - 5719
+  - 5749
+  mention_lines:
+  - 5734
+  brief: 安兹/第三方间接提及，无本人言行
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: N
+  line_range:
+  - 5797
+  - 5831
+  mention_lines:
+  - 5812
+  - 5816
+  brief: 安兹/第三方间接提及，无本人言行
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: O
+  line_range:
+  - 5987
+  - 6025
+  mention_lines:
+  - 6002
+  - 6010
+  brief: 安兹/第三方间接提及，无本人言行
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: P
+  line_range:
+  - 6053
+  - 6083
+  mention_lines:
+  - 6068
+  brief: 安兹/第三方间接提及，无本人言行
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: Q
+  line_range:
+  - 6247
+  - 6299
+  mention_lines:
+  - 6262
+  - 6278
+  - 6284
+  brief: 安兹/第三方间接提及，无本人言行
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: R
+  line_range:
+  - 6349
+  - 6383
+  mention_lines:
+  - 6364
+  - 6368
+  brief: 安兹/第三方间接提及，无本人言行
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: S
+  line_range:
+  - 6627
+  - 7055
+  mention_lines:
+  - 6642
+  - 6650
+  - 6656
+  - 6672
+  - 6696
+  - 6706
+  - 6710
+  - 6712
+  - 6718
+  - 6748
+  - 6750
+  - 6754
+  - 6756
+  - 6760
+  - 6776
+  - 6782
+  - 6788
+  - 6790
+  - 6796
+  - 6800
+  - 6804
+  - 6816
+  - 6832
+  - 6850
+  - 6852
+  - 6854
+  - 6862
+  - 6864
+  - 6868
+  - 6884
+  - 6892
+  - 6904
+  - 6908
+  - 6910
+  - 6914
+  - 6918
+  - 6928
+  - 6938
+  - 6954
+  - 6976
+  - 6978
+  - 7004
+  - 7040
+  brief: 房间场景(Message+面对面)+Epilogue独处仪式（旗帜踩踏/排��宣誓）
+  status: done
+  event_ids:
+  - YLDB-EV-V11-001
+  - YLDB-EV-V11-002
+  priority: high
+  notes: ''
+- cluster_id: T
+  line_range:
+  - 7087
+  - 7143
+  mention_lines:
+  - 7102
+  - 7118
+  - 7128
+  brief: BD Drama休假辩论(script格式)
+  status: done
+  event_ids:
+  - YLDB-EV-V11-003
+  priority: high
+  notes: ''
+- cluster_id: U
+  line_range:
+  - 7157
+  - 7187
+  mention_lines:
+  - 7172
+  brief: BD Drama续段安兹内心感想，无新事件
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+- cluster_id: V
+  line_range:
+  - 7255
+  - 7385
+  mention_lines:
+  - 7270
+  - 7298
+  - 7318
+  - 7326
+  - 7332
+  - 7340
+  - 7348
+  - 7356
+  - 7370
+  brief: BD Drama守护者自省会+出发场景
+  status: done
+  event_ids:
+  - YLDB-EV-V11-004
+  priority: high
+  notes: ''
+progress_summary:
+  clusters_total: 22
+  clusters_done: 3
+  clusters_partial: 0
+  clusters_pending: 0
+  processing_order: sequential
+  next_recommended: A
+usage_note: 本文件由 scripts/locate_candidates.py 机械生成（按人名grep聚类），brief/priority/status 需要处理该cluster时填写/更新，不代表已判断是否构成事件（Event）。

@@ -56,11 +56,20 @@
 - **回顾式自测**（C020）：15个关键行为按处理前profile判断可预测性，accuracy≈0.53（回顾式非盲测，仅供量级参考）；4个"不可预测"项全部转化为修正条目
 - **schema复核**：3个信号记录并复核，均判定暂不改schema（见logs/schema_gaps.md首条复核记录）
 
-## 下一步（等用户指示，不自行启动）
+## dev阶段（卷十一~十二，开发调测）进度
 
-1. dev阶段：卷十一~十二盲测（eval_protocol.md阶段B），检验v0.6 profile的预测力——这是第一次真正的非回顾式评估
-2. 遗留：value_hierarchy第3/5层仍无正式证据（卷六~十未出现纳萨力克存续vs安兹利益的冲突场景）；MM2/MM4/MM6/MM7三重验证回填；依恋创伤机制需更多危机场景
+| 卷 | 状态 | 事件数 | derivability audit | 要点 |
+|---|---|---|---|---|
+| 卷十一 | ✅ 完成 | 4（EV-V11-001~004，14 turn） | 加权均分 0.93 | 矮人国远征卷她留守（yield仅0.18）；Epilogue独处场景为効忠排他性**迄今最强直接证据**（踩踏公会旗帜+消灭守护者宣言）；4处gap中2处修入profile（deflect guilt形态+即時重構→認知加工surface_behaviors追加；排他性evidence+confidence措辞微调）；profile升至v0.7 |
+| 卷十二 | ⏳ 待处理 | — | — | — |
+
+**dev阶段方法说明**：因为连续叙事文本中trigger与response交织（无法先冻结预测再读答案），dev阶段采用"derivability audit"替代盲测——逐行为判断profile现有字段能否推导出该行为，带引用链。透明声明：pre-training contamination使准确率偏高，关注点在"引用链能否建立"（gap识别）而非绝对数字。详见 `logs/dev_predictions/vol11.md`。
+
+## 下一步
+
+1. **卷十二 dev评估**：同卷十一流程（derivability audit + gap修正 + profile更新）
+2. 遗留：value_hierarchy第3/5层仍无正式证据；MM2/MM4/MM6/MM7三重验证回填；依恋创伤机制需更多危机场景
 3. `event_initial_dynamic_matrix.mental_fatigue`若dev阶段仍零使用，考虑schema调整
 
 ---
-最后更新：2026-07-19（卷十处理完成+train阶段收尾，profile.yaml升至v0.6）
+最后更新：2026-07-19（卷十一dev评估完成，profile.yaml升至v0.7——認知加工+効忠排他性两处修正）

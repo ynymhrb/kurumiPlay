@@ -355,4 +355,28 @@ round: v2.0
 eval_before: 无
 eval_after: 见C020回顾式检验
 delta: 待定
+
+## 2026-07-19 — psychological_structure"认知加工"surface_behaviors追加deflect guilt形态+即时重构形态
+
+触发：YLDB-EV-V11-001（安兹道歉时她以"至高无上存在恩赐"话术deflect罪恶感）、YLDB-EV-V11-004（迪米乌哥斯说服后瞬间claimed"我从一开始就知道了"）。dev评估Gap 1。
+修正前：surface_behaviors列4类形态（防御向/增益向/生产性共构/边界）。
+修正后：追加第5类"deflect guilt形态"（安兹自责时将其过失重构为恩赐，保护"安兹无过"认知前提）+第6类"即时重构"（被说服后瞬间face-saving claimed早已知晓）。evidence追加V11-001/V11-004。
+原因：profile覆盖了该机制的核心但缺少这两个具体表现形态，导致dev audit评分0.7（Gap 1）。
+change_type: 字段追加
+round: v2.0
+eval_before: dev derivability audit score 0.7 on this behavior
+eval_after: 修正后该行为可完全推导
+git_ref: 待回填
+
+## 2026-07-19 — belief_system"効忠排他性"evidence追加V11-002+confidence措辞微调（意愿层面确认）
+
+触发：YLDB-EV-V11-002 epilogue（踩踏公会旗帜+咒骂至尊+"消灭守护者"宣言+抱蹭飞鼠旗）。dev评估Gap 2。
+修正前：confidence标注"暗线具体指向仍保持开放"；evidence含3个直接场景+3条推断关联。
+修正后：直接场景扩展为4个（追加V11-002）；confidence微调为"暗线的意愿层面已确认（消灭宣言为私下独白直接陈述），行动层面待观察"。不改变"不定论"的顶层判断，但收窄了开放范围。
+原因：V11-002是迄今最强的効忠排他性直接证据——不仅是符号弃置（V6），而是对公会旗帜的物理攻击+对同僚的消灭威胁。dev audit该行为评分0.6因profile仅标"推断性"而实际文本已有明确意愿陈述。
+change_type: 证据追加+措辞微调
+round: v2.0
+eval_before: dev derivability audit score 0.6
+eval_after: 修正后方向与强度均可推导
+git_ref: 待回填
 git_ref: c09dede
