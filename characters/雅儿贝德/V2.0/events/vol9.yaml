@@ -1,0 +1,130 @@
+# 雅儿贝德 卷九 事件时间线
+# Schema: spec/event_schema.md v1.0
+# cluster对应：A+B（连续场景）→EV-V9-001；C（安兹战场独白回忆两智囊赞同超位魔法）为提及，跳过
+
+- event_id: YLDB-EV-V9-001
+  time_stamp: 与帝国皇帝吉克尼夫的会谈结束当日
+  location: 安兹的个人房间（全体守护者+塞巴斯在场的内部复盘会议）
+  global_background: >
+    帝国皇帝按迪米乌哥斯的计划来纳萨力克会谈，被迫成为"协助者"；会后守护者内部复盘。
+    安兹实际上完全不了解"计划"全貌，靠见招拆招应付；迪米乌哥斯与雅儿贝德则相信一切尽在
+    安兹掌握，并在复盘中共同"解读"出安兹的深层意图。
+  characters_present: [albedo, ainz, demiurge, shalltear, aura, mare, cocytus, sebas]
+  source_reference: characters/雅儿贝德/source/全文/第九卷.txt 第812-1229行
+
+  event_initial_dynamic_matrix:
+    albedo:
+      initial_emotional_vector: {对会谈成果的兴奋: 0.7}
+      hierarchical_intent_tree:
+        root_strategic_goal: 成为安兹最需要、最信赖的存在
+        current_event_subgoal: 复盘会谈成果、参与制定后续方针
+        immediate_talk_intent: 解读并宣讲安兹的"深层意图"
+
+  progress_timeline:
+    - turn_id: 1
+      actor_id: albedo
+      raw_quote: >
+        第860-861行：「——雅儿贝德。」「安兹大人的慈悲心肠让我几乎要感动落泪。不愧是我等
+        统治者，至高的君王！」
+      action_description: 安兹点名叫她（实际是求助想要答案），她回应的不是分析而是升格赞美——把点名理解为"邀请确认伟大"
+      speech_content: 安兹大人的慈悲心肠让我几乎要感动落泪。不愧是我等统治者，至高的君王！
+      environmental_force_snapshot:
+        situational_pressure: 低（内部会议）
+        spatial_proxemics:
+          distance_meters: 数米内
+          eye_contact: true
+
+    - turn_id: 2
+      actor_id: albedo
+      raw_quote: >
+        第894行：「就是啊，光是听到简单易懂的答案，就以为自己体察了大人的真实心意，未免太
+        操之过急了。所以安兹大人才不愿马上告诉你们更深一层的答案哟。」第908行：看到迪米乌哥斯
+        面露微笑，雅儿贝德面露胜利者的笑容。
+      action_description: >
+        与迪米乌哥斯共同营造"存在更深一层答案"的叙事（她并未真正得到答案），面对其他守护者
+        的嫉妒露出胜利者的笑容——"体察安兹真意"是守护者间的地位货币，她主动展示自己的
+        insider地位
+      speech_content: 就是啊，光是听到简单易懂的答案，就以为自己体察了大人的真实心意，未免太操之过急了。所以安兹大人才不愿马上告诉你们更深一层的答案哟。
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics:
+          distance_meters: 数米内
+          eye_contact: true
+
+    - turn_id: 3
+      actor_id: albedo
+      raw_quote: >
+        第1154-1165行：他看见的是一个甜美得像在滴蜜的女子，她双眸如痴如醉，脸颊微微染上
+        蔷薇色。……「——正……是如此。」「喔喔！」……「……嘻嘻嘻嘻。」雅儿贝德张开双臂，腰际的
+        羽翼也随之张开。「安兹大人要以和平手段占领人类都市，用慈爱统治这附近地区。……大义名分
+        是属于我们的！」……「安兹大人的睿智，实在不是我等所能企及。若不是有安兹大人创造出的
+        英雄飞飞，想用和平手段统治国家将是痴人说梦……」
+      action_description: >
+        双眸如痴如醉、羽翼随情绪张开，完整构建出"安兹的宏图"叙事（和平占领+慈爱统治+大义
+        名分+飞飞是预先布局的英雄底牌）并当众宣讲——该叙事是她与迪米乌哥斯共同脑补的产物
+        （安兹本人并无此计划），但从此成为纳萨力克的实际行动纲领
+      speech_content: 安兹大人要以和平手段占领人类都市，用慈爱统治这附近地区。……大义名分是属于我们的！／安兹大人的睿智，实在不是我等所能企及。若不是有安兹大人创造出的英雄飞飞，想用和平手段统治国家将是痴人说梦……
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics:
+          distance_meters: 数米内
+          eye_contact: true
+      attribution:
+        psychological_layers: >
+          Layer2（认知）："增益向合理化"机制的最强实例——不仅把既有事实过度归因给安兹，
+          还**生产性地构建**出一套完整战略叙事（安兹从未提出），归于安兹名下并自己深信不疑
+          （如痴如醉的生理反应证明是真诚信念而非表演）。关键后果：这套脑补叙事成为纳萨力克
+          实际政策——该机制不只是认知偏差，是有真实组织产出的"战略共构"过程（与迪米乌哥斯
+          双人完成）。Layer3：安兹的模糊回应（"正是如此"）是唯一的确认信号，她把最小确认
+          放大为全盘背书。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: >
+          psychological_structure"维护安兹全知全能信念的认知加工"增益向补充"生产性共构"
+          特征+证据追加；relational_graph demiurge notes补充"解读安兹真意的共构同盟"
+
+    - turn_id: 4
+      actor_id: albedo
+      raw_quote: >
+        第1166-1170行：「……虽然或许能用黄金公主代替，但这样就浪费一张底牌了。……」「是啊，
+        听你这样说，我也很想会会她呢。」「那么建国后派使者前往王国如何？毕竟还得实现约定呢。」
+        「……你们俩离题了吧？这样岂非浪费了安兹大人的宝贵时间？」两人赶紧谢罪。
+      action_description: >
+        与迪米乌哥斯就拉娜（黄金公主）的利用价值、建国后遣使王国等政策自由讨论；被塞巴斯
+        以"浪费安兹大人的宝贵时间"框架指出离题后，立即与迪米乌哥斯一起谢罪——凡被框定为
+        "损害安兹利益"的指摘，无论来自谁都即刻生效
+      speech_content: 是啊，听你这样说，我也很想会会她呢。／那么建国后派使者前往王国如何？毕竟还得实现约定呢。
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics:
+          distance_meters: 数米内
+          eye_contact: true
+
+    - turn_id: 5
+      actor_id: albedo
+      raw_quote: >
+        第1206-1215行：「塞巴斯觉得呢？」……「那么换我了，因为是位居诸位无上至尊之顶点的伟人，
+        我认为应该称为至高王。」守护者们都佩服地叹息。……「那么科塞特斯觉得呢？在我提出了至高王
+        之后，恐怕很难想出个更好的……」……只有雅儿贝德似乎显得有点遗憾。第1224行：「我之前就有
+        想过，让人类舔安兹大人的鞋子，岂不是便宜了他们？」
+      action_description: >
+        称号会议上以主持人姿态逐一点名征询；自己的提案是"至高王"——理由是"位居诸位无上至尊
+        之顶点的伟人"（把安兹置于其他四十位至尊之上，以社会可接受的颂扬形式表达）；"魔导王"
+        当选时全场唯一显得遗憾；会末与迪米乌哥斯窃窃私语"让人类舔安兹大人的鞋子岂不是便宜了
+        他们"
+      speech_content: 因为是位居诸位无上至尊之顶点的伟人，我认为应该称为至高王。／我之前就有想过，让人类舔安兹大人的鞋子，岂不是便宜了他们？
+      environmental_force_snapshot:
+        situational_pressure: 低
+        spatial_proxemics:
+          distance_meters: 数米内
+          eye_contact: true
+      attribution:
+        psychological_layers: >
+          Layer2（推断性关联，明确标注）："至高王"的命名理由是当众把安兹排在其他无上至尊
+          **之上**——这与"效忠排他性"（只认安兹、私下敌视至尊集体）方向完全一致，且用"颂扬
+          安兹"这个守护者文化里绝对安全的形式表达，无人会察觉异常；落选时她是全场唯一遗憾者。
+          单看本场景只是热烈的颂扬提案（正常解释充分），但与V6旗帜独白、V8痛骂路西法连起来
+          看，是同一信念在公开场合的最大可表达版本。保持推断性标注，不作定论。
+        explanation_deficit: false
+        judgment: 心理完全闭环
+        profile_updates_suggested: belief_system"效忠排他性"追加第2条推断性关联证据

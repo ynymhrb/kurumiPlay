@@ -1,0 +1,63 @@
+source: characters/雅儿贝德/source/全文/第九卷.txt
+total_lines: 4712
+total_mention_lines: 18
+last_scanned: 由 locate_candidates.py 自动生成，未经人工复核
+clusters:
+- cluster_id: A
+  line_range:
+  - 797
+  - 923
+  mention_lines:
+  - 812
+  - 815
+  - 843
+  - 860
+  - 895
+  - 901
+  - 908
+  brief: 会谈后复盘会议前半（升格赞美/共构"深层答案"/胜利者笑容）
+  status: done
+  event_ids:
+  - YLDB-EV-V9-001
+  priority: high
+  notes: ''
+- cluster_id: B
+  line_range:
+  - 1137
+  - 1240
+  mention_lines:
+  - 1152
+  - 1154
+  - 1158
+  - 1162
+  - 1164
+  - 1173
+  - 1179
+  - 1207
+  - 1215
+  - 1225
+  brief: 复盘会议后半（宏图叙事共构/黄金公主闲谈/称号会议"至高王"提案）
+  status: done
+  event_ids:
+  - YLDB-EV-V9-001
+  priority: high
+  notes: ''
+- cluster_id: C
+  line_range:
+  - 3672
+  - 3702
+  mention_lines:
+  - 3687
+  brief: 安兹战场独白回忆两智囊赞同超位魔法，纯提及
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: ''
+progress_summary:
+  clusters_total: 3
+  clusters_done: 2
+  clusters_partial: 0
+  clusters_pending: 0
+  processing_order: sequential
+  next_recommended: null
+usage_note: 本文件由 scripts/locate_candidates.py 机械生成（按人名grep聚类），brief/priority/status 需要处理该cluster时填写/更新，不代表已判断是否构成事件（Event）。
