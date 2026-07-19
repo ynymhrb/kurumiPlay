@@ -1,0 +1,60 @@
+source: characters/雅儿贝德/source/全文/第十二卷.txt
+total_lines: 4189
+total_mention_lines: 17
+last_scanned: 由 locate_candidates.py 自动生成，人工复核完成
+clusters:
+- cluster_id: A
+  line_range:
+  - 1949
+  - 2034
+  mention_lines:
+  - 1964
+  - 1968
+  - 1972
+  - 1977
+  - 1981
+  - 1983
+  - 1987
+  - 2004
+  - 2019
+  brief: 外交接见前半——宰相欢迎仪式+武器信任gambit+王座厅谒见
+  status: done
+  event_ids: [YLDB-EV-V12-001]
+  priority: high
+  notes: 与Cluster B为连续场景，合并为同一事件
+- cluster_id: B
+  line_range:
+  - 2071
+  - 2151
+  mention_lines:
+  - 2086
+  - 2094
+  - 2118
+  - 2123
+  - 2134
+  - 2136
+  brief: 外交接见后半——时间交涉（5→3→2年）+安兹强势命令+"遵命"+送客泛红
+  status: done
+  event_ids: [YLDB-EV-V12-001]
+  priority: high
+  notes: 与Cluster A为连续场景，合并为同一事件
+- cluster_id: C
+  line_range:
+  - 4049
+  - 4085
+  mention_lines:
+  - 4064
+  - 4070
+  brief: 安兹独白中提及（抱怨她和迪米乌哥斯不考虑自己能力给任务）
+  status: skipped
+  event_ids: []
+  priority: low
+  notes: 纯安兹内心独白，无雅儿贝德本人言行——属于安兹对她的评价信息，已知（talents组织管理能力超群的反面=给安兹压力）
+progress_summary:
+  clusters_total: 3
+  clusters_done: 2
+  clusters_partial: 0
+  clusters_pending: 0
+  clusters_skipped: 1
+  processing_order: sequential
+  next_recommended: null
