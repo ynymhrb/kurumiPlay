@@ -409,3 +409,19 @@ round: v2.0
 eval_before: vol11 dev盲测 0.57（机制0.80/文风3/5，contamination声明适用）
 eval_after: 待卷十四干净盲测检验（v0.9+协议v1.1）
 git_ref: 3a0cbbb
+
+## 2026-07-20 — 卷十二dev盲测复盘：profile v0.9→v0.10五项通用修正 + prediction_protocol v1.1→v1.2一项协议修正
+
+触发：卷十二验证集盲测调试（logs/predictions/vol12_blind.md → vol12_scored.md，0.59/机制0.83/文风3.5；对外公务语域，与卷十一内部私密语域互补）。
+修正前→修正后（字段级）：
+1. speech_register新增"归荣于上"子字段：对外恩典/许可/动向/决定一律以陛下为源头陈述，从不以自己为施与主体；含头衔呈现序候选（圣职全称先行、宰相为对外翻译）。5实例。change_type: 字段新增
+2. speech_register.first_person补"小女子（对外谦称场合，配'窃以为'级谦语）"。2实例。change_type: 字段追加
+3. speech_register.语体动力学补表演价值维度：迎宾/说服=铺陈，事务性确认=极简，对内对外皆然。change_type: 范围限定
+4. talents"武器化印象操纵"补"隐威慑显体贴"：话术表层永远是体贴/信任/选择权，威慑由事实差距让对方自行推断。change_type: 字段追加
+5. traits"翅膀情绪通道"升级为"躯体泄露通道"：扩展至肩颤/脸颊泛红，2卷2场景支持（候选偏强）；确立言语/躯体分离规律（对安兹命令言语应答永远干脆热烈，动摇只走躯体）。change_type: 范围限定+证据追加
+协议修正（spec/prediction_protocol.md v1.2）：第0.5步补"衬垫与滑档警觉"（vol12五错中三个为衬垫/滑档类）。
+原因：两轮dev调试稳定复现"机制≈0.8、总分≈0.58"结构，损失集中在话语模式层，本轮修正全部指向该层；全部过防过拟合门槛。#4评估性扫视判定为推理端未调用既有机制，不加字段。
+round: v2.0
+eval_before: vol12 dev盲测 0.59（机制0.83/文风3.5，contamination声明适用）
+eval_after: 待卷十四干净盲测检验（v0.10+协议v1.2）
+git_ref: 待回填

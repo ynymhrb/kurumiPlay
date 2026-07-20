@@ -1,4 +1,4 @@
-# 雅儿贝德 profile 追溯文件（profile_trace.yaml）v0.9
+# 雅儿贝德 profile 追溯文件（profile_trace.yaml）v0.10
 # 与 profile.yaml 配套：profile.yaml 只保留推理逻辑，本文件承载证据链/置信度详情/逐卷来源/变更记录。
 # 键名与 profile.yaml 字段一一对应。v0.7及之前版本的完整叙述性limitation文本见git历史
 # （git show e15fc6d:characters/雅儿贝德/V2.0/profile.yaml 等）。
@@ -110,7 +110,14 @@ preferences_evidence: [YLDB-EV-V6-001, YLDB-EV-V8-001, YLDB-EV-V8-003, YLDB-EV-V
 traits_evidence:
   独占欲: [YLDB-EV-V6-001, YLDB-EV-V8-001, YLDB-EV-V8-003, YLDB-EV-V10-002]
   更懂安兹地位货币: [YLDB-EV-V9-001, YLDB-EV-V8-001]
-  翅膀情绪通道: [vol11-BD7房间事件×4处（扇动=急切/垂落=失落/伸展=喜悦/飞行取物）]
+  躯体泄露通道: >
+    vol11-BD7房间事件×4处（翅膀：扇动=急切/垂落=失落/伸展=喜悦/飞行取物）+
+    vol12-使节接见×3处（肩颤=被强硬命令的不安[L121]；脸颊泛红×2=安兹君主威仪触发的兴奋
+    泄露到对外场合[L134]）。言语/躯体分离：L120言语"是！遵命，陛下！"干脆热烈与L121肩颤
+    并存——vol12盲测#24把犹豫渗入言语被扣分，据此确立分离规律。2卷2场景，候选偏强。
+  武器化印象操纵_隐威慑显体贴: >
+    vol12-L23：准许佩剑的理由全程"信赖+让各位宽心+无意伤害+要保管也行"，威慑零出口，
+    宁亚在L30-31自行推断实力差。vol12盲测#10直陈"利刃不可能伤及陛下"被判错，据此补条。
 talents_evidence:
   组织管理: [YLDB-EV-V7-004（防卫系统获安兹正式认可）, YLDB-EV-V7-002（阿里阿德涅边界条件追问）]
   武器化印象操纵: [YLDB-EV-V10-004, YLDB-EV-V10-005]
@@ -140,8 +147,19 @@ speech_register:
   怪笑: {evidence: [YLDB-EV-V6-001 turn2]}
   请罪自贬: {evidence: [YLDB-EV-V6-001 turn4]}
   称呼演变: {evidence: [YLDB-EV-V10-003], provenance: 峰值瞬间"遵命，飞鼠大人！"}
+  归荣于上:
+    confidence: v0.10新增（vol12单场景5实例；头衔呈现序为候选1实例）
+    evidence: [vol12-使节接见L11/L50/L86/L131/L134, vol12-L9（头衔序）]
+    provenance: >
+      "陛下深怀忧虑…理所当然""陛下已准，众人抬起头来""若能得到陛下许可""魔导王陛下驾返"
+      ——恩典与许可从不以自己为施与主体；vol12盲测#2/#19把主体写成了她自己（"我的荣幸"），
+      据此立条。见logs/predictions/vol12_scored.md
+  小女子谦称:
+    confidence: v0.10新增（2实例）
+    evidence: [vol12-L23, vol12-L134]
   语体动力学:
-    confidence: v0.9新增（单场景6实例+跨卷旁证1）
+    confidence: v0.9新增（单场景6实例+跨卷旁证1）；v0.10补表演价值维度（vol12"好的。"
+      "窃以为相当困难。"两处事务性极简 vs 迎宾致辞铺陈的对照）
     evidence: [vol11-BD7房间事件×6处, YLDB-EV-V10-003]
     provenance: >
       vol11盲测复盘M1：高唤起时GT全为短爆发（"聊，聊聊！""是吗……""如您所言"
@@ -175,6 +193,11 @@ psychological_structure:
       见logs/predictions/vol13_scored.md复盘一节
 
 # ================= 变更记录 =================
+# v0.10（2026-07-20，vol12 dev盲测复盘——对外语域调试轮）
+# - 五项通用修正：speech_register新增"归荣于上"（5实例）+"小女子"谦称+语体动力学补表演价值维度；
+#   talents武器化印象操纵补"隐威慑显体贴"；traits翅膀通道升级"躯体泄露通道"（2卷支持，含言语/
+#   躯体分离规律）。协议同步v1.2（衬垫与滑档警觉）。
+# - 评分0.59/机制0.83/文风3.5；与vol11互补覆盖语域两极，损失稳定集中在话语模式层。
 # v0.9（2026-07-20，vol11 dev盲测复盘——推理端调试轮）
 # - 四项通用修正（全部过防过拟合门槛，无场景补丁）：speech_register新增"语体动力学"（情绪峰值
 #   句长骤缩，6实例+跨卷旁证）；认知加工deflect guilt补作用域（限统治/职责级自责）；规则9补
