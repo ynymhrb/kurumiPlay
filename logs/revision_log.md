@@ -424,4 +424,4 @@ git_ref: 3a0cbbb
 round: v2.0
 eval_before: vol12 dev盲测 0.59（机制0.83/文风3.5，contamination声明适用）
 eval_after: 待卷十四干净盲测检验（v0.10+协议v1.2）
-git_ref: 待回填
+git_ref: 3b593c5
