@@ -140,11 +140,15 @@ vol13复盘确立三步推理协议（`spec/prediction_protocol.md` v1.0）后�
 
 **里程碑结论：dev调试闭环（v0.9/v0.10+协议v1.1/v1.2）在干净数据上产生真实增益。** 残余损失定位于五个可命名层面（F1内心默认档=战略分析／F2对安兹共谋筹划平语档／F3支配游戏话术／F4私人势力实证／F5称谓补正），不再是弥散性错误。**五条候选修正因来源为test集，按纪律仅记录待决**（见vol14_scored.md），未修入profile。
 
-## 下一步（等用户指示）
+## 🔒 本轮冻结（2026-07-20，用户裁定）
 
-1. **决定F1-F5五条test来源候选修正是否修入profile v0.11**（无更多干净数据可验证，修入即用于RolePlay生成场景）
-2. 本轮（albedo-round-v2.0）train/dev/test全部完成，可考虑打tag冻结；或开启新角色复用skill流程
-3. 遗留：value_hierarchy第3/5层；MM2/MM4/MM6/MM7三重验证回填；依恋创伤机制需更多危机场景
+**albedo-round-v2.0 正式结束，打tag `albedo-round-v2.0` 冻结。**
+
+- **F1-F5五条test来源候选修正：不采纳**（用户裁定"测试集不做调参"——保持纪律，profile定格在v0.10）。候选内容保留在`logs/predictions/vol14_scored.md`，若未来开启v3.0新轮次，可作为待验证假设随新train数据重新检验。
+- 本轮最终产出：profile v0.10 + profile_trace v0.10 + events/（卷六~十二，21事件74turn）+ literary_techniques v0.3 + prediction_protocol v1.2
+- 最终成绩：干净盲测0.63/机制0.815（基线0.55，dev调试闭环增益+0.08）
+- 遗留至下轮：value_hierarchy第3/5层证据；MM2/MM4/MM6/MM7三重验证回填；依恋创伤机制危机场景；F1-F5假设
+- 本目录自此冻结不再修改；开启新轮次时按skill流程移入`_history/`
 
 ---
-最后更新：2026-07-20（卷十四干净盲测0.63/机制0.815——test收官，dev闭环增益确认）
+最后更新：2026-07-20（本轮冻结，tag: albedo-round-v2.0）
