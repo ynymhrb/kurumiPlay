@@ -164,7 +164,7 @@ def main():
     lines.append("## Bootstrap Confidence Intervals")
     lines.append("")
     lines.append("| field | pair | mean_diff | ci95 | n |")
-    lines.append("|---|---:|---:|---:|")
+    lines.append("|---|---:|---:|---:|---:|")
     pairs = [("C", "A"), ("B", "C"), ("B", "A")]
     for field in ("content", "register"):
         for left, right in pairs:
@@ -194,7 +194,7 @@ def main():
     lines.append("## Chunk Breakdown (content accuracy)")
     lines.append("")
     lines.append("| chunk | pair | mean_diff | n |")
-    lines.append("|---|---:|---:|")
+    lines.append("|---|---:|---:|---:|")
     for chunk_label in sorted(set(chunks.values())):
         subset = {
             cid: vals for cid, vals in rows.items()
@@ -221,7 +221,7 @@ def main():
     lines.append("")
     sens, nonsens = sensitivity_report(rows, sensitive_ids, all_styled_ids)
     if sens or nonsens:
-        lines.append("| group | n_items | mean |B-C| content |")
+        lines.append("| group | n_items | mean_abs_B_minus_C_content |")
         lines.append("|---|---:|---:|")
         lines.append(
             f"| style-sensitive (B≠C on ≥1 axis) | {len(sens)} | {mean(sens):.3f} |"

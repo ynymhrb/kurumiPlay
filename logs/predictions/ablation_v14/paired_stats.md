@@ -6,7 +6,7 @@ Items are paired across arms (same slot, three different profile conditions). Th
 ## Bootstrap Confidence Intervals
 
 | field | pair | mean_diff | ci95 | n |
-|---|---:|---:|---:|
+|---|---:|---:|---:|---:|
 | content | C-A | +0.057 | [-0.013, +0.127] | 79 |
 | content | B-C | -0.006 | [-0.057, +0.051] | 79 |
 | content | B-A | +0.051 | [-0.006, +0.108] | 79 |
@@ -21,7 +21,7 @@ The paired bootstrap CIs are narrower than the rough independent-SE estimate (SE
 ## Chunk Breakdown (content accuracy)
 
 | chunk | pair | mean_diff | n |
-|---|---:|---:|
+|---|---:|---:|---:|
 | A | C-A | +0.062 | 48 |
 | A | B-C | +0.010 | 48 |
 | A | B-A | +0.073 | 48 |
@@ -33,7 +33,7 @@ The paired bootstrap CIs are narrower than the rough independent-SE estimate (SE
 
 Cross-reference with `style_axis_scores_exploratory.md`: for items where the exploratory style-axis B≠C (profile truly shifts expression), is the content-score |B-C| larger than for items where B=C on all style axes?
 
-| group | n_items | mean |B-C| content |
+| group | n_items | mean_abs_B_minus_C_content |
 |---|---:|---:|
 | style-sensitive (B≠C on ≥1 axis) | 14 | 0.143 |
 | style-insensitive (B=C on all axes) | 18 | 0.083 |
