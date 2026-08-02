@@ -6,22 +6,26 @@ scores_raw.md 期望格式，每行一项：
     #12 | X:1/1 | Y:0.5/0 | Z:1/-
 即 内容分/语域分；语域不适用记 '-'。
 
-用法: python scripts/unblind.py
+用法:
+    python scripts/unblind.py                          # 默认 ablation_v14
+    python scripts/unblind.py --dir ablation_v14_full  # n=200 全量消融
 """
+import argparse
 import json
 import os
 import re
 from collections import defaultdict
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-D = os.path.join(BASE, "logs", "predictions", "ablation_v14")
+PRED_DIR = os.path.join(BASE, "logs", "predictions")
+DEFAULT_DIR = "ablation_v14"
 ARMS = ["A", "B", "C"]
 
 ROW = re.compile(r"^\s*#?\s*(\d+)\s*\|(.*)$")
 CELL = re.compile(r"([XYZ])\s*:\s*([0-9.]+)\s*/\s*([0-9.]+|-)")
 
 
-def load_chunks():
+def load_chunks(D):
     m = {}
     with open(os.path.join(D, "gt_key.md"), encoding="utf-8") as f:
         for raw in f:
@@ -32,8 +36,27 @@ def load_chunks():
 
 
 def main():
-    key = json.load(open(os.path.join(D, "unblind_key.json"), encoding="utf-8"))
-    chunks = load_chunks()
+    parser = argparse.ArgumentParser(
+        description="揭盲内容/语域评分"
+    )
+    parser.add_argument(
+        "--dir", default=DEFAULT_DIR,
+        help=f"消融目录名（相对于 logs/predictions/，默认 {DEFAULT_DIR}）"
+    )
+    args = parser.parse_args()
+
+    D = os.path.join(PRED_DIR, args.dir)
+    if not os.path.isdir(D):
+        print(f"错误：目录不存在 {D}")
+        return
+
+    key_path = os.path.join(D, "unblind_key.json")
+    if not os.path.exists(key_path):
+        print(f"错误：{key_path} 不存在，先运行 merge_blind.py")
+        return
+
+    key = json.load(open(key_path, encoding="utf-8"))
+    chunks = load_chunks(D)
 
     content = defaultdict(list)          # arm -> [score]
     register = defaultdict(list)         # arm -> [score]

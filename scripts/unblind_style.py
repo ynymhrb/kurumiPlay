@@ -13,6 +13,9 @@ style_scores_raw.md 期望格式，每行一项：
 
     # 独立评分路径（Gate 3 重跑）
     $env:PYTHONIOENCODING='utf-8'; python scripts/unblind_style.py --input style_scores_raw_independent.md --output style_scores_independent.md
+
+    # n=200 全量消融
+    $env:PYTHONIOENCODING='utf-8'; python scripts/unblind_style.py --dir ablation_v14_full
 """
 import argparse
 import json
@@ -21,7 +24,8 @@ import re
 from collections import defaultdict
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-D = os.path.join(BASE, "logs", "predictions", "ablation_v14")
+PRED_DIR = os.path.join(BASE, "logs", "predictions")
+DEFAULT_DIR = "ablation_v14"
 ARMS = ["A", "B", "C"]
 
 AXES = [
@@ -38,7 +42,7 @@ AXIS_CELL = re.compile(
 )
 
 
-def load_chunks():
+def load_chunks(D):
     m = {}
     with open(os.path.join(D, "gt_key.md"), encoding="utf-8") as f:
         for raw in f:
@@ -51,14 +55,23 @@ def load_chunks():
 def main():
     parser = argparse.ArgumentParser(description="揭盲风格轴评分")
     parser.add_argument(
+        "--dir", default=DEFAULT_DIR,
+        help=f"消融目录名（相对于 logs/predictions/，默认 {DEFAULT_DIR}）"
+    )
+    parser.add_argument(
         "--input", default="style_scores_raw.md",
-        help="输入原始评分文件（相对于 ablation_v14/ 目录，默认 style_scores_raw.md）"
+        help="输入原始评分文件（相对于消融目录，默认 style_scores_raw.md）"
     )
     parser.add_argument(
         "--output", default="style_scores.md",
-        help="输出揭盲结果文件（相对于 ablation_v14/ 目录，默认 style_scores.md）"
+        help="输出揭盲结果文件（相对于 消融目录，默认 style_scores.md）"
     )
     args = parser.parse_args()
+
+    D = os.path.join(PRED_DIR, args.dir)
+    if not os.path.isdir(D):
+        print(f"错误：目录不存在 {D}")
+        return
 
     key_path = os.path.join(D, "style_unblind_key.json")
     raw_path = os.path.join(D, args.input)
@@ -72,7 +85,7 @@ def main():
         return
 
     key = json.load(open(key_path, encoding="utf-8"))
-    chunks = load_chunks()
+    chunks = load_chunks(D)
 
     # arm -> axis -> [0/1 scores]
     axis_scores = {a: {ax: [] for ax in AXES} for a in ARMS}

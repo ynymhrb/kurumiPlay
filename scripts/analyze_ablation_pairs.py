@@ -6,9 +6,10 @@ bootstrap confidence intervals. Also computes a profile-sensitivity index:
 for items where exploratory style-axis scores show B≠C, is |content_B - content_C|
 larger than for items where style axes agree?
 
-Usage: python scripts/analyze_ablation_pairs.py
-Output: logs/predictions/ablation_v14/paired_stats.md
+Usage: python scripts/analyze_ablation_pairs.py [--dir DIR]
+Output: logs/predictions/<dir>/paired_stats.md
 """
+import argparse
 import json
 import os
 import random
@@ -16,19 +17,20 @@ import re
 from collections import defaultdict
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-D = os.path.join(BASE, "logs", "predictions", "ablation_v14")
+PRED_DIR = os.path.join(BASE, "logs", "predictions")
+DEFAULT_DIR = "ablation_v14"
 SEED = 20260728
 N_BOOT = 10000
 
 # ── Parsers ──────────────────────────────────────────────────────────────
 
-def load_unblind_key():
+def load_unblind_key(D):
     """Return dict: item_id(int) -> {X: arm, Y: arm, Z: arm}."""
     with open(os.path.join(D, "unblind_key.json"), encoding="utf-8") as f:
         raw = json.load(f)
     return {int(k): v for k, v in raw.items()}
 
-def load_scores(key):
+def load_scores(key, D):
     """Return dict: item_id(int) -> {arm: {content: float|None, register: float|None}}."""
     ROW_RE = re.compile(r"^\s*#?\s*(\d+)\s*\|(.*)$")
     CELL_RE = re.compile(r"([XYZ])\s*:\s*([0-9.]+)\s*/\s*([0-9.]+|-)")
@@ -52,7 +54,7 @@ def load_scores(key):
             rows[cid] = values
     return rows
 
-def load_chunk_map():
+def load_chunk_map(D):
     """Return dict: item_id(int) -> chunk_label(str)."""
     chunks = {}
     with open(os.path.join(D, "gt_key.md"), encoding="utf-8") as f:
@@ -62,7 +64,7 @@ def load_chunk_map():
                 chunks[int(parts[0])] = parts[1]
     return chunks
 
-def load_style_sensitivity():
+def load_style_sensitivity(D):
     """Return dict: item_id(int) -> set of axis names where B≠C in exploratory scores.
 
     Reads style_axis_scores_exploratory.md rows, collects items where B != C
@@ -145,10 +147,24 @@ def fmt_ci(est, lo, hi):
     return f"{est:+.3f}  [{lo:+.3f}, {hi:+.3f}]"
 
 def main():
-    key = load_unblind_key()
-    rows = load_scores(key)
-    chunks = load_chunk_map()
-    sensitive_ids, all_styled_ids = load_style_sensitivity()
+    parser = argparse.ArgumentParser(
+        description="Paired bootstrap reanalysis of three-arm ablation scores"
+    )
+    parser.add_argument(
+        "--dir", default=DEFAULT_DIR,
+        help=f"消融目录名（相对于 logs/predictions/，默认 {DEFAULT_DIR}）"
+    )
+    args = parser.parse_args()
+
+    D = os.path.join(PRED_DIR, args.dir)
+    if not os.path.isdir(D):
+        print(f"错误：目录不存在 {D}")
+        return
+
+    key = load_unblind_key(D)
+    rows = load_scores(key, D)
+    chunks = load_chunk_map(D)
+    sensitive_ids, all_styled_ids = load_style_sensitivity(D)
 
     lines = []
     lines.append("# Paired Bootstrap Reanalysis of vol14 Ablation")
@@ -156,7 +172,7 @@ def main():
     lines.append(f"Method: paired bootstrap, {N_BOOT} resamples, seed={SEED}.")
     lines.append(
         "Items are paired across arms (same slot, three different profile conditions). "
-        "This is the correct analysis because the three arms predict exactly the same 79 slots."
+        f"This is the correct analysis because the three arms predict exactly the same {len(rows)} slots."
     )
     lines.append("")
 

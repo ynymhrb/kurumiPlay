@@ -22,6 +22,12 @@ CHUNKS = [
     ("part04", 1501, 1965, "复盘会 + 拉娜 + 菲利浦"),
 ]
 
+# 已知对齐失败的原文行号 → 人工核对的正确答案
+# 验证集行「安兹阻止了{}。」vs 原文「安兹阻止想继续冲去的雅儿贝德。」—— regex 无法匹配
+MANUAL_OVERRIDES = {
+    1413: ["想继续冲去的雅儿贝德"],
+}
+
 
 def load(path):
     with open(path, encoding="utf-8") as f:
@@ -51,25 +57,37 @@ def main():
     for name, lo, hi, label in CHUNKS:
         arena_lines = []
         n_here = 0
-        n_fail = 0
+        n_auto_fail = 0
+        n_manual = 0
+        n_unresolved = 0
         for ln in range(lo, hi + 1):
             v = val[ln - 1]
             if "{}" not in v:
                 arena_lines.append(f"{ln:>5}| {v}")
                 continue
             fills = recover_fills(v, orig[ln - 1])
+            is_manual = False
+            if fills is None and ln in MANUAL_OVERRIDES:
+                fills = MANUAL_OVERRIDES[ln]
+                is_manual = True
             k = v.count("{}")
             out = v
             for j in range(k):
                 counter += 1
                 n_here += 1
                 out = out.replace("{}", f"【#{counter}】", 1)
-                gt = (fills[j] if fills and j < len(fills) else "!!对齐失败,人工核对!!")
-                if fills is None:
-                    n_fail += 1
+                if fills and j < len(fills):
+                    gt = fills[j]
+                else:
+                    gt = "!!对齐失败,人工核对!!"
                 gt_rows.append((counter, name, ln, label, gt))
+            if is_manual:
+                n_manual += 1
+            elif fills is None:
+                n_auto_fail += 1
+                n_unresolved += 1
             arena_lines.append(f"{ln:>5}| {out}")
-        stats[name] = (n_here, n_fail)
+        stats[name] = (n_here, n_auto_fail, n_manual, n_unresolved)
 
         # Arena header
         header = [
@@ -92,19 +110,23 @@ def main():
             f.write(f"| {cid} | {ch} | {ln} | {ctx} | {g} |\n")
 
     # README summary
-    total_fail = sum(v[1] for v in stats.values())
-    item_counts = {k: v[0] for k, v in stats.items()}
+    total_auto_fail = sum(v[1] for v in stats.values())
+    total_manual = sum(v[2] for v in stats.values())
+    total_unresolved = sum(v[3] for v in stats.values())
     with open(os.path.join(OUT, "README.md"), "w", encoding="utf-8") as f:
         f.write("# vol14 Full Ablation README\n\n")
         f.write("## Arena stats\n\n")
-        f.write("| part | slots | align_failures |\n|---|---|---|\n")
-        for name, (slots, fails) in stats.items():
-            f.write(f"| {name} | {slots} | {fails} |\n")
-        f.write(f"| **total** | **{counter}** | **{total_fail}** |\n")
-        f.write(f"\nalignment_failures: {total_fail}\n")
+        f.write("| part | slots | auto_align_failures | manual_overrides | unresolved_failures |\n")
+        f.write("|---|---:|---:|---:|---:|\n")
+        for name, (slots, af, man, unr) in stats.items():
+            f.write(f"| {name} | {slots} | {af} | {man} | {unr} |\n")
+        f.write(f"| **total** | **{counter}** | **{total_auto_fail}** | **{total_manual}** | **{total_unresolved}** |\n")
+        f.write(f"\nauto_alignment_failures: {total_auto_fail}\n")
+        f.write(f"manual_overrides: {total_manual}\n")
+        f.write(f"unresolved_alignment_failures: {total_unresolved}\n")
         f.write(f"total_placeholders: {counter}\n")
 
-    print("chunk stats (slots, align_failures):", stats)
+    print("chunk stats (slots, auto_fail, manual, unresolved):", stats)
     print("total slots:", counter)
 
 
