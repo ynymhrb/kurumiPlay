@@ -7,8 +7,14 @@ style_scores_raw.md 期望格式，每行一项：
 
 每项必须包含全部五个轴。0/1/- 三档：- 不计分母。
 
-用法: $env:PYTHONIOENCODING='utf-8'; python scripts/unblind_style.py
+用法:
+    # 默认路径（原始评分）
+    $env:PYTHONIOENCODING='utf-8'; python scripts/unblind_style.py
+
+    # 独立评分路径（Gate 3 重跑）
+    $env:PYTHONIOENCODING='utf-8'; python scripts/unblind_style.py --input style_scores_raw_independent.md --output style_scores_independent.md
 """
+import argparse
 import json
 import os
 import re
@@ -43,9 +49,20 @@ def load_chunks():
 
 
 def main():
+    parser = argparse.ArgumentParser(description="揭盲风格轴评分")
+    parser.add_argument(
+        "--input", default="style_scores_raw.md",
+        help="输入原始评分文件（相对于 ablation_v14/ 目录，默认 style_scores_raw.md）"
+    )
+    parser.add_argument(
+        "--output", default="style_scores.md",
+        help="输出揭盲结果文件（相对于 ablation_v14/ 目录，默认 style_scores.md）"
+    )
+    args = parser.parse_args()
+
     key_path = os.path.join(D, "style_unblind_key.json")
-    raw_path = os.path.join(D, "style_scores_raw.md")
-    out_path = os.path.join(D, "style_scores.md")
+    raw_path = os.path.join(D, args.input)
+    out_path = os.path.join(D, args.output)
 
     if not os.path.exists(key_path):
         print(f"错误：{key_path} 不存在，先运行 merge_style_blind.py")
